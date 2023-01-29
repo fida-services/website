@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 
 import { colors } from 'theme';
@@ -10,14 +10,15 @@ interface Props extends StyledProps {
   link: string;
 }
 interface StyledProps {
-  color?: string;
+  color?: CSSProperties['color'];
   border?: boolean;
+  backgroundColor?: CSSProperties['backgroundColor']
 }
 
 export const MenuButton = (props: Props) => {
-  const { label, color, border, link } = props;
+  const { label, color, backgroundColor, border, link } = props;
   return (
-    <StyledMenuButton border={border}>
+    <StyledMenuButton backgroundColor={backgroundColor} border={border}>
       <StyledLink href={link}>
         <Text size={16} color={color} label={label} fontWeight={700} toUpperCase />
       </StyledLink>
@@ -26,17 +27,19 @@ export const MenuButton = (props: Props) => {
 };
 
 const StyledMenuButton = styled.button<StyledProps>`
-    padding: 5px 10px;
-    line-height: '100%';
+    margin: 5px 10px;
     background: none;
+    text-align: left;
     color: ${({ color }) => (color || colors.white)};
+    background: ${({ backgroundColor }) => (backgroundColor || 'unset')};
     border: ${({ border, color }) => (border ? `1px solid ${color || colors.white}` : 'none')};
-    border-radius: ${({ border }) => (border ? '25px' : 'none')};
+    border-radius: 25px;
 `;
 const StyledLink = styled.a`
+    display: inline-block;
     font-size: 16px;
-    margin: 0 34px;
+    padding: 5px 34px;
+    box-sizing: border-box;
     color: ${({ color }) => (color || colors.white)};
-    text-decoration: none;
-    
+    text-decoration: none;   
 `;

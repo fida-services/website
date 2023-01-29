@@ -1,34 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from 'assets/icons/fidaLogo.png';
+
+import logo from 'assets/logos/fida.png';
+import { menuItems } from 'data/menuItems';
+
 import { MenuButton } from './MenuButton';
-
-// interface Props {
-
-// }
-
-const menuItems = [
-  {
-    label: 'home',
-    link: '#'
-  },
-  {
-    label: 'whitepaper',
-    link: '#'
-  },
-  {
-    label: 'invest deck',
-    link: '#'
-  },
-
-];
 
 export const Header = () => (
   <StyledHeader>
     <img src={logo} alt="fida logo" />
     <div className="flex">
-      {menuItems.map(({ label, link }) => <MenuButton key={label} label={label} link={link} />)}
-      <MenuButton label="join our community" link="#" border />
+      {menuItems.iterableItems.map(({ label, link }) => <MenuButton key={label} label={label} link={link} />)}
+      <MenuButton label={menuItems.joinCommunity.label} link={menuItems.joinCommunity.link} border />
     </div>
   </StyledHeader>
 );

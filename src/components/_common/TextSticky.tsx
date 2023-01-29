@@ -19,7 +19,7 @@ export const TextSticky = ({ textData }: Props) => {
       <div>
         {titleTexts.map((text, index) => (index === highlightIndex
           ? <Text key={text} size={32} label={text} color={colors.textGradient} fontWeight={700} linearGradient />
-          : <Text key={text} size={32} label={text} />))}
+          : <Text key={text} size={32} label={text} fontWeight={400} />))}
       </div>
       { descriptionText && (
       <div className="mt-3">

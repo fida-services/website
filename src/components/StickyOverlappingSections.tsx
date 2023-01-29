@@ -29,21 +29,21 @@ const texts = {
 export const StickyOverlappingSections = () => (
   <StyledGenericWrapper marginBottom={100}>
     <StickySection>
-      <StyledGradientBackground height={512}>
-        <img src={laptop} height="480" alt="laptop" />
-      </StyledGradientBackground>
+      <div>
+        <img src={laptop} height="496" alt="laptop" />
+      </div>
       <TextSticky textData={texts.setOne} />
     </StickySection>
     <StickySection>
-      <StyledGradientBackground height={402}>
+      <div>
         <img src={phone} height="546" alt="phone" />
-      </StyledGradientBackground>
+      </div>
       <TextSticky textData={texts.setTwo} />
     </StickySection>
     <StickySection>
-      <StyledGradientBackground height={402}>
+      <div>
         <img src={screen} height="438" alt="screen" />
-      </StyledGradientBackground>
+      </div>
       <TextSticky textData={texts.setThree} />
     </StickySection>
   </StyledGenericWrapper>

@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Description } from './Description';
+import { Footer } from './Footer';
 import { Header } from './Header';
 import { JoinCommunity } from './JoinCommunity';
 import { KeepingSecure } from './KeepingSecure';
+import { Partners } from './Partners';
 import { SafetyInfo } from './SafetyInfo';
 import { SecurityProtocol } from './SecurityProtocol';
 import { SignUpBelow } from './SignUpBelow';
@@ -26,6 +28,8 @@ const App = () => {
       <KeepingSecure />
       <SafetyInfo />
       <SecurityProtocol />
+      <Partners />
+      <Footer />
     </MainWrapper>
   );
 };

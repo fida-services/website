@@ -16,11 +16,12 @@ export const StickySection = ({ children }: StyledSectionProps) => (
 
 const StickyWrapper = styled.section<StyledSectionProps>`
     position: sticky;
-    margin: 40px;
+    margin: 40px auto;
     position: -webkit-sticky;
     top: 0;
+    max-width: 1240px;
     height: 90vh;
-    width: 100vw;
+    width: 90%;
     background: ${colors.textGradient};
     padding: 3px;
     display: flex;
