@@ -6,7 +6,7 @@ import { TextSticky } from 'components/_common/TextSticky';
 import laptop from 'assets/images/laptop.png';
 import screen from 'assets/images/screen.png';
 import phone from 'assets/images/phone.png';
-import { StyledGradientBackground } from 'styledParts/StyledGradientBackground';
+
 import { StyledGenericWrapper } from 'styledParts/StyledGenericWrapper';
 
 const texts = {
