@@ -18,7 +18,7 @@ export const SignUpBelow = () => (
       <TextWrapper>
         <Text size={32} label={text.signUp} fontWeight={700} />
       </TextWrapper>
-      <MenuButton label="join our community" link="#" border />
+      <MenuButton label="join our community" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />
     </BackgroundWrapper>
   </StyledGenericWrapper>
 );

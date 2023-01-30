@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
-import lines from 'assets/shapes/lines2.png';
+import lines from 'assets/shapes/lines.png';
 import filledSquares from 'assets/shapes/squareWithFill.png';
 
 import { MenuButton } from './MenuButton';
@@ -25,7 +25,7 @@ export const Welcome = () => (
       <Text label={texts.elevateGame} size={30} color={colors.textGradient} fontWeight={700} linearGradient toUpperCase />
       {texts.mainTitle.map(({ title }) => <Text key={title} label={title} size={62} toUpperCase />)}
       <div className="mt-6">
-        <MenuButton label="join our community" link="#" border />
+        <MenuButton label="join our community" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />
       </div>
     </StyledWelcome>
   </FirstBackground>

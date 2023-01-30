@@ -15,6 +15,6 @@ export const menuItems = {
   ],
   joinCommunity: {
     label: 'join our community',
-    link: '#'
+    link: ' https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w'
   }
 };
