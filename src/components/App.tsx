@@ -10,7 +10,6 @@ import { Slider } from './slider/Slider';
 import { KeepingSecure } from './KeepingSecure';
 import { SafetyInfo } from './SafetyInfo';
 import { SecurityProtocol } from './SecurityProtocol';
-import { Partners } from './Partners';
 import { Footer } from './Footer';
 
 const App = () => (
@@ -24,7 +23,6 @@ const App = () => (
     <KeepingSecure />
     <SafetyInfo />
     <SecurityProtocol />
-    <Partners />
     <Footer />
   </MainWrapper>
 );
