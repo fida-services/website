@@ -9,7 +9,7 @@ export const menuItems = {
       link: '#'
     },
     {
-      label: 'invest deck',
+      label: 'investment deck',
       link: '#'
     },
   ],
