@@ -14,7 +14,7 @@ const text = {
   title: {
     join: 'join ',
     our: 'our',
-    community: ' community'
+    community: 'Network'
   },
   boxesData: [
     {
