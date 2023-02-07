@@ -8,6 +8,7 @@ import screen from 'assets/images/screen.png';
 import phone from 'assets/images/phone.png';
 
 import { StyledGenericWrapper } from 'styledParts/StyledGenericWrapper';
+import { isMobile } from './rwd/detectMobile';
 
 const texts = {
   setOne: {
@@ -27,22 +28,22 @@ const texts = {
 };
 
 export const StickyOverlappingSections = () => (
-  <StyledGenericWrapper marginBottom={100}>
+  <StyledGenericWrapper marginBottom={150} marginTop={110}>
     <StickySection>
-      <div>
-        <img src={laptop} height="496" alt="laptop" />
+      <div className="py-5 px-2">
+        <img src={laptop} style={{ width: isMobile ? '85%' : '558px' }} alt="laptop" />
       </div>
       <TextSticky textData={texts.setOne} />
     </StickySection>
     <StickySection>
-      <div>
-        <img src={phone} height="546" alt="phone" />
+      <div className="px-2">
+        <img src={phone} style={{ width: isMobile ? '75%' : '369' }} alt="phone" />
       </div>
       <TextSticky textData={texts.setTwo} />
     </StickySection>
     <StickySection>
-      <div>
-        <img src={screen} height="438" alt="screen" />
+      <div className="px-2">
+        <img src={screen} style={{ width: isMobile ? '85%' : '464' }} alt="screen" />
       </div>
       <TextSticky textData={texts.setThree} />
     </StickySection>

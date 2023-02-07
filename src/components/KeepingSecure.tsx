@@ -14,11 +14,11 @@ const text = {
 };
 
 export const KeepingSecure = () => (
-  <StyledGenericWrapper marginBottom={30}>
+  <StyledGenericWrapper marginTop={300} marginBottom={220}>
     <BackgroundWrapper>
       <StyledTextWrapper>
-        <Text size={80} label={text.titleOne} fontWeight={700} toUpperCase />
-        <Text size={80} label={text.titleTwo} fontWeight={700} color={colors.textGradient} linearGradient toUpperCase />
+        <Text size={5} label={text.titleOne} fontWeight={700} toUpperCase />
+        <Text size={5} label={text.titleTwo} fontWeight={700} color={colors.textGradient} linearGradient toUpperCase />
       </StyledTextWrapper>
     </BackgroundWrapper>
   </StyledGenericWrapper>
@@ -34,13 +34,18 @@ justify-content: center;
       content: "";
       position: absolute;
       overflow: visible;
-      width: 100%;
-      height: 400%;
-      top: -200%;
-      left: 0;
+      width: 250%;
+      height: 300%;
+      top: -100%;
+      left: -12%;
       z-index: -1;
       background: url(${lines}) 0 0 no-repeat;
-      transform: rotate(-135deg) scale(.7);
+      transform:  scale(.9);
+      @media (max-width: 840px) {
+        transform: scale(.7);
+        top: -50%;
+        left: -50%;
+      }
     }
 `;
 const StyledTextWrapper = styled.div`

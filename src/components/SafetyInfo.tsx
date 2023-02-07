@@ -38,15 +38,15 @@ const paragraphs = [
 ];
 
 export const SafetyInfo = () => (
-  <StyledGenericWrapper marginBottom={50}>
-    {paragraphs.map(paragraph => <Paragraph paragraph={paragraph} />)}
+  <StyledGenericWrapper marginTop={110} marginBottom={150}>
+    {paragraphs.map(paragraph => <Paragraph key={paragraph.title} paragraph={paragraph} />)}
   </StyledGenericWrapper>
 );
 
 const Paragraph = ({ paragraph }: ParagraphProps) => (
   <StyledWrapper backgroundImage={paragraph.backgroundImage}>
-    <Text size={32} textPlacing="center" label={paragraph.title} fontWeight={700} />
-    <Text size={24} textPlacing="center" label={paragraph.description} fontWeight={400} />
+    <Text size={2} textPlacing="center" label={paragraph.title} fontWeight={700} />
+    <Text size={1.5} textPlacing="center" label={paragraph.description} fontWeight={400} />
   </StyledWrapper>
 );
 
@@ -59,4 +59,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
     padding: 100px 0;
     max-width: 495px;
     margin: 20px auto;
+    @media (max-width: 840px) {
+      padding: 50px 0;
+    }
 `;

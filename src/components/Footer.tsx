@@ -16,20 +16,22 @@ import { Text } from './_common/Text';
 const socials = [{
   src: twitter,
   name: 'twitter',
-  link: '#'
+  link: 'https://twitter.com/fida_finance'
 }, {
   src: telegram,
   name: 'telegram',
-  link: '#'
+  link: 'https://t.me/+ZQqwyHJDSUJiYTdh'
 }, {
   src: linkedin,
   name: 'linkedin',
-  link: '#'
-}, {
-  src: whatsApp,
-  name: 'whatsApp',
-  link: '#'
-}];
+  link: 'https://www.linkedin.com/company/fida-finance/'
+},
+// {
+//   src: whatsApp,
+//   name: 'whatsApp',
+//   link: '#'
+// }
+];
 
 const text = {
   frida: '©Fida 2023'
@@ -46,9 +48,9 @@ export const Footer = () => {
       <MenuButtonsWrapper>
         <IterableButtonsWrapper>
           {iterableItems.map(({ label, link }) => (
-            <div className="mr-5 flex align-items-center">
+            <div key={label} className="mr-5 flex align-items-center">
               <StyledLink href={link}>
-                <Text size={16} label={label} fontWeight={700} toUpperCase />
+                <Text size={1} label={label} fontWeight={700} toUpperCase />
               </StyledLink>
             </div>
           ))}
@@ -57,7 +59,7 @@ export const Footer = () => {
       </MenuButtonsWrapper>
       <SocialsWrapper>
         {socials.map(({ name, link, src }) => (
-          <div className="mr-5">
+          <div key={name} className="mr-5">
             <a href={link}>
               <img src={src} alt={name} />
             </a>
@@ -66,7 +68,7 @@ export const Footer = () => {
       </SocialsWrapper>
       <RadiantBar />
       <div className="pb-5">
-        <Text size={14} label={text.frida} fontWeight={400} />
+        <Text size={1} label={text.frida} fontWeight={400} />
       </div>
     </FooterWrapper>
   );

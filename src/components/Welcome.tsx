@@ -8,6 +8,7 @@ import filledSquares from 'assets/shapes/squareWithFill.png';
 
 import { MenuButton } from './MenuButton';
 import { Header } from './Header';
+import { isMobile } from './rwd/detectMobile';
 
 const texts = {
   elevateGame: 'Elevate your game; invest in insurance contracts.',
@@ -22,10 +23,12 @@ export const Welcome = () => (
   <FirstBackground>
     <Header />
     <StyledWelcome className="flex flex-column">
-      <Text label={texts.elevateGame} size={30} color={colors.textGradient} fontWeight={700} linearGradient toUpperCase />
-      {texts.mainTitle.map(({ title }) => <Text key={title} label={title} size={62} toUpperCase />)}
-      <div className="mt-6">
-        <MenuButton label="join our community" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />
+      <Text label={texts.elevateGame} size={2} color={colors.textGradient} fontWeight={700} linearGradient toUpperCase />
+      {texts.mainTitle.map(({ title }) => <Text key={title} label={title} size={isMobile ? 3 : 5} toUpperCase />)}
+      <div className={`mt-6 ${isMobile ? 'flex justify-content-center' : ''}`}>
+        {isMobile
+          ? <MenuButton label="join our community" backgroundColor={colors.white} color="black" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" />
+          : <MenuButton label="join our community" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />}
       </div>
     </StyledWelcome>
   </FirstBackground>
@@ -50,11 +53,19 @@ const StyledWelcome = styled.div`
       left: 430px;
       background: url(${filledSquares}) 0 0 no-repeat;
       transform: rotate(45deg);
+      z-index: -1;
+      @media (max-width: 840px) {
+        top: 300px;
+        left: 15vw;
+      }
+    }
+    @media (max-width: 840px) {
+      margin-left: 20px;
     }
 `;
 
 const FirstBackground = styled.div`
   background-image: url(${lines});
-  background-position: 63% 3%;
+  background-position: 30% 50%;
   background-repeat: no-repeat;
 `;

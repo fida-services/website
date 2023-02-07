@@ -6,6 +6,7 @@ import { colors } from 'theme';
 import { StyledGenericWrapper } from 'styledParts/StyledGenericWrapper';
 
 import emptySquares from 'assets/shapes/emptySquares.png';
+import { isMobile } from './rwd/detectMobile';
 
 const texts = {
   theFida: 'the fida',
@@ -14,14 +15,14 @@ const texts = {
 };
 
 export const Description = () => (
-  <StyledGenericWrapper marginBottom={230}>
+  <StyledGenericWrapper marginBottom={isMobile ? 150 : 250}>
     <BackgroundWrapper>
-      <div className="flex justify-content-center gap-3">
-        <Text label={texts.theFida} size={60} color={colors.textGradient} fontWeight={700} linearGradient toUpperCase />
-        <Text label={texts.marketplace} size={60} fontWeight={700} toUpperCase />
+      <div className={`flex ${isMobile ? 'flex-column align-items-center' : 'justify-content-center gap-3'}`}>
+        <Text label={texts.theFida} size={isMobile ? 2 : 4} color={colors.textGradient} fontWeight={700} linearGradient toUpperCase />
+        <Text label={texts.marketplace} size={isMobile ? 2 : 4} fontWeight={700} toUpperCase />
       </div>
       <StyledTextWrapper>
-        <Text textPlacing="center" label={texts.description} size={32} fontWeight={700} />
+        <Text textPlacing="center" label={texts.description} size={isMobile ? 1 : 2} fontWeight={700} />
       </StyledTextWrapper>
     </BackgroundWrapper>
   </StyledGenericWrapper>
@@ -33,13 +34,17 @@ position: relative;
       content: "";
       position: absolute;
       overflow: visible;
-      width: 100%;
-      height: 250%;
-      top: -100%;
-      left: -10%;
+      width: 300%;
+      height: 400%;
+      top: -150%;
+      left: 0;
       z-index: -1;
       background: url(${emptySquares}) 0 0 no-repeat;
-      transform: rotate(-135deg) scale(.8);
+      transform: translate(-50%, -50%) rotate(-135deg) scale(.8) ;
+      @media (max-width: 840px) {
+        left: 50%;
+        top: 40%;
+      }
     }
 `;
 const StyledTextWrapper = styled.div`

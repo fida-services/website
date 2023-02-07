@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Welcome } from './Welcome';
 import { Description } from './Description';
 import { StickyOverlappingSections } from './StickyOverlappingSections';
-import { JoinCommunity } from './JoinCommunity';
+import { JoinNetwork } from './JoinNetwork';
 import { SignUpBelow } from './SignUpBelow';
 import { Slider } from './slider/Slider';
 import { KeepingSecure } from './KeepingSecure';
@@ -17,7 +17,7 @@ const App = () => (
     <Welcome />
     <Description />
     <StickyOverlappingSections />
-    <JoinCommunity />
+    <JoinNetwork />
     <SignUpBelow />
     <Slider />
     <KeepingSecure />
@@ -31,6 +31,9 @@ const MainWrapper = styled.div`
   color: white;
   max-width: 1440px;
   margin: 0 auto;
+  @media (max-width: 840px) {
+    overflow-x: hidden; 
+  }
 `;
 
 export default App;

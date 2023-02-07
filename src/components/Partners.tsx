@@ -17,11 +17,11 @@ const assets = {
 export const Partners = () => (
   <StyledGenericWrapper marginBottom={150}>
     <div className="mb-5">
-      <Text size={60} label={assets.titleOne} fontWeight={700} toUpperCase />
+      <Text size={4} label={assets.titleOne} fontWeight={700} toUpperCase />
     </div>
     <SponsorsWrapper>
       {assets.logos.map(logo => (
-        <SponsorWrapper>
+        <SponsorWrapper key={logo}>
           <img src={logo} alt={logo} />
         </SponsorWrapper>
       ))}
