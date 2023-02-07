@@ -9,12 +9,13 @@ import { GradientBox } from 'components/_common/GradientBox';
 import cube from 'assets/icons/cube.png';
 import circles from 'assets/icons/circles.png';
 import { StyledGenericWrapper } from 'styledParts/StyledGenericWrapper';
+import { isMobile } from './rwd/detectMobile';
 
 const text = {
   title: {
     join: 'join ',
     our: 'our',
-    community: 'Network'
+    community: ' Network'
   },
   boxesData: [
     {
@@ -30,12 +31,14 @@ const text = {
   ]
 };
 
-export const JoinCommunity = () => (
-  <StyledGenericWrapper marginBottom={110}>
-    <div className="mb-7">
-      <Text size={80} label={text.title.join} toUpperCase fontWeight={700} />
-      <Text size={80} label={text.title.our} color={colors.textGradient} fontWeight={700} linearGradient toUpperCase />
-      <Text size={80} label={text.title.community} fontWeight={700} toUpperCase />
+export const JoinNetwork = () => (
+  <StyledGenericWrapper marginBottom={isMobile ? 50 : 150} marginTop={110}>
+    <div className="mb-7 text-center">
+      <a href="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" className="no-underline">
+        <Text size={isMobile ? 3 : 5} label={text.title.join} toUpperCase fontWeight={700} />
+        <Text size={isMobile ? 3 : 5} label={text.title.our} color={colors.textGradient} fontWeight={700} linearGradient toUpperCase />
+        <Text size={isMobile ? 3 : 5} label={text.title.community} fontWeight={700} toUpperCase />
+      </a>
     </div>
     <StyledBoxesWrapper>
       {text.boxesData.map(boxData => <GradientBox key={boxData.title} boxData={boxData} />)}
@@ -45,5 +48,9 @@ export const JoinCommunity = () => (
 
 const StyledBoxesWrapper = styled.div`
     display: flex;
+    margin-bottom: 110px;
+    @media (max-width: 840px) {
+      flex-direction: column;
+    }
 
 `;

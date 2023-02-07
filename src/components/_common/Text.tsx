@@ -28,7 +28,7 @@ export const Text = (props: Props) => {
 const StyledSpan = styled.span<StyledProps>`
     color: ${({ color, linearGradient }) => ((color && !linearGradient) ? color : colors.white)};
     background: ${({ linearGradient, color }) => (linearGradient && color ? color : 'none')};
-    font-size: ${({ size }) => (size ? `${size}px` : '16px')};
+    font-size: ${({ size }) => (size ? `${size}rem` : '16px')};
     text-align: ${({ textPlacing }) => textPlacing || 'left'};
     font-weight: ${({ fontWeight }) => (fontWeight || '500')};
 

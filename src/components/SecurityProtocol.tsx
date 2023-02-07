@@ -6,6 +6,7 @@ import { StyledGenericWrapper } from 'styledParts/StyledGenericWrapper';
 import emptySquares from 'assets/shapes/emptySquares.png';
 
 import { Text } from './_common/Text';
+import { isMobile } from './rwd/detectMobile';
 
 const text = {
   titleOne: "For more information about Fida's security protocol please view our Whitepaper.",
@@ -13,13 +14,13 @@ const text = {
 };
 
 export const SecurityProtocol = () => (
-  <StyledGenericWrapper maxWidth={870} marginBottom={220}>
+  <StyledGenericWrapper maxWidth={870} marginTop={110} marginBottom={150}>
     <BackgroundWrapper>
       <StyledGenericWrapper maxWidth={850} marginBottom={35}>
-        <Text size={32} textPlacing="center" label={text.titleOne} fontWeight={700} />
+        <Text size={isMobile ? 1.5 : 2} textPlacing="center" label={text.titleOne} fontWeight={700} />
       </StyledGenericWrapper>
       <StyledLink href="#">
-        <Text size={16} label={text.buttonTitle} color="black" fontWeight={700} />
+        <Text size={1} label={text.buttonTitle} color="black" fontWeight={700} />
       </StyledLink>
     </BackgroundWrapper>
   </StyledGenericWrapper>
@@ -35,13 +36,18 @@ justify-content: center;
       content: "";
       position: absolute;
       overflow: visible;
-      width: 100%;
-      height: 400%;
-      top: -200%;
-      left: -10%;
+      width: 300%;
+      height: 500%;
+      top: -180%;
+      left: 10%;
       z-index: -1;
       background: url(${emptySquares}) 0 0 no-repeat;
-      transform: rotate(-135deg) scale(.7);
+      transform: translate(-50%, -50%) rotate(-135deg) scale(.6);
+      @media (max-width: 840px) {
+      transform: translate(-50%, -50%) rotate(-135deg) scale(.4);
+      left: 80%;
+      top: 0;
+      }
     }
 `;
 const StyledLink = styled.a`

@@ -14,6 +14,10 @@ interface CurrentSlideType {
   data: SliderDataType;
   index: number
 }
+interface StyledButtonProps {
+  flipped?: boolean;
+  disabled?: boolean;
+}
 interface Props {
   sliderData: SliderDataType[];
   currentSlide: CurrentSlideType;
@@ -37,11 +41,11 @@ export const SliderArrows = (props: Props) => {
   return (
     <StyledWrapper>
       <StyledButton onClick={() => arrowClick('ahead')} disabled={isTheSlideLast} className="mb-2">
-        <img style={{ fill: isTheSlideLast ? colors.lowOpaGrey : colors.white }} src={arrowCircle} alt="arrow pointing right" />
+        {/* <img style={{ fill: isTheSlideLast ? colors.lowOpaGrey : colors.white }} src={arrowCircle} alt="arrow pointing right" /> */}
       </StyledButton>
-      <StyledFlippedButton onClick={() => arrowClick('back')} disabled={isTheSlideFirst}>
-        <img style={{ fill: isTheSlideFirst ? colors.lowOpaGrey : colors.white }} src={arrowCircle} alt="arrow pointing right" />
-      </StyledFlippedButton>
+      <StyledButton onClick={() => arrowClick('back')} disabled={isTheSlideFirst}>
+        {/* <img style={{ fill: isTheSlideFirst ? colors.lowOpaGrey : colors.white }} src={arrowCircle} alt="arrow pointing right" /> */}
+      </StyledButton>
     </StyledWrapper>
   );
 };
@@ -53,17 +57,15 @@ const StyledWrapper = styled.div`
     margin-left: 75px;
 `;
 
-const StyledButton = styled.button`
-  background-color: ${colors.mainBlack};
+const StyledButton = styled.button<StyledButtonProps>`
+  background-color: ${colors.white};
   cursor: pointer;
+  mask-image: url(${arrowCircle});
+  mask-repeat: no-repeat;
   border-radius: 25px;
-  border: none
-`;
-
-const StyledFlippedButton = styled.button`
-  background-color: ${colors.mainBlack};
-  cursor: pointer;
+  border: none;
+  width: 70px;
+  height: 70px;
   transform: rotate(180deg);
-  border-radius: 25px;
-  border: none
+  /* &. to do */
 `;

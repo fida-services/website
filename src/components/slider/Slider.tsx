@@ -22,10 +22,10 @@ const text = {
 export const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState({ data: sliderData[0], index: 0 });
   return (
-    <StyledGenericWrapper marginBottom={155}>
+    <StyledGenericWrapper marginBottom={150} marginTop={110}>
       <div>
-        <Text size={80} label={text.title.titleOne} toUpperCase fontWeight={700} />
-        <Text size={80} label={text.title.titleTwo} color={colors.textGradient} toUpperCase fontWeight={700} linearGradient />
+        <Text size={5} label={text.title.titleOne} toUpperCase fontWeight={700} />
+        <Text size={5} label={text.title.titleTwo} color={colors.textGradient} toUpperCase fontWeight={700} linearGradient />
       </div>
 
       <SliderWrapper>

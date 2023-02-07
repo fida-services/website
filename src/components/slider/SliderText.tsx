@@ -16,10 +16,10 @@ export const SliderText = (props: Props) => {
   return (
     <StyledWrapper>
       <TitleWrapper>
-        <Text size={32} label={title} fontWeight={700} />
+        <Text size={2} label={title} fontWeight={700} />
       </TitleWrapper>
       <div>
-        <Text size={16} label={description} fontWeight={400} color={colors.greyWhite} />
+        <Text size={1} label={description} fontWeight={400} color={colors.greyWhite} />
       </div>
     </StyledWrapper>
   );

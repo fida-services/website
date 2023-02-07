@@ -34,7 +34,7 @@ export const Slide = (props: Props) => {
       )}
 
       <StyledButton type="button" onClick={() => setCurrentSlide({ data: slideData, index })}>
-        <Text size={14} label={slideData.title} color={isCurrent ? colors.white : colors.grey} fontWeight={700} />
+        <Text size={1} label={slideData.title} color={isCurrent ? colors.white : colors.grey} fontWeight={700} />
       </StyledButton>
     </SlideWrapper>
   );

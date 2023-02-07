@@ -23,4 +23,9 @@ background-size: cover;
 overflow: visible;
 width: ${({ width }) => (width ? `${width}px` : 'unset')};
 height: ${({ height }) => `${height}px`};
+@media (max-width: 840px) {
+  margin-bottom: 140px;
+  flex-direction: column;
+  max-width: 90vw;
+}
 `;
