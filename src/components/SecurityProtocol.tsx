@@ -36,18 +36,13 @@ justify-content: center;
       content: "";
       position: absolute;
       overflow: visible;
-      width: 300%;
-      height: 500%;
-      top: -180%;
-      left: 10%;
+      width: 900px;
+      height: 900px;
+      top: 20%;
+      left: 50%;
       z-index: -1;
       background: url(${emptySquares}) 0 0 no-repeat;
       transform: translate(-50%, -50%) rotate(-135deg) scale(.6);
-      @media (max-width: 840px) {
-      transform: translate(-50%, -50%) rotate(-135deg) scale(.4);
-      left: 80%;
-      top: 0;
-      }
     }
 `;
 const StyledLink = styled.a`

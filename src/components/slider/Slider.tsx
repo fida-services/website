@@ -6,9 +6,12 @@ import { Text } from 'components/_common/Text';
 
 import { colors } from 'theme';
 
+import { isMobile } from 'components/rwd/detectMobile';
+import { MobileSwiper } from 'components/rwd/MobileSwiper';
+import appPhone from 'assets/images/appPhone.png';
+
 import sliderData from './sliderData.json';
 import { Slide } from './Slide';
-import { PhoneRadiantBackground } from './PhoneRadiantBackground';
 import { SliderText } from './SliderText';
 import { SliderArrows } from './SliderArrows';
 
@@ -23,22 +26,26 @@ export const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState({ data: sliderData[0], index: 0 });
   return (
     <StyledGenericWrapper marginBottom={150} marginTop={110}>
-      <div>
-        <Text size={5} label={text.title.titleOne} toUpperCase fontWeight={700} />
-        <Text size={5} label={text.title.titleTwo} color={colors.textGradient} toUpperCase fontWeight={700} linearGradient />
-      </div>
+      {isMobile ? <MobileSwiper /> : (
+        <>
+          <div>
+            <Text size={5} label={text.title.titleOne} toUpperCase fontWeight={700} />
+            <Text size={5} label={text.title.titleTwo} color={colors.textGradient} toUpperCase fontWeight={700} linearGradient />
+          </div>
 
-      <SliderWrapper>
-        <SliderMenuWrapper>
-          {sliderData.map((slide, index) => <Slide key={slide.id} slideData={slide} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} index={index} />)}
-        </SliderMenuWrapper>
+          <SliderWrapper>
+            <SliderMenuWrapper>
+              {sliderData.map((slide, index) => <Slide key={slide.id} slideData={slide} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} index={index} />)}
+            </SliderMenuWrapper>
 
-        <PhoneRadiantBackground />
+            <img src={appPhone} alt="phone with applications" />
 
-        <SliderText currentSlideData={currentSlide.data} />
+            <SliderText currentSlideData={currentSlide.data} />
 
-        <SliderArrows sliderData={sliderData} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
-      </SliderWrapper>
+            <SliderArrows sliderData={sliderData} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
+          </SliderWrapper>
+        </>
+      )}
     </StyledGenericWrapper>
   );
 };
