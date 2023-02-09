@@ -33,10 +33,11 @@ const StyledMenuButton = styled.button<StyledProps>`
     background: ${({ backgroundColor }) => (backgroundColor || 'unset')};
     border: ${({ border, color }) => (border ? `1px solid ${color || colors.white}` : 'none')};
     border-radius: 25px;
+    text-align: center;
 `;
 const StyledLink = styled.a`
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem;
     padding: 5px 34px;
     box-sizing: border-box;
     color: ${({ color }) => (color || colors.white)};

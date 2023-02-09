@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Modal from '@mui/material/Modal';
 
-import { MenuButton } from 'components/MenuButton';
 import { menuItems } from 'data/menuItems';
+import { colors } from 'theme';
+import { Text } from 'components/_common/Text';
+import filledSquares from 'assets/shapes/squareWithFill.png';
 
 interface Props {
   modalToggle: boolean
@@ -15,12 +17,18 @@ const modalStyled = {
 
 export const HeaderMenuMobile = (props: Props) => {
   const { modalToggle } = props;
-
+  const { joinCommunity: { label, link } } = menuItems;
   return (
-    <Modal style={modalStyled} open={modalToggle}>
-      <MenuWrapper>
-        {menuItems.iterableItems.map(({ label, link }) => <MenuButton key={label} label={label} link={link} />)}
-        <MenuButton label={menuItems.joinCommunity.label} link={menuItems.joinCommunity.link} border />
+    <Modal style={modalStyled} hideBackdrop open={modalToggle}>
+      <MenuWrapper className="gap-5">
+        {menuItems.iterableItems.map(({ label, link }) => (
+          <a key={label} href={link} className="no-underline">
+            <Text key={label} size={3} label={label} toUpperCase />
+          </a>
+        ))}
+        <a href={link} className="no-underline">
+          <Text label={label} size={3} color={colors.textGradient} linearGradient toUpperCase />
+        </a>
       </MenuWrapper>
     </Modal>
   );
@@ -29,4 +37,18 @@ export const HeaderMenuMobile = (props: Props) => {
 const MenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: ${colors.mainBlack};
+  height: 100%;
+  padding: 0 10px;
+  &:before {
+      content: "";
+      position: absolute;
+      overflow: visible;
+      width: 500px;
+      height: 500px;
+      bottom: -350px;
+      left: -50px;
+      background: url(${filledSquares}) 0 0 no-repeat;
+      transform: rotate(60deg) scale(.8);
+    }
 `;

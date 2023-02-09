@@ -11,7 +11,7 @@ export const MobileHeader = () => {
 
   return (
     <div>
-      <MobileMenuButton src={modalToggle ? menuMobileClose : menuMobileOpen} onClick={() => setModalToggle(true)} alt="open menu" />
+      <MobileMenuButton src={modalToggle ? menuMobileClose : menuMobileOpen} onClick={() => setModalToggle(prevState => !prevState)} alt="open menu" />
       <HeaderMenuMobile modalToggle={modalToggle} />
     </div>
   );

@@ -14,8 +14,8 @@ import { isMobile } from './rwd/detectMobile';
 const text = {
   title: {
     join: 'join ',
-    our: 'our',
-    community: ' Network'
+    our: 'our ',
+    community: 'Network'
   },
   boxesData: [
     {

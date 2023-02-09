@@ -12,6 +12,7 @@ import { colors } from 'theme';
 
 import { MenuButton } from './MenuButton';
 import { Text } from './_common/Text';
+import { isMobile } from './rwd/detectMobile';
 
 const socials = [{
   src: twitter,
@@ -49,13 +50,16 @@ export const Footer = () => {
         <IterableButtonsWrapper>
           {iterableItems.map(({ label, link }) => (
             <div key={label} className="mr-5 flex align-items-center">
-              <StyledLink href={link}>
+              <StyledLink className="text-center" href={link}>
                 <Text size={1} label={label} fontWeight={700} toUpperCase />
               </StyledLink>
             </div>
           ))}
         </IterableButtonsWrapper>
-        <MenuButton label={joinCommunity.label} link={joinCommunity.link} backgroundColor={colors.textGradient} />
+        <div className={`flex justify-content-center ${isMobile ? 'mt-5 mb-5' : ''}`}>
+
+          <MenuButton label={joinCommunity.label} link={joinCommunity.link} backgroundColor={colors.textGradient} />
+        </div>
       </MenuButtonsWrapper>
       <SocialsWrapper>
         {socials.map(({ name, link, src }) => (
@@ -80,6 +84,10 @@ const FooterWrapper = styled.div`
     flex-direction: column;
     max-width: 80%;
     margin: 0 auto;
+    @media (max-width: 840px) {
+      max-width: 95%;
+      padding: 0 15px;
+    }
 `;
 const LogoWrapper = styled.div`
     margin-bottom: 24px;
@@ -88,6 +96,9 @@ const MenuButtonsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 34px;
+    @media (max-width: 840px) {
+      flex-direction: column;
+    }
 `;
 const IterableButtonsWrapper = styled.div`
     display: flex;

@@ -34,18 +34,17 @@ position: relative;
       content: "";
       position: absolute;
       overflow: visible;
-      width: 300%;
-      height: 400%;
-      top: -150%;
-      left: 0;
+      width: 800px;
+      height: 800px;
+      top: 20%;
+      left: 50%;
       z-index: -1;
       background: url(${emptySquares}) 0 0 no-repeat;
-      transform: translate(-50%, -50%) rotate(-135deg) scale(.8) ;
+      transform: translate(-50%, -50%) rotate(-135deg) scale(.8);
       @media (max-width: 840px) {
-        left: 50%;
-        top: 40%;
+      transform: translate(-50%, -50%) rotate(-135deg) scale(.5);
       }
-    }
+  }
 `;
 const StyledTextWrapper = styled.div`
   display: flex;
