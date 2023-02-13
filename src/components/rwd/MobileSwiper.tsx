@@ -30,7 +30,7 @@ export const MobileSwiper = () => (
       thumbs-swiper=".my-thumbs"
     >
       {sliderData.map(({ title, description }) => (
-        <SwiperItem title={title} description={description} />
+        <SwiperItem title={title} key={title} description={description} />
       ))}
     </swiper-container>
   </StyledWrapper>

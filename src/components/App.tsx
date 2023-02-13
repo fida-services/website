@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { getQueryParams } from 'functions/getQueryParams';
 import { Welcome } from './Welcome';
 import { Description } from './Description';
 import { StickyOverlappingSections } from './StickyOverlappingSections';
@@ -11,21 +12,28 @@ import { KeepingSecure } from './KeepingSecure';
 import { SafetyInfo } from './SafetyInfo';
 import { SecurityProtocol } from './SecurityProtocol';
 import { Footer } from './Footer';
+import { Partners } from './Partners';
 
-const App = () => (
-  <MainWrapper>
-    <Welcome />
-    <Description />
-    <StickyOverlappingSections />
-    <JoinNetwork />
-    <SignUpBelow />
-    <Slider />
-    <KeepingSecure />
-    <SafetyInfo />
-    <SecurityProtocol />
-    <Footer />
-  </MainWrapper>
-);
+const App = () => {
+  const url = getQueryParams();
+  return (
+    <MainWrapper>
+      <Welcome />
+      <Description />
+      <StickyOverlappingSections />
+      <JoinNetwork />
+      <SignUpBelow />
+      <Slider />
+      <KeepingSecure />
+      <SafetyInfo />
+      <SecurityProtocol />
+      {url.partners
+        ? <Partners />
+        : null}
+      <Footer />
+    </MainWrapper>
+  );
+};
 
 const MainWrapper = styled.div`
   color: white;
