@@ -18,7 +18,7 @@ export const Header = () => (
       : (
         <div className="flex">
           {menuItems.iterableItems.map(({ label, link }) => <MenuButton key={label} label={label} link={link} />)}
-          <MenuButton label={menuItems.joinCommunity.label} link={menuItems.joinCommunity.link} border />
+          <MenuButton label={menuItems.joinNetwork.label} link={menuItems.joinNetwork.link} border />
         </div>
       )}
   </StyledHeader>

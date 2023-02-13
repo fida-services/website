@@ -1,0 +1,22 @@
+{
+  "files": [
+    "./public/*.html",
+    "./public/*.txt",
+    "./public/*.json",
+    "./src/**/*.html",
+    "./src/**/*.json",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
+  "dictionaries": [
+    "dictionary.txt"
+  ],
+  "ignore": [
+    "[0-9]+.*",
+    "[a-fA-F0-9]+"
+  ],
+  "reports": [
+    "./reports/spellcheck.json"
+  ],
+  "quiet": true
+}

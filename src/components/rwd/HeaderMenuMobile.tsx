@@ -17,7 +17,7 @@ const modalStyled = {
 
 export const HeaderMenuMobile = (props: Props) => {
   const { modalToggle } = props;
-  const { joinCommunity: { label, link } } = menuItems;
+  const { joinNetwork: { label, link } } = menuItems;
   return (
     <Modal style={modalStyled} hideBackdrop open={modalToggle}>
       <MenuWrapper className="gap-5">
