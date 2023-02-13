@@ -35,11 +35,11 @@ const socials = [{
 ];
 
 const text = {
-  frida: '©Fida 2023'
+  copyright: '©Fida 2023'
 };
 
 export const Footer = () => {
-  const { iterableItems, joinCommunity } = menuItems;
+  const { iterableItems, joinNetwork } = menuItems;
 
   return (
     <FooterWrapper>
@@ -58,7 +58,7 @@ export const Footer = () => {
         </IterableButtonsWrapper>
         <div className={`flex justify-content-center ${isMobile ? 'mt-5 mb-5' : ''}`}>
 
-          <MenuButton label={joinCommunity.label} link={joinCommunity.link} backgroundColor={colors.textGradient} />
+          <MenuButton label={joinNetwork.label} link={joinNetwork.link} backgroundColor={colors.textGradient} />
         </div>
       </MenuButtonsWrapper>
       <SocialsWrapper>
@@ -72,7 +72,7 @@ export const Footer = () => {
       </SocialsWrapper>
       <RadiantBar />
       <div className="pb-5">
-        <Text size={1} label={text.frida} fontWeight={400} />
+        <Text size={1} label={text.copyright} fontWeight={400} />
       </div>
     </FooterWrapper>
   );
