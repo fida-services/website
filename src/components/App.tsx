@@ -40,7 +40,7 @@ const MainWrapper = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   @media (max-width: 840px) {
-    overflow-x: hidden; 
+    overflow-x: hidden;
   }
 `;
 
