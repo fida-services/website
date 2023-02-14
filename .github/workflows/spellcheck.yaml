@@ -20,8 +20,12 @@ jobs:
             ./src/**/*.json
             ./src/**/*.ts
             ./src/**/*.tsx
+      - name: Exit Unchanged
+        if: steps.files.outputs.any_changed != 'true'
+        run: |
+          echo "::notice Skipping spell-check since no files have changed"
+          exit 0
       - name: Setup Node
-        if: steps.files.outputs.any_changed == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -30,7 +34,7 @@ jobs:
       - name: ensure Reports directory
         run: mkdir -p reports
       - name: Spell Check
-        run: npm run spell-check --files ${{ steps.files.outputs.all_changed_files }}
+        run: npm run spell-check -- --files ${{ steps.files.outputs.all_changed_files }}
       - name: Upload Result
         uses: actions/upload-artifact@v3
         with:
