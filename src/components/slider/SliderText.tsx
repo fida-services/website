@@ -1,7 +1,8 @@
-import { Text } from 'components/_common/Text';
 import React from 'react';
 import styled from 'styled-components';
+
 import { colors } from 'theme';
+import { Text } from 'components/_common/Text';
 
 interface SlideData {
   title: string;
@@ -16,7 +17,7 @@ export const SliderText = (props: Props) => {
   return (
     <StyledWrapper>
       <TitleWrapper>
-        <Text size={2} label={title} fontWeight={700} />
+        <Text size={1.6} label={title} fontWeight={700} />
       </TitleWrapper>
       <div>
         <Text size={1} label={description} fontWeight={400} color={colors.greyWhite} />
@@ -25,13 +26,16 @@ export const SliderText = (props: Props) => {
   );
 };
 
-const TitleWrapper = styled.div`
-    line-height: 40px;
-    margin-bottom: 12px;
-`;
 const StyledWrapper = styled.div`
     max-width: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 15px;
+`;
+
+const TitleWrapper = styled.div`
+    line-height: 30px;
+    margin-bottom: 12px;
+    margin-top: -10px;
 `;

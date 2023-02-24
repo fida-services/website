@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import menuMobileOpen from 'assets/icons/menuMobileOpen.png';
-import menuMobileClose from 'assets/icons/menuMobileClose.png';
+import menuMobileOpen from 'assets/icons/menuMobileOpen.svg';
+import menuMobileClose from 'assets/icons/menuMobileClose.svg';
 
 import { HeaderMenuMobile } from './HeaderMenuMobile';
 
@@ -21,4 +21,5 @@ const MobileMenuButton = styled.img`
   width: 40px;
   height: 40px;
   cursor: pointer;
+  margin-right: 5px;
 `;

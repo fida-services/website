@@ -11,16 +11,19 @@ interface SliderDataType {
   title: string;
   description: string;
 }
+
 interface CurrentSlideType {
   data: SliderDataType;
   index: number
 }
+
 interface Props {
   slideData: SliderDataType;
   currentSlide: CurrentSlideType;
   setCurrentSlide: Dispatch<SetStateAction<CurrentSlideType>>
   index: number;
 }
+
 export const Slide = (props: Props) => {
   const { slideData, currentSlide, setCurrentSlide, index } = props;
   const isCurrent = currentSlide.index === index;
@@ -34,15 +37,15 @@ export const Slide = (props: Props) => {
       )}
 
       <StyledButton type="button" onClick={() => setCurrentSlide({ data: slideData, index })}>
-        <Text size={1} label={slideData.title} color={isCurrent ? colors.white : colors.grey} fontWeight={700} />
+        <Text size={1} label={slideData.title} color={isCurrent ? colors.white : colors.grey} fontWeight={700} hoverTransition />
       </StyledButton>
     </SlideWrapper>
   );
 };
 
 const SlideWrapper = styled.div`
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 `;
 
 const ImageWrapper = styled.div`
