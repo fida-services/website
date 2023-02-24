@@ -1,8 +1,11 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
+
 import { colors } from 'theme';
 import { Text } from 'components/_common/Text';
-import { isMobile } from 'components/rwd/detectMobile';
+import { maxWidth840, maxWidth1140 } from 'components/rwd/detectMobile';
 
 interface Props {
   textData: {
@@ -13,14 +16,22 @@ interface Props {
 }
 
 export const TextSticky = ({ textData }: Props) => {
+  const isMobile = useMediaQuery({
+    query: maxWidth840,
+  });
+
+  const isTablet = useMediaQuery({
+    query: maxWidth1140,
+  });
+
   const { highlightIndex, titleTexts, descriptionText } = textData;
 
   return (
     <StyledTextSticky>
       <div>
         {titleTexts.map((text, index) => (index === highlightIndex
-          ? <Text key={text} size={2} label={text} color={colors.textGradient} fontWeight={700} linearGradient />
-          : <Text key={text} size={2} label={text} fontWeight={400} />))}
+          ? <Text key={text} size={isMobile ? 1.5 : isTablet ? 1.7 : 2} label={text} color={colors.textGradient} fontWeight={700} linearGradient />
+          : <Text key={text} size={isMobile ? 1.5 : isTablet ? 1.7 : 2} label={text} fontWeight={400} />))}
       </div>
       { descriptionText && (
       <div className="mt-3">
@@ -34,10 +45,10 @@ export const TextSticky = ({ textData }: Props) => {
 const StyledTextSticky = styled.div`
   max-width: 400px;
   width: 30%;
-  margin-bottom: 100px;
+  
   @media (max-width: 840px) {
     margin-top: 20px;
     width: 90%;
-    margin-bottom: 20px;
+    font-size: 10px;
   }
 `;

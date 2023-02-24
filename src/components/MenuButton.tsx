@@ -2,7 +2,6 @@ import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 
 import { colors } from 'theme';
-
 import { Text } from './_common/Text';
 
 interface Props extends StyledProps {
@@ -34,6 +33,11 @@ const StyledMenuButton = styled.button<StyledProps>`
     border: ${({ border, color }) => (border ? `1px solid ${color || colors.white}` : 'none')};
     border-radius: 25px;
     text-align: center;
+    transition: 0.5s;
+
+    &:hover {
+    opacity: 0.6;
+    }
 `;
 const StyledLink = styled.a`
     display: inline-block;

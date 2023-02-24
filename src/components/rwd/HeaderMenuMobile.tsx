@@ -20,14 +20,14 @@ export const HeaderMenuMobile = (props: Props) => {
   const { joinNetwork: { label, link } } = menuItems;
   return (
     <Modal style={modalStyled} hideBackdrop open={modalToggle}>
-      <MenuWrapper className="gap-5">
+      <MenuWrapper className="gap-4">
         {menuItems.iterableItems.map(({ label, link }) => (
           <a key={label} href={link} className="no-underline">
-            <Text key={label} size={3} label={label} toUpperCase />
+            <Text key={label} size={2.5} label={label} toUpperCase />
           </a>
         ))}
         <a href={link} className="no-underline">
-          <Text label={label} size={3} color={colors.textGradient} linearGradient toUpperCase />
+          <Text label={label} size={2.5} color={colors.textGradient} linearGradient toUpperCase />
         </a>
       </MenuWrapper>
     </Modal>
@@ -39,7 +39,8 @@ const MenuWrapper = styled.div`
   flex-direction: column;
   background-color: ${colors.mainBlack};
   height: 100%;
-  padding: 0 10px;
+  padding: 10px 10px 0;
+  
   &:before {
       content: "";
       position: absolute;

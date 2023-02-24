@@ -1,23 +1,22 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import arrowCircle from 'assets/icons/arrowCircle.svg';
 import { colors } from 'theme';
+import { ReactComponent as RightArrorCircle } from 'assets/icons/arrowCircle2.svg';
 
 type ArrowClickType = 'ahead' | 'back';
+
 interface SliderDataType {
   id: number;
   title: string;
   description: string;
 }
+
 interface CurrentSlideType {
   data: SliderDataType;
   index: number
 }
-interface StyledButtonProps {
-  flipped?: boolean;
-  disabled?: boolean;
-}
+
 interface Props {
   sliderData: SliderDataType[];
   currentSlide: CurrentSlideType;
@@ -40,32 +39,52 @@ export const SliderArrows = (props: Props) => {
 
   return (
     <StyledWrapper>
-      <StyledButton onClick={() => arrowClick('ahead')} disabled={isTheSlideLast} className="mb-2">
-        {/* <img style={{ fill: isTheSlideLast ? colors.lowOpaGrey : colors.white }} src={arrowCircle} alt="arrow pointing right" /> */}
-      </StyledButton>
       <StyledButton onClick={() => arrowClick('back')} disabled={isTheSlideFirst}>
-        {/* <img style={{ fill: isTheSlideFirst ? colors.lowOpaGrey : colors.white }} src={arrowCircle} alt="arrow pointing right" /> */}
+        <StyledRightArrorCircle disabled={isTheSlideFirst} />
+      </StyledButton>
+      <StyledButton onClick={() => arrowClick('ahead')} disabled={isTheSlideLast}>
+        <StyledRightArrorCircle disabled={isTheSlideLast} />
       </StyledButton>
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 25px;
 `;
 
-const StyledButton = styled.button<StyledButtonProps>`
-  background-color: ${colors.white};
+const StyledButton = styled.button`
+  all: unset;
+
+  &:nth-of-type(1) {
+    transform: rotate(180deg);
+    margin-bottom: 13px;
+  }
+
+  &:disabled {
+    color: ${colors.lowOpaGrey};
+    cursor: unset;
+  }
+
+`;
+
+const StyledRightArrorCircle = styled(RightArrorCircle)<{ disabled: boolean }>`
+  width: 80px;
+  height: 80px;
   cursor: pointer;
-  mask-image: url(${arrowCircle});
-  mask-repeat: no-repeat;
-  border-radius: 25px;
-  border: none;
-  width: 70px;
-  height: 70px;
-  transform: rotate(180deg);
-  /* &. to do */
+  
+  &:hover {
+    opacity: 0.6;
+
+    ${({ disabled }) => disabled
+    && css`
+      opacity: 0.3;
+      cursor: default;
+    `}
+  }
+
+  ${({ disabled }) => disabled && 'opacity: 0.3;'}
 `;

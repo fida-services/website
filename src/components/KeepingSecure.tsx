@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 
-import { StyledGenericWrapper } from 'styledParts/StyledGenericWrapper';
+import straightSquares from 'assets/shapes/straightSquares.svg';
 import { colors } from 'theme';
-
-import lines from 'assets/shapes/emptySquares.png';
-
+import { useOnScreen } from 'hooks/useOnScreen';
+import { maxWidth840, maxWidth1140 } from './rwd/detectMobile';
 import { Text } from './_common/Text';
 
 const text = {
@@ -13,42 +13,98 @@ const text = {
   titleTwo: 'secure'
 };
 
-export const KeepingSecure = () => (
-  <StyledGenericWrapper marginTop={300} marginBottom={220}>
-    <BackgroundWrapper>
-      <StyledTextWrapper>
-        <Text size={5} label={text.titleOne} fontWeight={700} toUpperCase />
-        <Text size={5} label={text.titleTwo} fontWeight={700} color={colors.textGradient} linearGradient toUpperCase />
-      </StyledTextWrapper>
-    </BackgroundWrapper>
-  </StyledGenericWrapper>
-);
+export const KeepingSecure = () => {
+  const [isElementOneVisible, setIsElementOneVisible] = useState(false);
 
-const BackgroundWrapper = styled.div`
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-  &:after {
-      content: "";
-      position: absolute;
-      overflow: visible;
-      width: 250%;
-      height: 300%;
-      top: -100%;
-      left: -12%;
-      z-index: -1;
-      background: url(${lines}) 0 0 no-repeat;
-      transform:  scale(.9);
-      @media (max-width: 840px) {
-        transform: scale(.7);
-        top: -50%;
-        left: -50%;
-      }
+  const elementOneRef = useRef<HTMLDivElement>(null);
+
+  const isElementOneOnScreen = useOnScreen(elementOneRef);
+
+  if (isElementOneOnScreen) {
+    if (!isElementOneVisible) setIsElementOneVisible(true);
+  }
+
+  const isMobile = useMediaQuery({
+    query: maxWidth840,
+  });
+
+  const isTablet = useMediaQuery({
+    query: maxWidth1140,
+  });
+  return (
+    <Wrapper isChangedMargin={isTablet}>
+      <TitleWrapper isChangedMargin={isTablet}>
+        <TextWrapper
+          ref={elementOneRef}
+          isOnScreen={isElementOneVisible}
+        >
+          <Text size={isMobile ? 3 : 4} label={text.titleOne} fontWeight={700} toUpperCase textPlacing="center" />
+          <Text size={isMobile ? 3 : 4} label={text.titleTwo} fontWeight={700} color={colors.textGradient} linearGradient toUpperCase />
+        </TextWrapper>
+        <LinesWrapper>
+          <LinesBg src={straightSquares} alt="qrcode" />
+        </LinesWrapper>
+      </TitleWrapper>
+    </Wrapper>
+
+  );
+};
+
+const Wrapper = styled.div<{ isChangedMargin: boolean }>`
+    margin: 300px 30px 200px 30px;
+
+    @media (max-width: 1140px) {
+      margin: 300px 30px -30px 30px;
+    }
+
+    @media (max-width: 840px) {
+      margin: 200px 30px 200px 30px;
+    }
+
+    @media (max-width: 640px) {
+      margin: 100px 30px 0px 30px;
+    }
+
+    @media (max-width: 400px) {
+      margin: -30px 30px 0px 30px;
+    }
+
+    @media (max-height: 360px) {
+      margin: 60px 30px -20px 30px;
     }
 `;
-const StyledTextWrapper = styled.div`
-    max-width: 680px;
+
+const LinesWrapper = styled.div`
+      position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+`;
+
+const LinesBg = styled.img`
+    transform-origin: center;
+    transform: scale(0.6);
+    z-index: -1;
+`;
+
+const TitleWrapper = styled.div<{ isChangedMargin: boolean }>`
     text-align: center;
+    margin-bottom: ${({ isChangedMargin }) => (isChangedMargin ? 150 : 40)}px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 400px) {
+      margin-bottom: 100px;
+    }
+`;
+
+const TextWrapper = styled.div<{ isOnScreen: boolean }>`
+    transform: ${({ isOnScreen }) => (isOnScreen ? 'translateY(0)' : 'translateY(50px)')};
+    transition: 1.5s;
+    transition-delay: 0.01s;
 `;

@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import questGates from 'assets/logos/questGates.svg';
+import sompo from 'assets/logos/sompo.svg';
+import superscript from 'assets/logos/superscript.svg';
 import { StyledGenericWrapper } from 'styledParts/StyledGenericWrapper';
 import { colors } from 'theme';
-
-import questGates from 'assets/logos/questGates.png';
-import sompo from 'assets/logos/sompo.png';
-import superscript from 'assets/logos/superscript.png';
 import { Text } from './_common/Text';
-import { isMobile } from './rwd/detectMobile';
 
 const assets = {
   titleOne: 'OUR PARTNERS & INVESTORS',
@@ -16,9 +14,9 @@ const assets = {
 };
 
 export const Partners = () => (
-  <StyledGenericWrapper marginBottom={150}>
-    <div className="mb-5 text-center">
-      <Text size={4} label={assets.titleOne} fontWeight={700} toUpperCase />
+  <StyledGenericWrapper marginBottom={150} marginTop={100}>
+    <div className="mb-3 text-center">
+      <Text size={3} label={assets.titleOne} fontWeight={700} toUpperCase />
     </div>
     <SponsorsWrapper>
       {assets.logos.map(logo => (
@@ -36,9 +34,8 @@ const SponsorsWrapper = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: ${colors.white};
-    border-radius: 25px;
-    padding: 40px 100px;
+    padding: 0;
+
     @media (max-width: 840px) {
       max-width: 100%;
     }
@@ -47,5 +44,9 @@ const SponsorWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px 20px;
+    margin: 20px 20px;
+    background-color: ${colors.white};
+    padding: 30px;
+    border-radius: 25px;
+
 `;

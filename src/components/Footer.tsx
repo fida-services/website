@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 
-import fida from 'assets/logos/fida.png';
-import linkedin from 'assets/icons/socials/linkedin.png';
-import telegram from 'assets/icons/socials/telegram.png';
-import twitter from 'assets/icons/socials/twitter.png';
+import fida from 'assets/logos/fidaLogo.svg';
+import linkedin from 'assets/icons/socials/linkedin.svg';
+import telegram from 'assets/icons/socials/telegram.svg';
+import twitter from 'assets/icons/socials/twitter.svg';
 import whatsApp from 'assets/icons/socials/whatsApp.png';
+
 import { menuItems } from 'data/menuItems';
-
 import { colors } from 'theme';
-
 import { MenuButton } from './MenuButton';
 import { Text } from './_common/Text';
-import { isMobile } from './rwd/detectMobile';
+import { maxWidth840 } from './rwd/detectMobile';
 
 const socials = [{
   src: twitter,
@@ -39,6 +39,10 @@ const text = {
 };
 
 export const Footer = () => {
+  const isMobile = useMediaQuery({
+    query: maxWidth840,
+  });
+
   const { iterableItems, joinNetwork } = menuItems;
 
   return (
@@ -57,17 +61,16 @@ export const Footer = () => {
           ))}
         </IterableButtonsWrapper>
         <div className={`flex justify-content-center ${isMobile ? 'mt-5 mb-5' : ''}`}>
-
           <MenuButton label={joinNetwork.label} link={joinNetwork.link} backgroundColor={colors.textGradient} />
         </div>
       </MenuButtonsWrapper>
       <SocialsWrapper>
         {socials.map(({ name, link, src }) => (
-          <div key={name} className="mr-5">
+          <IconWrapper key={name}>
             <a href={link}>
               <img src={src} alt={name} />
             </a>
-          </div>
+          </IconWrapper>
         ))}
       </SocialsWrapper>
       <RadiantBar />
@@ -106,11 +109,27 @@ const IterableButtonsWrapper = styled.div`
 `;
 const StyledLink = styled.a`
     text-decoration: none;
+    transition: 0.5s;
+
+    &:hover {
+    opacity: 0.6;
+    }
 `;
+
 const SocialsWrapper = styled.div`
     display: flex;
     margin-bottom: 18px;
 `;
+
+const IconWrapper = styled.div`
+  margin-right: 32px;
+  transition: 0.5s;
+
+  &:hover {
+  opacity: 0.6;
+  }
+`;
+
 const RadiantBar = styled.div`
     width: 100%;
     margin: 0 auto 24px 0;
