@@ -24,7 +24,7 @@ jobs:
         if: steps.files.outputs.any_changed != 'true'
         run: |
           echo "::notice Skipping spell-check since no files have changed"
-          exit 0
+          exit 3
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
