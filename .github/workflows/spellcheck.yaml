@@ -24,22 +24,28 @@ jobs:
         if: steps.files.outputs.any_changed != 'true'
         run: |
           echo "::notice Skipping spell-check since no files have changed"
-          exit 3
+          exit 0
       - name: Setup Node
+        if: steps.files.outputs.any_changed == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Fetch Dependencies
+        if: steps.files.outputs.any_changed == 'true'
         run: npm ci
       - name: ensure Reports directory
+        if: steps.files.outputs.any_changed == 'true'
         run: mkdir -p reports
       - name: Spell Check
+        if: steps.files.outputs.any_changed == 'true'
         run: npm run spell-check -- --files ${{ steps.files.outputs.all_changed_files }}
       - name: Upload Result
+        if: steps.files.outputs.any_changed == 'true'
         uses: actions/upload-artifact@v3
         with:
           path: ./reports/spellcheck.json
       - name: Report
+        if: steps.files.outputs.any_changed == 'true'
         uses: austenstone/spellchecker-cli-action-summary@main
         with:
           file-json: ./reports/spellcheck.json
