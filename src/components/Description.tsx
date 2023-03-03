@@ -74,28 +74,40 @@ const Wrapper = styled.div<{ marginBottom: number }>`
     position: relative;
     overflow: visible;
 
+    @media (min-width: 1141px) {
+      margin-top: 570px;
+    }
+
     @media (max-width: 1140px) {
-      margin-top: 750px;
+      margin-top: 660px;
     }
 
     @media (max-width: 960px) {
-      margin-top: 700px;
+      margin-top: 650px;
     }
 
+    /* @media (max-width: 840px) {
+      margin-top: 600px;
+    } */
+
     @media (max-width: 810px) {
-      margin-top: 630px;
+      margin-top: 520px;
+    }
+
+    @media (max-width: 700px) {
+      margin-top: 530px;
     }
 
     @media (max-width: 650px) {
-      margin-top: 600px;
+      margin-top: 550px;
     }
 
     @media (max-width: 600px) {
-      margin-top: 580px;
+      margin-top: 380px;
     }
 
     @media (max-width: 450px) {
-      margin-top: 500px;
+      margin-top: 330px;
     }
 `;
 

@@ -49,8 +49,8 @@ export const Welcome = () => {
           </FurtherLinesWrapper>
           <ButtonWrapper>
             {isMobile
-              ? <MenuButton label="join our community" backgroundColor={colors.white} color="black" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" />
-              : <MenuButton label="join our community" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />}
+              ? <MenuButton label="join our network" backgroundColor={colors.white} color="black" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" />
+              : <MenuButton label="join our network" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />}
           </ButtonWrapper>
         </TextWrapper>
       </StyledWelcome>

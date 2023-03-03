@@ -15,12 +15,12 @@ const text = {
   title: {
     join: 'join ',
     our: 'our ',
-    community: 'Community'
+    community: 'Network'
   },
   boxesData: [
     {
-      title: 'An Active Community',
-      description: 'We are building a community where participants can facilitate knowledge sharing and evolve the insurance industry.',
+      title: 'An Active Network',
+      description: 'We are building a network where participants can facilitate knowledge sharing and evolve the insurance industry.',
       image: cube
     },
     {
@@ -93,11 +93,7 @@ const Wrapper = styled.div<{ isChangedMargin: boolean }>`
     }
 
     @media (min-width: 1141px) and (max-height: 600px) {
-      margin-top: -50px;
-    }
-
-    @media (min-width: 1141px) and (max-height: 500px) {
-      margin-top: -250px;
+      margin-top: 200px;
     }
 `;
 
@@ -116,7 +112,6 @@ interface WrapperProps {
 
 const TitleWrapper = styled.div<WrapperProps>`
     text-align: center;
-    /* margin-bottom: ${({ isChangedMargin }) => (isChangedMargin ? 190 : 40)}px; */
     position: relative;
 
     transform: ${({ isOnScreen }) => (isOnScreen ? 'translateY(0)' : 'translateY(100px)')};
@@ -133,7 +128,7 @@ const TitleWrapper = styled.div<WrapperProps>`
     }
 
     @media (max-width: 960px) {
-      margin-bottom: 100px;
+      margin-bottom: 130px;
     }
 
     @media (max-width: 810px) {

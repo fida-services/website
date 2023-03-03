@@ -349,3 +349,7 @@ isIntersecting
 setIntersecting
 IntersectionObserver
 useEffect
+isMaxHeight750
+isMaxHeight850
+maxHeight750
+maxHeight850

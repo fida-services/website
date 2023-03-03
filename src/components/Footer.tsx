@@ -86,7 +86,7 @@ const FooterWrapper = styled.div`
     padding: 0 30px;
     flex-direction: column;
     max-width: 80%;
-    margin: 0 auto;
+    margin: 100px auto 0;
     @media (max-width: 840px) {
       max-width: 95%;
       padding: 0 15px;
