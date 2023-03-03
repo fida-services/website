@@ -29,7 +29,7 @@ const App = () => (
         <KeepingSecure />
         <SafetyInfo />
         <Security />
-        <Partners />
+        {/* <Partners /> */}
         <Footer />
       </ScrollContainer>
     </MainWrapper>

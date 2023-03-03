@@ -50,7 +50,7 @@ export const SignUpBelow = () => {
           ref={elementTwoRef}
           isOnScreen={isElementTwoVisible}
         >
-          <MenuButton label="join our community" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />
+          <MenuButton label="join our network" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />
         </ButtonWrapper>
         <LinesBg src={linesBg} alt="qrcode" />
       </TitleWrapper>

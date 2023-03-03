@@ -15,7 +15,7 @@ import laptop from 'assets/images/laptop.svg';
 import screen from 'assets/images/screen.svg';
 import phone from 'assets/images/phone.svg';
 
-import { maxWidth1140, maxHeight700, maxHeight800, maxHeight900 } from './rwd/detectMobile';
+import { maxWidth1140, maxHeight700, maxHeight750, maxHeight800, maxHeight850, maxHeight900 } from './rwd/detectMobile';
 
 const texts = {
   setOne: {
@@ -49,8 +49,16 @@ export const StickyOverlappingSections = ({ isLast, isLaptop, isPhone, isScreen 
     query: maxHeight900,
   });
 
+  const isMaxHeight850 = useMediaQuery({
+    query: maxHeight850,
+  });
+
   const isMaxHeight800 = useMediaQuery({
     query: maxHeight800,
+  });
+
+  const isMaxHeight750 = useMediaQuery({
+    query: maxHeight750,
   });
 
   const isMaxHeight700 = useMediaQuery({
@@ -65,7 +73,7 @@ export const StickyOverlappingSections = ({ isLast, isLaptop, isPhone, isScreen 
     },
   } as Animation);
 
-  const moveInAnimationValue = isMaxHeight700 ? 1300 : isMaxHeight800 ? 900 : isMaxHeight900 ? 600 : 400;
+  const moveInAnimationValue = isMaxHeight750 ? 700 : isMaxHeight800 ? 630 : isMaxHeight850 ? 520 : isMaxHeight900 ? 430 : 250;
 
   return (
     <Wrapper>
