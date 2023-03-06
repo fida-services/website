@@ -39,6 +39,8 @@ const StyledSpan = styled.span<StyledProps>`
     -webkit-background-clip: ${({ linearGradient }) => (linearGradient ? 'text' : 'none')};
     -webkit-text-fill-color: ${({ linearGradient }) => (linearGradient ? 'transparent' : 'none')};
 
+    white-space: pre-line;
+
     ${({ noTextWrap }) => noTextWrap && 'white-space: nowrap;'}
     
     transition: 0.5s;

@@ -86,10 +86,6 @@ const Wrapper = styled.div<{ marginBottom: number }>`
       margin-top: 650px;
     }
 
-    /* @media (max-width: 840px) {
-      margin-top: 600px;
-    } */
-
     @media (max-width: 810px) {
       margin-top: 520px;
     }
