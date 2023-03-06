@@ -5,10 +5,6 @@ export const menuItems = {
       link: '#'
     },
     {
-      label: 'whitepaper',
-      link: '#'
-    },
-    {
       label: 'investor deck',
       link: 'https://docsend.com/view/vk3buz5675z2siuy'
     },

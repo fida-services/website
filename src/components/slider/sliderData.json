@@ -2,27 +2,27 @@
     {
         "id": 0,
         "title": "Trades on the Fida marketplace",
-        "description": "Insurance policies are risk assessed and priced by an underwriting insurer.\n\n The insurance company agrees to take a lead position covering a percentage of the coverage required. The remaining is taken by the Fida community on a 'follow-on' basis i.e. accepting the same terms as the lead insurer.\n There opportunities are posted on Fida by Brokers on behalf of the insured."
+        "description": "Insurance policies are risk assessed and priced by an underwriting insurer. The insurance company agrees to take a lead position covering a percentage of the coverage required. The remaining is taken by the Fida community on a 'follow-on' basis i.e. accepting the same terms as the lead insurer. These opportunities are posted on Fida by Brokers on behalf of the insured."
     },
     {
         "id": 1,
         "title": "Fractionalization and Tokenization of Insurance Contracts",
-        "description": "The remaining amount is fractionalized, divided into small denominations represented by Fida Cards on the marketplace Each Fida Card gets exactly the same premium (and takes the same risk) proportionately as the main lead insurer. Investors can buy as many Risk Cards as desired (if available) until the policy limit is covered."
+        "description": "The remaining amount is fractionalized, divided into small denominations represented by Fida Cards on the marketplace. Each Fida Card gets exactly the same premium (and takes the same liability) proportionately as the main lead insurer. Investors can buy as many Cards as desired (if available) until the policy limit is covered."
     },
     {
         "id": 2,
         "title": "Smart Contracts & Securing the Funds",
-        "description": "When the policy limit is attained the Risk Cards are minted as NFTs with the funds secured in a frozen 'time locked' smart contract. The policy is now 'on risk'.  The smart contract determines: the distribution of premium to NFT holders the liability in the event of a claim for which NFT holders are responsible the designated parties responsible for authorizing the execution of the smart contract and thus triggering the payout of a claim."
+        "description": "When the policy limit is attained the Fida Cards are minted. The funds are secured in a frozen 'time locked' smart contract and the policy goes 'on risk'. The smart contract determines the distribution of the premium to the Fida Card holders, the liability in the event of a claim for which the Fida Card holders are responsible and the designated parties responsible for authorizing the execution of the smart contract (typically the lead insurer) thus triggering the payout of a claim."
     },
     {
         "id": 3,
         "title": "Premium & Investors Portfolio Premium Pools.",
-        "description": "Premium payments are distributed from the insured to the holders of the Fida Cards proportionate to ownership. Premium is added to each Investor's Portfolio Premium Pool. Thus, for investors who have many Fida cards representing multiple different policies (a portfolio), the premium generated across all policies is used to pay any potential claims for any policy before the underlying collateral is used. This encourages investors create a diverse portfolio so the 'premiums of the many pay for the claims of a few'."
+        "description": "Premium payments are distributed from the insured to the holders of the Fida Cards proportionate to ownership. Premium is added to each Investor's Portfolio Premium Pool. Thus, for investors who have many Fida cards representing multiple different policies (a portfolio), the premium generated across all policies is used to pay any potential claims for any policy before the underlying collateral is used. This encourages investors create a diversified portfolio so the 'premiums of the many pay for the claims of a few'."
     },
     {
         "id": 4,
         "title": "Claims",
-        "description": "Claims are paid out instantly when a specific qualifying event occurs (for parametric products) or when a valid claim has been approved by the official third party. Claims are paid proportionately to the risk exposure taken by the Lead Insurer and the Fida Card holders. Each Fida Cards pays proportionate to the exposure to the total liability. Claims payments are first taken from the Investors Portfolio Premium Pool. If the Premium Pool is exhausted claims are paid from the underlying collateral held in the policy smart contract."
+        "description": "Claims are paid out when a specific qualifying event occurs (for parametric products) or when a valid claim has been approved by the official third party. Claims are paid proportionately to the risk exposure taken by the Lead Insurer and the Fida Card holders. Each Fida Cards pays proportionate to the exposure to the total liability. Claims payments are first taken from the Investors Portfolio Premium Pool. If the Premium Pool is exhausted claims are paid from the underlying collateral held in the policy smart contract."
     },
     {
         "id": 5,
@@ -31,12 +31,17 @@
     },
     {
         "id": 6,
-        "title": "Increasing capital efficiency",
-        "description": "Investors with a suitably diversified portfolio can increase their capital efficiency in two ways: Fida will also take a proportion of the risk (the top line) but take disproportionately less of the premium, allowing you to make your investments more capital efficient. Investors can reduce the collateral required across their portfolio."
+        "title": "Increase capital efficiency",
+        "description": "Investors with a suitably diversified portfolio can potentially increase their capital efficiency in two ways: \n 1) decrease collateralization requirements by leveraging collateral held across their portfolio by using the Fida protocol to demonstrate compliance with Solvency 2 regulations, \n 2) access the Fida Fund that will take a proportion of the risk (the top line) but take disproportionately less of the premium."
     },
     {
         "id": 7,
+        "title": "Increase returns",
+        "description": "In addition to increasing capital efficiency investors can further increase their returns by putting the capital locked in the insurance smart contract to work by making it available to secure interest earning Defi protocols e.g. staking. Investors therefore earn a return from the premium generated and by participating in selected Defi protocols."
+    },
+    {
+        "id": 8,
         "title": "The secondary market",
-        "description": "Investors can resell Fida risk cards (to liquidate the associated underlying assets) on the Fida marketplace."
+        "description": "Investors can resell their Fida Cards (to liquidate the associated underlying assets) on the Fida marketplace."
     }
 ]

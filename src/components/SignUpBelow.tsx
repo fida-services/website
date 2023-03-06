@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
 import linesBg from 'assets/shapes/linesBg.svg';
+import { colors } from 'theme';
 import { Text } from 'components/_common/Text';
 import { useOnScreen } from 'hooks/useOnScreen';
 import { MenuButton } from './MenuButton';
@@ -50,7 +51,7 @@ export const SignUpBelow = () => {
           ref={elementTwoRef}
           isOnScreen={isElementTwoVisible}
         >
-          <MenuButton label="join our network" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border />
+          <MenuButton label="join our network" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border backgroundColor={colors.white} color={colors.mainBlack} />
         </ButtonWrapper>
         <LinesBg src={linesBg} alt="qrcode" />
       </TitleWrapper>

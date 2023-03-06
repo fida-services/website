@@ -56,6 +56,8 @@ export const Slider = () => {
         return photo2;
       case 7:
         return photo3;
+      case 8:
+        return photo1;
       default:
         return photo0;
     }
