@@ -28,7 +28,7 @@ const App = () => (
         <Slider />
         <KeepingSecure />
         <SafetyInfo />
-        <Security />
+        {/* <Security /> */}
         {/* <Partners /> */}
         <Footer />
       </ScrollContainer>
