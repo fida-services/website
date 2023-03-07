@@ -27,8 +27,8 @@ import { SliderArrows } from './SliderArrows';
 const text = {
   title: {
     titleOne: 'how it ',
-    titleTwo: 'works'
-  }
+    titleTwo: 'works',
+  },
 };
 
 export const Slider = () => {
@@ -69,7 +69,14 @@ export const Slider = () => {
         <>
           <MobileTextWrapper>
             <Text size={3} label={text.title.titleOne} toUpperCase fontWeight={700} noTextWrap />
-            <Text size={3} label={text.title.titleTwo} color={colors.textGradient} toUpperCase fontWeight={700} linearGradient />
+            <Text
+              size={3}
+              label={text.title.titleTwo}
+              color={colors.gradient}
+              toUpperCase
+              fontWeight={700}
+              linearGradient
+            />
           </MobileTextWrapper>
           <MobileSlider />
         </>
@@ -77,11 +84,26 @@ export const Slider = () => {
         <>
           <TextWrapper>
             <Text size={5} label={text.title.titleOne} toUpperCase fontWeight={700} />
-            <Text size={5} label={text.title.titleTwo} color={colors.textGradient} toUpperCase fontWeight={700} linearGradient />
+            <Text
+              size={5}
+              label={text.title.titleTwo}
+              color={colors.gradient}
+              toUpperCase
+              fontWeight={700}
+              linearGradient
+            />
           </TextWrapper>
           <SliderWrapper>
             <SliderMenuWrapper>
-              {sliderData.map((slide, index) => <Slide key={slide.id} slideData={slide} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} index={index} />)}
+              {sliderData.map((slide, index) => (
+                <Slide
+                  key={slide.id}
+                  slideData={slide}
+                  currentSlide={currentSlide}
+                  setCurrentSlide={setCurrentSlide}
+                  index={index}
+                />
+              ))}
             </SliderMenuWrapper>
             <img src={pickMobileSliderPhoto(currentSlide.index)} alt="phone with applications" />
             <SliderText currentSlideData={currentSlide.data} />
@@ -96,7 +118,8 @@ export const Slider = () => {
 const Container = styled(StyledGenericWrapper)`
   @media (max-width: 840px) {
     padding: 0 20px;
-  }`;
+  }
+`;
 
 const MobileTextWrapper = styled.div`
   display: flex;
@@ -123,5 +146,5 @@ const SliderWrapper = styled.div`
 const SliderMenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start
+  justify-content: flex-start;
 `;

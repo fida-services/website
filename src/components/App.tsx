@@ -1,50 +1,27 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ScrollContainer } from 'react-scroll-motion';
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+} from 'react-router-dom';
 
-import { Welcome } from './Welcome';
-import { Description } from './Description';
-import { StickyOverlappingSections } from './StickyOverlappingSections';
-import { JoinNetwork } from './JoinNetwork';
-import { SignUpBelow } from './SignUpBelow';
-import { Slider } from './slider/Slider';
-import { KeepingSecure } from './KeepingSecure';
-import { SafetyInfo } from './SafetyInfo';
-import { Security } from './Security';
-import { Footer } from './Footer';
-import { Partners } from './Partners';
+import JoinNetworkForm from 'components/join-network-form/JoinNetworkForm';
+import MainTemplate from 'components/MainTemplate';
+import LandingPage from 'components/LandingPage';
 
-const App = () => (
-  <ViewportWrapper>
-    <MainWrapper>
-      <ScrollContainer>
-        <Welcome />
-        <Description />
-        <StickyOverlappingSections isLaptop />
-        <StickyOverlappingSections isPhone />
-        <StickyOverlappingSections isScreen isLast />
-        <JoinNetwork />
-        <SignUpBelow />
-        <Slider />
-        <KeepingSecure />
-        <SafetyInfo />
-        {/* <Security /> */}
-        {/* <Partners /> */}
-        <Footer />
-      </ScrollContainer>
-    </MainWrapper>
-  </ViewportWrapper>
-);
+const App = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route element={<MainTemplate />}>
+          <Route index element={<LandingPage />} />
+          <Route path="form" element={<JoinNetworkForm />} />
+        </Route>
+      </>
+    )
+  );
 
-const ViewportWrapper = styled.div`
-  width: 100%;
-  overflow: hidden;
-`;
-
-const MainWrapper = styled.div`
-  color: white;
-  max-width: 1440px;
-  margin: 0 auto;
-`;
+  return <RouterProvider router={router} />;
+};
 
 export default App;

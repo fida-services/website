@@ -14,17 +14,21 @@ interface SliderDataType {
 
 interface CurrentSlideType {
   data: SliderDataType;
-  index: number
+  index: number;
 }
 
 interface Props {
   sliderData: SliderDataType[];
   currentSlide: CurrentSlideType;
-  setCurrentSlide: Dispatch<SetStateAction<CurrentSlideType>>
+  setCurrentSlide: Dispatch<SetStateAction<CurrentSlideType>>;
 }
 
 export const SliderArrows = (props: Props) => {
-  const { sliderData, currentSlide: { index }, setCurrentSlide } = props;
+  const {
+    sliderData,
+    currentSlide: { index },
+    setCurrentSlide,
+  } = props;
   const isTheSlideLast = sliderData.length - 1 === index;
   const isTheSlideFirst = index === 0;
 
@@ -40,10 +44,10 @@ export const SliderArrows = (props: Props) => {
   return (
     <StyledWrapper>
       <StyledButton onClick={() => arrowClick('back')} disabled={isTheSlideFirst}>
-        <StyledRightArrorCircle disabled={isTheSlideFirst} />
+        <StyledRightArrowCircle disabled={isTheSlideFirst} />
       </StyledButton>
       <StyledButton onClick={() => arrowClick('ahead')} disabled={isTheSlideLast}>
-        <StyledRightArrorCircle disabled={isTheSlideLast} />
+        <StyledRightArrowCircle disabled={isTheSlideLast} />
       </StyledButton>
     </StyledWrapper>
   );
@@ -68,22 +72,22 @@ const StyledButton = styled.button`
     color: ${colors.lowOpaGrey};
     cursor: unset;
   }
-
 `;
 
-const StyledRightArrorCircle = styled(RightArrorCircle)<{ disabled: boolean }>`
+const StyledRightArrowCircle = styled(RightArrorCircle)<{ disabled: boolean }>`
   width: 80px;
   height: 80px;
   cursor: pointer;
-  
+
   &:hover {
     opacity: 0.6;
 
-    ${({ disabled }) => disabled
-    && css`
-      opacity: 0.3;
-      cursor: default;
-    `}
+    ${({ disabled }) =>
+      disabled &&
+      css`
+        opacity: 0.3;
+        cursor: default;
+      `}
   }
 
   ${({ disabled }) => disabled && 'opacity: 0.3;'}

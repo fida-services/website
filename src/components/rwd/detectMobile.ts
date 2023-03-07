@@ -15,3 +15,5 @@ export const maxHeight800 = '(max-height: 800px)';
 export const maxHeight750 = '(max-height: 750px)';
 
 export const maxHeight700 = '(max-height: 700px)';
+
+export const maxHeight670 = '(max-height: 670px)';

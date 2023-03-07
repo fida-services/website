@@ -1,8 +1,15 @@
 export const colors = {
   mainBlack: '#141414',
-  textGradient: 'linear-gradient(269.98deg, #3742F5 19.49%, #D6357F 103.52%)',
-  grey: '#FFFFFF80',
+  gradient: 'linear-gradient(269.98deg,  #3742F5 19.49%, #D6357F 103.52%)',
+  gradientReversed: 'linear-gradient(269.98deg, #D6357F 19.49%,  #3742F5 103.52%)',
+  bgcGrey: '#F8F8FB',
+  darkGrey: '#495057',
+  lightGrey: '#CED4DA',
+  grey: 'rgb(170, 169, 169)',
   greyWhite: '#F5F5F5',
   white: '#FFFFFF',
-  lowOpaGrey: 'rgba(255, 255, 255, 0.2)'
+  lowOpaGrey: 'rgba(255, 255, 255, 0.2)',
+  lightBlue: '#556EE6',
+  blue: '#3742F5',
+  errorRed: '#F46A6A',
 };

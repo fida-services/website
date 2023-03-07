@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 import React, { useState } from 'react';
@@ -75,7 +74,7 @@ const PaginationWrapper = styled.div`
   justify-content: flex-end;
   height: 20px;
   width: 100%;
-  z-index: -2
+  z-index: -2;
   transition: 0.5s;
   cursor: pointer;
 

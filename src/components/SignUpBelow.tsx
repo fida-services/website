@@ -6,11 +6,11 @@ import linesBg from 'assets/shapes/linesBg.svg';
 import { colors } from 'theme';
 import { Text } from 'components/_common/Text';
 import { useOnScreen } from 'hooks/useOnScreen';
-import { MenuButton } from './MenuButton';
+import { LinkButton } from './_common/LinkButton';
 import { maxWidth840, maxWidth1140 } from './rwd/detectMobile';
 
 const text = {
-  signUp: 'Sign up below to be invited to the Fida network when we go live.'
+  signUp: 'Sign up below to be invited to the Fida network when we go live.',
 };
 
 export const SignUpBelow = () => {
@@ -41,17 +41,16 @@ export const SignUpBelow = () => {
   return (
     <Wrapper isChangedMargin={isTablet}>
       <TitleWrapper isChangedMargin={isTablet}>
-        <TextWrapper
-          ref={elementOneRef}
-          isOnScreen={isElementOneVisible}
-        >
-          <Text size={isMobile ? 1.5 : 2} label={text.signUp} fontWeight={700} textPlacing="center" />
+        <TextWrapper ref={elementOneRef} isOnScreen={isElementOneVisible}>
+          <Text
+            size={isMobile ? 1.5 : 2}
+            label={text.signUp}
+            fontWeight={700}
+            textPlacing="center"
+          />
         </TextWrapper>
-        <ButtonWrapper
-          ref={elementTwoRef}
-          isOnScreen={isElementTwoVisible}
-        >
-          <MenuButton label="join our network" link="https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w" border backgroundColor={colors.white} color={colors.mainBlack} />
+        <ButtonWrapper ref={elementTwoRef} isOnScreen={isElementTwoVisible}>
+          <LinkButton label="join our network" variant="white" isRouterLink link="/form" />
         </ButtonWrapper>
         <LinesBg src={linesBg} alt="qrcode" />
       </TitleWrapper>
@@ -60,39 +59,40 @@ export const SignUpBelow = () => {
 };
 
 const Wrapper = styled.div<{ isChangedMargin: boolean }>`
-    margin: 200px 30px 50px 30px;
-    display: flex;
-    justify-content: center;
+  margin: 200px 30px 50px 30px;
+  display: flex;
+  justify-content: center;
 `;
 
 const TitleWrapper = styled.div<{ isChangedMargin: boolean }>`
-    margin-bottom: 100px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 640px;
-    gap: 20px;
-    text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 640px;
+  gap: 20px;
+  text-align: center;
 `;
 
 const TextWrapper = styled.div<{ isOnScreen: boolean }>`
-    transform: ${({ isOnScreen }) => (isOnScreen ? 'translateY(0)' : 'translateY(50px)')};
-    transition: 1.5s;
-    transition-delay: 0.01s;
+  transform: ${({ isOnScreen }) => (isOnScreen ? 'translateY(0)' : 'translateY(50px)')};
+  transition: 1.5s;
+  transition-delay: 0.01s;
+  z-index: 10;
 `;
 
 const ButtonWrapper = styled.div<{ isOnScreen: boolean }>`
-    transform: ${({ isOnScreen }) => (isOnScreen ? 'translateY(0)' : 'translateY(50px)')};
-    transition: 1.5s;
-    transition-delay: 0.01s;
+  transform: ${({ isOnScreen }) => (isOnScreen ? 'translateY(0)' : 'translateY(50px)')};
+  transition: 1.5s;
+  transition-delay: 0.01s;
+  z-index: 10;
 `;
 
 const LinesBg = styled.img`
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `;

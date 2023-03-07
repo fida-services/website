@@ -10,32 +10,35 @@ import whatsApp from 'assets/icons/socials/whatsApp.png';
 
 import { menuItems } from 'data/menuItems';
 import { colors } from 'theme';
-import { MenuButton } from './MenuButton';
+import { LinkButton } from './_common/LinkButton';
 import { Text } from './_common/Text';
 import { maxWidth840 } from './rwd/detectMobile';
 
-const socials = [{
-  src: twitter,
-  name: 'twitter',
-  link: 'https://twitter.com/fida_finance'
-}, {
-  src: telegram,
-  name: 'telegram',
-  link: 'https://t.me/+ZQqwyHJDSUJiYTdh'
-}, {
-  src: linkedin,
-  name: 'linkedin',
-  link: 'https://www.linkedin.com/company/fida-finance/'
-},
-// {
-//   src: whatsApp,
-//   name: 'whatsApp',
-//   link: '#'
-// }
+const socials = [
+  {
+    src: twitter,
+    name: 'twitter',
+    link: 'https://twitter.com/fida_finance',
+  },
+  {
+    src: telegram,
+    name: 'telegram',
+    link: 'https://t.me/+ZQqwyHJDSUJiYTdh',
+  },
+  {
+    src: linkedin,
+    name: 'linkedin',
+    link: 'https://www.linkedin.com/company/fida-finance/',
+  },
+  // {
+  //   src: whatsApp,
+  //   name: 'whatsApp',
+  //   link: '#'
+  // }
 ];
 
 const text = {
-  copyright: '©Fida 2023'
+  copyright: '©Fida 2023',
 };
 
 export const Footer = () => {
@@ -61,7 +64,7 @@ export const Footer = () => {
           ))}
         </IterableButtonsWrapper>
         <div className={`flex justify-content-center ${isMobile ? 'mt-5 mb-5' : ''}`}>
-          <MenuButton label={joinNetwork.label} link={joinNetwork.link} backgroundColor={colors.textGradient} />
+          <LinkButton label={joinNetwork.label} link={joinNetwork.link} variant={'gradient'} />
         </div>
       </MenuButtonsWrapper>
       <SocialsWrapper>
@@ -82,43 +85,42 @@ export const Footer = () => {
 };
 
 const FooterWrapper = styled.div`
-    display: flex;
-    padding: 0 30px;
-    flex-direction: column;
-    max-width: 80%;
-    margin: 100px auto 0;
-    @media (max-width: 840px) {
-      max-width: 95%;
-      padding: 0 15px;
-    }
+  display: flex;
+  padding: 0 30px;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 100px auto 0;
+  @media (max-width: 840px) {
+    max-width: 95%;
+    padding: 0 15px;
+  }
 `;
 const LogoWrapper = styled.div`
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 `;
 const MenuButtonsWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 34px;
-    @media (max-width: 840px) {
-      flex-direction: column;
-    }
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 34px;
+  @media (max-width: 840px) {
+    flex-direction: column;
+  }
 `;
 const IterableButtonsWrapper = styled.div`
-    display: flex;
-    
+  display: flex;
 `;
 const StyledLink = styled.a`
-    text-decoration: none;
-    transition: 0.5s;
+  text-decoration: none;
+  transition: 0.5s;
 
-    &:hover {
+  &:hover {
     opacity: 0.6;
-    }
+  }
 `;
 
 const SocialsWrapper = styled.div`
-    display: flex;
-    margin-bottom: 18px;
+  display: flex;
+  margin-bottom: 18px;
 `;
 
 const IconWrapper = styled.div`
@@ -126,13 +128,13 @@ const IconWrapper = styled.div`
   transition: 0.5s;
 
   &:hover {
-  opacity: 0.6;
+    opacity: 0.7;
   }
 `;
 
 const RadiantBar = styled.div`
-    width: 100%;
-    margin: 0 auto 24px 0;
-    height: 2px;
-    background: ${colors.textGradient};
+  width: 100%;
+  margin: 0 auto 24px 0;
+  height: 2px;
+  background: ${colors.gradient};
 `;

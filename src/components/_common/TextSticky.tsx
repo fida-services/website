@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React from 'react';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
@@ -12,7 +11,7 @@ interface Props {
     highlightIndex: number;
     titleTexts: string[];
     descriptionText?: string;
-  }
+  };
 }
 
 export const TextSticky = ({ textData }: Props) => {
@@ -29,14 +28,25 @@ export const TextSticky = ({ textData }: Props) => {
   return (
     <StyledTextSticky>
       <div>
-        {titleTexts.map((text, index) => (index === highlightIndex
-          ? <Text key={text} size={isMobile ? 1.5 : isTablet ? 1.7 : 2} label={text} color={colors.textGradient} fontWeight={700} linearGradient />
-          : <Text key={text} size={isMobile ? 1.5 : isTablet ? 1.7 : 2} label={text} fontWeight={400} />))}
+        {titleTexts.map((text, index) =>
+          index === highlightIndex ? (
+            <Text
+              key={text}
+              size={isMobile ? 1.5 : isTablet ? 1.7 : 2}
+              label={text}
+              color={colors.gradient}
+              fontWeight={700}
+              linearGradient
+            />
+          ) : (
+            <Text key={text} size={isMobile ? 1.5 : isTablet ? 1.7 : 2} label={text} fontWeight={400} />
+          )
+        )}
       </div>
-      { descriptionText && (
-      <div className="mt-3">
-        <Text size={isMobile ? 1 : 1.5} label={descriptionText} />
-      </div>
+      {descriptionText && (
+        <div className="mt-3">
+          <Text size={isMobile ? 1 : 1.5} label={descriptionText} />
+        </div>
       )}
     </StyledTextSticky>
   );
@@ -45,7 +55,7 @@ export const TextSticky = ({ textData }: Props) => {
 const StyledTextSticky = styled.div`
   max-width: 400px;
   width: 30%;
-  
+
   @media (max-width: 840px) {
     margin-top: 20px;
     width: 90%;

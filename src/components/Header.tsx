@@ -1,12 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
-import { menuItems } from 'data/menuItems';
-import { ReactComponent as FidaLogo } from 'assets/logos/fidaLogo.svg';
+import { LinkButton } from './_common/LinkButton';
 import { maxWidth840 } from './rwd/detectMobile';
-import { MenuButton } from './MenuButton';
+import { menuItems } from 'data/menuItems';
 import { MobileHeader } from './rwd/MobileHeader';
+
+import { ReactComponent as FidaLogo } from 'assets/logos/fidaLogo.svg';
 
 export const Header = () => {
   const isMobile = useMediaQuery({
@@ -16,22 +16,28 @@ export const Header = () => {
   return (
     <StyledHeader>
       <FidaLogo />
-      { isMobile
-        ? (<MobileHeader />
-        )
-        : (
-          <div className="flex">
-            {menuItems.iterableItems.map(({ label, link }) => <MenuButton key={label} label={label} link={link} />)}
-            <MenuButton label={menuItems.joinNetwork.label} link={menuItems.joinNetwork.link} border />
-          </div>
-        )}
+      {isMobile ? (
+        <MobileHeader />
+      ) : (
+        <div className="flex">
+          {menuItems.iterableItems.map(({ label, link }) => (
+            <LinkButton key={label} label={label} link={link} variant="transparent" />
+          ))}
+          <LinkButton
+            label={menuItems.joinNetwork.label}
+            variant="outline"
+            isRouterLink
+            link={menuItems.joinNetwork.link}
+          />
+        </div>
+      )}
     </StyledHeader>
   );
 };
 
 const StyledHeader = styled.header`
-    display: flex;
-    margin: 0 10px;
-    justify-content: space-between;
-    padding: 20px 0;
+  display: flex;
+  margin: 0 10px;
+  justify-content: space-between;
+  padding: 20px 0;
 `;
