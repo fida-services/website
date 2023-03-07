@@ -15,8 +15,8 @@ import { maxWidth640, maxWidth840, maxWidth1140 } from './rwd/detectMobile';
 const texts = {
   elevateGame: 'Elevate your game; invest in insurance contracts.',
   mainTitle: [
-    { title: 'FOLLOW INSURANCE EXPERTS.' },
-    { title: 'MAKE THE SAME' },
+    { title: 'FOLLOW INSURANCE EXPERTS. ' },
+    { title: 'MAKE THE SAME ' },
     { title: 'INVESTMENTS THEY DO.' },
   ]
 };
