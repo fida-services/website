@@ -17,12 +17,12 @@
     {
         "id": 3,
         "title": "Premium & Investors Portfolio Premium Pools.",
-        "description": "Premium payments are distributed from the insured to the holders of the Fida Cards proportionate to ownership. Premium is added to each Investor's Portfolio Premium Pool. Thus, for investors who have many Fida cards representing multiple different policies (a portfolio), the premium generated across all policies is used to pay any potential claims for any policy before the underlying collateral is used. This encourages investors create a diversified portfolio so the 'premiums of the many pay for the claims of a few'."
+        "description": "Premium payments are distributed from the insured to the holders of the Fida Cards proportionate to ownership. Premium is added to each Investor's Portfolio Premium Pool. Thus, for investors who have many Fida cards representing multiple different policies (a portfolio), the premium generated across all policies is used to pay any potential claims for any policy before the underlying collateral is used. This encourages investors to create a diversified portfolio so the 'premiums of the many pay for the claims of a few'."
     },
     {
         "id": 4,
         "title": "Claims",
-        "description": "Claims are paid out when a specific qualifying event occurs (for parametric products) or when a valid claim has been approved by the official third party. Claims are paid proportionately to the risk exposure taken by the Lead Insurer and the Fida Card holders. Each Fida Cards pays proportionate to the exposure to the total liability. Claims payments are first taken from the Investors Portfolio Premium Pool. If the Premium Pool is exhausted claims are paid from the underlying collateral held in the policy smart contract."
+        "description": "Claims are paid out when a specific qualifying event occurs (for parametric products) or when a valid claim has been approved by the official third party. Claims are paid proportionately to the risk exposure taken by the Lead Insurer and the Fida Card holders. Each Fida Card pays proportionate to the exposure to the total liability. Claims payments are first taken from the Investors Portfolio Premium Pool. If the Premium Pool is exhausted claims are paid from the underlying collateral held in the policy smart contract."
     },
     {
         "id": 5,
