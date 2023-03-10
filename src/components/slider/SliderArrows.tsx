@@ -40,10 +40,10 @@ export const SliderArrows = (props: Props) => {
   return (
     <StyledWrapper>
       <StyledButton onClick={() => arrowClick('back')} disabled={isTheSlideFirst}>
-        <StyledRightArrorCircle disabled={isTheSlideFirst} />
+        <StyledRightArrowCircle disabled={isTheSlideFirst} />
       </StyledButton>
       <StyledButton onClick={() => arrowClick('ahead')} disabled={isTheSlideLast}>
-        <StyledRightArrorCircle disabled={isTheSlideLast} />
+        <StyledRightArrowCircle disabled={isTheSlideLast} />
       </StyledButton>
     </StyledWrapper>
   );
@@ -71,7 +71,7 @@ const StyledButton = styled.button`
 
 `;
 
-const StyledRightArrorCircle = styled(RightArrorCircle)<{ disabled: boolean }>`
+const StyledRightArrowCircle = styled(RightArrorCircle)<{ disabled: boolean }>`
   width: 80px;
   height: 80px;
   cursor: pointer;
