@@ -240,7 +240,7 @@ mobilePadding
 .swiper-slide-thumb-active
 ReactComponent
 RightArrorCircle
-StyledRightArrorCircle
+StyledRightArrowCircle
 Swiper2
 .swiper-slide
 .swiper
