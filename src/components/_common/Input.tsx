@@ -14,36 +14,8 @@ const Input = forwardRef<HTMLInputElement, Props>(
   ({ error, description, label, placeholder, disabled, onChange, ...rest }, ref) => {
     const id = useId();
 
-    // const apiCall = () => {
-    //   axios
-    //     .post(
-    //       'https://api.hsforms.com/submissions/v3/integration/submit/23903564/2982e69a-90fd-42cb-9067-f3bdabea1f48',
-    //       {
-    //         fields: [
-    //           {
-    //             objectTypeId: '0-1',
-    //             name: 'firstname',
-    //             value: 'Dzban',
-    //           },
-    //           {
-    //             objectTypeId: '0-1',
-    //             name: 'test_label',
-    //             value: 'two',
-    //           },
-    //         ],
-    //       }
-    //     )
-    //     .then(function (response) {
-    //       console.log(response);
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // };
-
     return (
       <>
-        {/* <button onClick={apiCall}>API</button> */}
         <InputWrapper>
           <StyledLabel htmlFor={id} errorColors={!!error}>
             {label}
