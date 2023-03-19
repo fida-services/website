@@ -6,7 +6,6 @@ import fida from 'assets/logos/fidaLogo.svg';
 import linkedin from 'assets/icons/socials/linkedin.svg';
 import telegram from 'assets/icons/socials/telegram.svg';
 import twitter from 'assets/icons/socials/twitter.svg';
-import whatsApp from 'assets/icons/socials/whatsApp.png';
 
 import { menuItems } from 'data/menuItems';
 import { colors } from 'theme';
@@ -30,11 +29,6 @@ const socials = [
     name: 'linkedin',
     link: 'https://www.linkedin.com/company/fida-finance/',
   },
-  // {
-  //   src: whatsApp,
-  //   name: 'whatsApp',
-  //   link: '#'
-  // }
 ];
 
 const text = {
