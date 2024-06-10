@@ -10,16 +10,20 @@ export const MobileHeader = () => {
   const [modalToggle, setModalToggle] = useState(false);
 
   return (
-    <div>
-      <MobileMenuButton src={modalToggle ? menuMobileClose : menuMobileOpen} onClick={() => setModalToggle(prevState => !prevState)} alt="open menu" />
+    <>
+      <MobileMenuButton
+        src={modalToggle ? menuMobileClose : menuMobileOpen}
+        onClick={() => setModalToggle((prevState) => !prevState)}
+        alt="open menu"
+      />
       <HeaderMenuMobile modalToggle={modalToggle} />
-    </div>
+    </>
   );
 };
 
 const MobileMenuButton = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  margin-right: 5px;
+  
 `;
