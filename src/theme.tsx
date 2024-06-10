@@ -4,5 +4,8 @@ export const colors = {
   grey: '#FFFFFF80',
   greyWhite: '#F5F5F5',
   white: '#FFFFFF',
-  lowOpaGrey: 'rgba(255, 255, 255, 0.2)'
+  lowOpaGrey: 'rgba(255, 255, 255, 0.2)',
+  text_primary_on_brand: '#F5F5F6',
+  text_tertiary_600: '#94969C',
+  button_tertiary_color_fg: '#CECFD2'
 };
