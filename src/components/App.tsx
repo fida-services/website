@@ -1,15 +1,26 @@
-import React from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 
 import { Header } from './Header';
+import { Welcome } from './Welcome';
+import { maxWidth640 } from './rwd/detectMobile';
 
-const App = () => (
-  <ViewportWrapper>
-    <MainWrapper>
-      <Header />
-    </MainWrapper>
-  </ViewportWrapper>
-);
+const App = () => {
+  const isTablet = useMediaQuery({
+    query: maxWidth640,
+  });
+
+  return (
+    <ViewportWrapper>
+      <MainWrapper>
+        <Header />
+        <Container isTablet={isTablet}>
+          <Welcome />
+        </Container>
+      </MainWrapper>
+    </ViewportWrapper>
+  );
+};
 
 const ViewportWrapper = styled.div`
   width: 100%;
@@ -19,6 +30,12 @@ const ViewportWrapper = styled.div`
 const MainWrapper = styled.div`
   color: white;
   margin: 0 auto;
+`;
+
+const Container = styled.div<{ isTablet: boolean }>`
+  color: white;
+  margin: 0 auto;
+  margin: ${({ isTablet }) => (isTablet ? '0 16px' : '0 48px')};
 `;
 
 export default App;

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Modal from '@mui/material/Modal';
 
@@ -11,8 +10,8 @@ interface Props {
   modalToggle: boolean;
 }
 const modalStyled = {
-  top: '120px',
-  height: 'calc(100% - 120px)',
+  top: '80px',
+  height: 'calc(100% - 80px)',
 };
 
 export const HeaderMenuMobile = (props: Props) => {
@@ -35,7 +34,7 @@ export const HeaderMenuMobile = (props: Props) => {
             />
           </a>
         ))}
-        <MenuButton label={label} link={link} border isLaunchMarketplace />
+        <MenuButton label={label} link={link} border />
       </MenuWrapper>
     </Modal>
   );
