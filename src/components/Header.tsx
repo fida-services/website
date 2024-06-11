@@ -4,27 +4,20 @@ import { useMediaQuery } from 'react-responsive';
 
 import { menuItems } from 'data/menuItems';
 import { ReactComponent as FidaLogo } from 'assets/logos/fidaLogo.svg';
-import { maxWidth1024, maxWidth840 } from './rwd/detectMobile';
+import { colors } from 'theme';
+import { maxWidth840 } from './rwd/detectMobile';
 import { MenuButton } from './MenuButton';
 import { MobileHeader } from './rwd/MobileHeader';
 
-interface StyledProps {
-  isLaptop?: boolean;
-}
-
 export const Header = () => {
-  const isMobile = useMediaQuery({
+  const isTablet = useMediaQuery({
     query: maxWidth840,
   });
 
-  const isLaptop = useMediaQuery({
-    query: maxWidth1024,
-  });
-
   return (
-    <StyledHeader isLaptop={isLaptop}>
+    <StyledHeader>
       <FidaLogo />
-      {isMobile ? (
+      {isTablet ? (
         <MobileHeader />
       ) : (
         <div className="flex">
@@ -42,9 +35,20 @@ export const Header = () => {
   );
 };
 
-const StyledHeader = styled.header<StyledProps>`
+const StyledHeader = styled.header`
   display: flex;
-  margin: ${({ isLaptop }) => (isLaptop ? '0 16px' : '0 48px')};
   justify-content: space-between;
-  padding: 20px 0;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 16px;
+  background-color: ${colors.mainBlack};
+
+  @media (min-width: 768px) {
+    margin-bottom: 48px;
+    padding: 16px 48px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 20px;
+  }
 `;
