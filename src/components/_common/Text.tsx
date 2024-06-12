@@ -1,4 +1,6 @@
-import { CSSProperties } from 'react';
+/* eslint-disable no-else-return */
+/* eslint-disable react/no-array-index-key */
+import { CSSProperties, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 
 import { colors } from 'theme';
@@ -20,12 +22,38 @@ interface Props extends StyledProps {
   toUpperCase?: boolean
 }
 
+const boldReg = /(<rose>|<\/rose>)/;
+
 export const Text = (props: Props) => {
   const { label, toUpperCase, color, linearGradient, lineHeight, size, textPlacing, fontWeight, fontFamily, hoverTransition, noTextWrap } = props;
 
+  const renderText = useCallback(
+    (text: string, index: number, isBold: boolean) => (
+      <StyledSpan key={index} textPlacing={textPlacing} color={isBold ? colors.rose : color} fontWeight={fontWeight} size={size} linearGradient={linearGradient} lineHeight={lineHeight} hoverTransition={hoverTransition} noTextWrap={noTextWrap} fontFamily={fontFamily}>
+        {toUpperCase ? text.toUpperCase() : text}
+      </StyledSpan>
+    ),
+    [props]
+  );
+
+  const parts = label?.split(boldReg);
+  let isBold = false;
+
+  const formattedText = parts?.map((part, index) => {
+    if (part === '<rose>') {
+      isBold = true;
+      return '';
+    } else if (part === '</rose>') {
+      isBold = false;
+      return '';
+    } else {
+      return renderText(part, index, isBold);
+    }
+  });
+
   return (
-    <StyledSpan textPlacing={textPlacing} fontWeight={fontWeight} size={size} color={color} linearGradient={linearGradient} lineHeight={lineHeight} hoverTransition={hoverTransition} noTextWrap={noTextWrap} fontFamily={fontFamily}>
-      {toUpperCase ? label.toUpperCase() : label}
+    <StyledSpan textPlacing={textPlacing} fontWeight={fontWeight} size={size} linearGradient={linearGradient} lineHeight={lineHeight} hoverTransition={hoverTransition} noTextWrap={noTextWrap} fontFamily={fontFamily}>
+      {formattedText}
     </StyledSpan>
   );
 };
