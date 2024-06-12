@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
@@ -9,6 +8,7 @@ import { colors } from 'theme';
 import { maxWidth640, maxWidth840 } from './rwd/detectMobile';
 import { FidaMarketPlaceCard } from './FidaMarketPlaceCard';
 import { Title } from './_common/Title';
+import { WelcomeCards } from './WelcomeCards';
 
 const texts = {
   title: 'Invest in insurence Contracts',
@@ -25,34 +25,36 @@ export const Welcome = () => {
   });
 
   return (
-    <StyledWelcome>
-      <LinesBg src={isMobile ? welcomeOverlay : welcomeOverlayDesktop} alt="qrcode" />
-      <TextWrapper>
-        <Title label={texts.title} />
-        <Text
-          label={texts.description}
-          size={isTablet ? 1.5 : 1.875}
-          fontFamily="Inter"
-          color={colors.text_tertiary_600}
-          fontWeight={500}
-        />
-      </TextWrapper>
-      <FidaMarketPlaceCard />
-    </StyledWelcome>
+    <>
+      <StyledWelcome>
+        <LinesBg src={isMobile ? welcomeOverlay : welcomeOverlayDesktop} alt="welcome-overlay" />
+        <TextWrapper>
+          <Title label={texts.title} />
+          <Text
+            label={texts.description}
+            size={isTablet ? 1.5 : 1.875}
+            fontFamily="Inter"
+            color={colors.text_tertiary_600}
+            fontWeight={500}
+          />
+        </TextWrapper>
+        <FidaMarketPlaceCard />
+      </StyledWelcome>
+      <WelcomeCards />
+    </>
   );
 };
 
 const StyledWelcome = styled.div`
-  display: flex;
+  display: grid;
   flex-direction: column;
-  justify-content: center;
   overflow: visible;
   position: relative;
 
   @media (min-width: 1024px) {
+    grid-template-columns: 50% 50%;
     align-items: center;
     flex-direction: row;
-    gap: 24px;
   }
 `;
 
@@ -78,9 +80,5 @@ const TextWrapper = styled.div`
 
   @media (min-width: 1024px) {
     padding: 54px 0px;
-  }
-
-  @media (min-width: 1440px) {
-    min-width: 800px;
   }
 `;
