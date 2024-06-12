@@ -52,9 +52,9 @@ const StyledWelcome = styled.div`
   position: relative;
 
   @media (min-width: 1024px) {
-    grid-template-columns: 50% 50%;
     align-items: center;
     flex-direction: row;
+    grid-template-columns: 50% 50%;
   }
 `;
 
