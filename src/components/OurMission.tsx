@@ -3,7 +3,9 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
+import { missionItems } from 'data/missionItems';
 import { maxWidth840 } from './rwd/detectMobile';
+import { MissionCard } from './MissionCard';
 
 const texts = {
   title: 'Our Mission',
@@ -59,6 +61,11 @@ export const OurMission = () => {
           </TextWrapper>
         ))}
       </BottomSection>
+      <CardsWrapper>
+        {missionItems?.map(item => (
+          <MissionCard {...item} />
+        ))}
+      </CardsWrapper>
     </StyledOurMission>
   );
 };
@@ -66,10 +73,20 @@ export const OurMission = () => {
 const StyledOurMission = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
+  margin: 16px 0px;
 
   @media (min-width: 1024px) {
-    margin-top: 24px;
+    margin: 24px 0px;
+  }
+`;
+
+const CardsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (min-width: 1024px) {
+    gap: 0px;
   }
 `;
 

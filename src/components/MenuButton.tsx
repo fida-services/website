@@ -10,7 +10,6 @@ interface Props extends StyledProps {
 }
 
 interface StyledTagA {
-
   padding?: CSSProperties['padding']
 }
 interface StyledProps extends StyledTagA {
@@ -43,6 +42,7 @@ const StyledMenuButton = styled.button<StyledProps>`
     opacity: 0.6;
     }
 `;
+
 const StyledLink = styled.a<StyledTagA>`
     display: inline-block;
     font-size: 1rem;
