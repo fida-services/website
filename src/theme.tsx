@@ -9,7 +9,8 @@ export const colors = {
   text_tertiary_600: '#94969C',
   button_tertiary_color_fg: '#CECFD2',
   backgroundGradient: 'linear-gradient(to right, #3742F5, #D6357F)',
-  text_secondary_hover: '#ECECED'
+  text_secondary_hover: '#ECECED',
+  utility_gray: '#333741'
 };
 
 export const radius = {
