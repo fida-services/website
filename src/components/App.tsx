@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Header } from './Header';
 import { Welcome } from './Welcome';
 import { maxWidth640 } from './rwd/detectMobile';
+import { OurMission } from './OurMission';
 
 const App = () => {
   const isTablet = useMediaQuery({
@@ -16,6 +17,7 @@ const App = () => {
         <Header />
         <Container isTablet={isTablet}>
           <Welcome />
+          <OurMission />
         </Container>
       </MainWrapper>
     </ViewportWrapper>

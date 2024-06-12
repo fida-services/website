@@ -12,18 +12,18 @@ import { MenuButton } from './MenuButton';
 
 const texts = {
   card1: {
-    title: 'Expand your investors portfolio',
-    description: 'Follow insurence experts. Make the same investments they do.',
     buttonLabel: 'Learn more',
-    buttonLink: ''
+    buttonLink: '',
+    description: 'Follow insurence experts. Make the same investments they do.',
+    title: 'Expand your investors portfolio'
   },
   card2: {
-    title: '67%',
-    description: 'Insurance gap'
+    description: 'Insurance gap',
+    title: '67%'
   },
   card3: {
-    title: '$120 bln',
-    description: 'Market value'
+    description: 'Market value',
+    title: '$120 bln'
   }
 };
 
@@ -41,21 +41,26 @@ export const WelcomeCards = () => {
       <Card>
         <InnerCard>
           <Text
-            label={texts.card1.title}
-            size={isTablet ? 1.5 : 2.25}
             color={colors.text_primary_on_brand}
             fontWeight={400}
+            label={texts.card1.title}
             lineHeight={isTablet ? 32 : 44}
+            size={isTablet ? 1.5 : 2.25}
           />
           <Text
-            label={texts.card1.description}
-            size={isTablet ? 1 : 1.25}
-            fontFamily="Inter"
             color={colors.text_tertiary_600}
+            fontFamily="Inter"
             fontWeight={500}
+            label={texts.card1.description}
             lineHeight={isTablet ? 24 : 30}
+            size={isTablet ? 1 : 1.25}
           />
-          <MenuButton label={texts.card1.buttonLabel} link={texts.card1.buttonLink} padding="0px" color={colors.button_tertiary_color_fg} />
+          <MenuButton
+            color={colors.button_tertiary_color_fg}
+            label={texts.card1.buttonLabel}
+            link={texts.card1.buttonLink}
+            padding="0px"
+          />
         </InnerCard>
         <CardImage src={isTablet ? mobileCards : laptopCards} alt="cards" />
       </Card>
@@ -63,18 +68,18 @@ export const WelcomeCards = () => {
         <Card isSmallerCard style={{ position: 'relative' }}>
           <InnerCard isSmallerCard>
             <Text
-              label={texts.card2.title}
-              size={isTablet ? 1.5 : 3}
               color={colors.text_primary_on_brand}
               fontWeight={400}
-              textPlacing="center"
+              label={texts.card2.title}
               lineHeight={isTablet ? 32 : 60}
+              size={isTablet ? 1.5 : 3}
+              textPlacing="center"
             />
             <Text
-              label={texts.card2.description}
-              size={isTablet ? 0.875 : 1}
               color={colors.text_primary_on_brand}
               fontWeight={700}
+              label={texts.card2.description}
+              size={isTablet ? 0.875 : 1}
               textPlacing="center"
             />
           </InnerCard>
@@ -83,18 +88,18 @@ export const WelcomeCards = () => {
         <Card isSmallerCard>
           <InnerCard isSmallerCard>
             <Text
-              label={texts.card3.title}
-              size={isTablet ? 1.5 : 3}
               color={colors.text_primary_on_brand}
               fontWeight={400}
-              textPlacing="center"
+              label={texts.card3.title}
               lineHeight={isTablet ? 32 : 60}
+              size={isTablet ? 1.5 : 3}
+              textPlacing="center"
             />
             <Text
-              label={texts.card3.description}
-              size={isTablet ? 0.875 : 1}
               color={colors.text_primary_on_brand}
               fontWeight={700}
+              label={texts.card3.description}
+              size={isTablet ? 0.875 : 1}
               textPlacing="center"
             />
           </InnerCard>
