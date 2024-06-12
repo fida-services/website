@@ -11,8 +11,8 @@ import { Title } from './_common/Title';
 import { WelcomeCards } from './WelcomeCards';
 
 const texts = {
-  title: 'Invest in insurence Contracts',
   description: 'Follow insurence experts.\nMake the same investments they do.',
+  title: 'Invest in insurence Contracts',
 };
 
 export const Welcome = () => {
@@ -27,15 +27,18 @@ export const Welcome = () => {
   return (
     <>
       <StyledWelcome>
-        <LinesBg src={isMobile ? welcomeOverlay : welcomeOverlayDesktop} alt="welcome-overlay" />
+        <LinesBg
+          alt="welcome-overlay"
+          src={isMobile ? welcomeOverlay : welcomeOverlayDesktop}
+        />
         <TextWrapper>
           <Title label={texts.title} />
           <Text
+            color={colors.text_tertiary_600}
+            fontFamily="Inter"
+            fontWeight={500}
             label={texts.description}
             size={isTablet ? 1.5 : 1.875}
-            fontFamily="Inter"
-            color={colors.text_tertiary_600}
-            fontWeight={500}
           />
         </TextWrapper>
         <FidaMarketPlaceCard />
@@ -47,7 +50,6 @@ export const Welcome = () => {
 
 const StyledWelcome = styled.div`
   display: grid;
-  flex-direction: column;
   overflow: visible;
   position: relative;
 

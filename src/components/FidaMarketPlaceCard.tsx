@@ -36,13 +36,34 @@ export const FidaMarketPlaceCard = () => {
       <ContentWrapper>
         <TopWrapper>
           <TextWrapper>
-            <Text fontFamily="Inter" size={isTablet ? 1.5 : 2.25} label={text.titleOne} fontWeight={500} color={colors.text_primary_on_brand} />
-            <Text fontFamily="Inter" size={isTablet ? 1 : 1.25} label={text.titleTwo} fontWeight={500} color={colors.text_secondary_hover} />
+            <Text
+              color={colors.text_primary_on_brand}
+              fontFamily="Inter"
+              fontWeight={500}
+              label={text.titleOne}
+              size={isTablet ? 1.5 : 2.25}
+            />
+            <Text
+              color={colors.text_secondary_hover}
+              fontFamily="Inter"
+              fontWeight={500}
+              label={text.titleTwo}
+              size={isTablet ? 1 : 1.25}
+            />
           </TextWrapper>
-          <MenuButton label={button.label} link={button.link} border padding={isTablet ? '8px 14px' : '16px 22px'} />
+          <MenuButton
+            border
+            label={button.label}
+            link={button.link}
+            padding={isTablet ? '8px 14px' : '16px 22px'}
+          />
         </TopWrapper>
         <ImageWrapper>
-          <Laptop src={isDesktop ? fidaMacbookDesktop : fidaMacbook} alt="marketplace" isMobile={isMobile} />
+          <Laptop
+            alt="marketplace"
+            isMobile={isMobile}
+            src={isDesktop ? fidaMacbookDesktop : fidaMacbook}
+          />
         </ImageWrapper>
       </ContentWrapper>
     </Wrapper>
@@ -59,8 +80,8 @@ const Wrapper = styled.div`
 
   @media (min-width: 1024px) {
     align-items: center;
-    margin-top: 0px;
     flex-direction: row;
+    margin-top: 0px;
     overflow: hidden;
   }
 `;
@@ -77,8 +98,8 @@ const ContentWrapper = styled.div`
 `;
 
 const Laptop = styled.img<{ isMobile: boolean }>`
-  width: 100%;
   margin-top: ${({ isMobile }) => (isMobile ? '-40px' : '-100px')};
+  width: 100%;
 
   @media (min-width: 1024px) {
     margin-top: 0px;
@@ -98,8 +119,8 @@ const TopWrapper = styled.div`
   @media (min-width: 1024px) {
     flex-direction: column;
     justify-content: center;
-    padding: 0px 0px 0px 24px;
     margin-bottom: 10px;
+    padding: 0px 0px 0px 24px;
   }
 
   @media (min-width: 1440px) {
