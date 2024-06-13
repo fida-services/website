@@ -14,7 +14,9 @@ export const colors = {
   iconGradient: 'linear-gradient(to bottom, rgba(55, 66, 245, 0.4), rgba(214, 53, 127, 0.4))',
   text_secondary_hover: '#ECECED',
   utility_gray: '#333741',
-  rose: '#D6357F'
+  rose: '#D6357F',
+  button_secondary_fg: '#344054',
+  button_secondary_border: '#D0D5DD'
 };
 
 export const radius = {

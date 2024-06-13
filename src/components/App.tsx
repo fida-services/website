@@ -8,6 +8,8 @@ import { OurMission } from './sections/OurMission';
 import { ConquerRisk } from './sections/ConquerRisk';
 import { FidaMarketplace } from './sections/FidaMarketplace';
 import { SeemlessAI } from './sections/SeemlessAI';
+import { RoadMap } from './sections/RoadMap';
+import { JoinNetwork } from './sections/JoinNetwork';
 
 const App = () => {
   const isTablet = useMediaQuery({
@@ -25,6 +27,10 @@ const App = () => {
           <FidaMarketplace />
         </Container>
         <SeemlessAI />
+        <Container isTablet={isTablet}>
+          <RoadMap />
+          <JoinNetwork />
+        </Container>
       </MainWrapper>
     </ViewportWrapper>
   );
