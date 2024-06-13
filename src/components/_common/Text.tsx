@@ -1,5 +1,5 @@
 /* eslint-disable no-else-return */
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-nested-ternary */
 import { CSSProperties, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -19,41 +19,42 @@ interface StyledProps {
 
 interface Props extends StyledProps {
   label: string;
+  isRoseText?: boolean
   toUpperCase?: boolean
 }
 
-const boldReg = /(<rose>|<\/rose>)/;
+const roseReg = /(<rose>|<\/rose>)/;
 
 export const Text = (props: Props) => {
-  const { label, toUpperCase, color, linearGradient, lineHeight, size, textPlacing, fontWeight, fontFamily, hoverTransition, noTextWrap } = props;
+  const { label, toUpperCase, color, linearGradient, lineHeight, size, textPlacing, fontWeight, fontFamily, hoverTransition, noTextWrap, isRoseText } = props;
 
   const renderText = useCallback(
-    (text: string, index: number, isBold: boolean) => (
-      <StyledSpan key={index} textPlacing={textPlacing} color={isBold ? colors.rose : color} fontWeight={fontWeight} size={size} linearGradient={linearGradient} lineHeight={lineHeight} hoverTransition={hoverTransition} noTextWrap={noTextWrap} fontFamily={fontFamily}>
+    (text: string, index: number, isRose: boolean) => (
+      <StyledSpan key={index} textPlacing={textPlacing} color={isRose ? colors.rose : color} fontWeight={fontWeight} size={size} linearGradient={linearGradient} lineHeight={lineHeight} hoverTransition={hoverTransition} noTextWrap={noTextWrap} fontFamily={fontFamily}>
         {toUpperCase ? text.toUpperCase() : text}
       </StyledSpan>
     ),
     [props]
   );
 
-  const parts = label?.split(boldReg);
-  let isBold = false;
+  const parts = label?.split(roseReg);
+  let isRose = false;
 
   const formattedText = parts?.map((part, index) => {
     if (part === '<rose>') {
-      isBold = true;
+      isRose = true;
       return '';
     } else if (part === '</rose>') {
-      isBold = false;
+      isRose = false;
       return '';
     } else {
-      return renderText(part, index, isBold);
+      return renderText(part, index, isRose);
     }
   });
 
   return (
-    <StyledSpan textPlacing={textPlacing} fontWeight={fontWeight} size={size} linearGradient={linearGradient} lineHeight={lineHeight} hoverTransition={hoverTransition} noTextWrap={noTextWrap} fontFamily={fontFamily}>
-      {formattedText}
+    <StyledSpan textPlacing={textPlacing} color={color} fontWeight={fontWeight} size={size} linearGradient={linearGradient} lineHeight={lineHeight} hoverTransition={hoverTransition} noTextWrap={noTextWrap} fontFamily={fontFamily}>
+      {isRoseText ? formattedText : toUpperCase ? label.toUpperCase() : label}
     </StyledSpan>
   );
 };
