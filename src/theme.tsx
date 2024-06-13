@@ -9,7 +9,7 @@ export const colors = {
   text_tertiary_600: '#94969C',
   button_tertiary_color_fg: '#CECFD2',
   backgroundGradient: 'linear-gradient(to right, #3742F5, #D6357F)',
-  greyBackgroundGradient: 'linear-gradient(to right, #333741, #30343D80)',
+  greyBackgroundGradient: 'linear-gradient(to right, rgba(51, 55, 65, 1), rgba(48, 52, 61, 0.5))',
   text_secondary_hover: '#ECECED',
   utility_gray: '#333741',
   rose: '#D6357F'

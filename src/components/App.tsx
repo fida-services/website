@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { Welcome } from './Welcome';
 import { maxWidth640 } from './rwd/detectMobile';
 import { OurMission } from './OurMission';
+import { ConquerRisk } from './ConquerRisk';
 
 const App = () => {
   const isTablet = useMediaQuery({
@@ -18,6 +19,7 @@ const App = () => {
         <Container isTablet={isTablet}>
           <Welcome />
           <OurMission />
+          <ConquerRisk />
         </Container>
       </MainWrapper>
     </ViewportWrapper>
