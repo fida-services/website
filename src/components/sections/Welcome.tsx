@@ -5,10 +5,10 @@ import welcomeOverlay from 'assets/overlays/welcome-overlay.svg';
 import welcomeOverlayDesktop from 'assets/overlays/welcome-overlay-desktop.svg';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
-import { maxWidth640, maxWidth840 } from './rwd/detectMobile';
-import { FidaMarketPlaceCard } from './FidaMarketPlaceCard';
-import { Title } from './_common/Title';
-import { WelcomeCards } from './WelcomeCards';
+import { maxWidth640, maxWidth840 } from '../rwd/detectMobile';
+import { HeroCard } from '../HeroCard';
+import { Title } from '../_common/Title';
+import { WelcomeCards } from '../WelcomeCards';
 
 const texts = {
   description: 'Follow insurence experts.\nMake the same investments they do.',
@@ -41,7 +41,7 @@ export const Welcome = () => {
             size={isTablet ? 1.5 : 1.875}
           />
         </TextWrapper>
-        <FidaMarketPlaceCard />
+        <HeroCard />
       </StyledWelcome>
       <WelcomeCards />
     </>

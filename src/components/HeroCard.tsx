@@ -18,7 +18,7 @@ const button = {
   link: 'https://fida.finance/'
 };
 
-export const FidaMarketPlaceCard = () => {
+export const HeroCard = () => {
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });

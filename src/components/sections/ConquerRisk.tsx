@@ -5,7 +5,7 @@ import arrowPointer from 'assets/icons/arrow-pointer.svg';
 import opportunities from 'assets/images/opportunities.svg';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
-import { maxWidth840 } from './rwd/detectMobile';
+import { maxWidth840 } from '../rwd/detectMobile';
 
 const texts = {
   title: 'Divide and <rose>conquer risk!</rose>',
