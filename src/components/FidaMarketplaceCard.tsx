@@ -73,13 +73,13 @@ const Container = styled.div<{ isReversed?: boolean }>`
 const LinesBg = styled.img`
   left: 50%;
   position: absolute;
-  height: 50%;
-  transform: translate(-30%, -5%);
+  transform: translate(-30%, -2%);
   width: 100%;
   z-index: -1;
 
-  @media (min-width: 1440px) {
-    transform: translate(-30%, 5%);
+  @media (min-width: 1024px) {
+    height: 100%;
+    transform: translate(-30%, 0%);
   }
 `;
 
