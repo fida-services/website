@@ -7,17 +7,10 @@ import { colors, radius } from 'theme';
 import { maxWidth840 } from './rwd/detectMobile';
 import { ReadMore } from './ReadMore';
 
-interface CardProps {
-  isReversed?: boolean
-}
-
-interface ImageWrapperProps {
-  isReversed?: boolean
-}
-
-interface MissionCardProps extends CardProps {
+interface MissionCardProps {
   description: string;
   imageSrc: string;
+  isReversed?: boolean
   isRoseText?: boolean
   subtitle?: string
   title: string;
@@ -93,7 +86,7 @@ const MainContainer = styled.div`
   }
 `;
 
-const Card = styled.div<CardProps>`
+const Card = styled.div<{ isReversed?: boolean }>`
   align-items: center;
   background: ${colors.greyBackgroundGradient};
   border-radius: ${radius['4xl']};
@@ -125,7 +118,7 @@ const LinesBg = styled.img`
   }
 `;
 
-const ImageWrapper = styled.img<ImageWrapperProps>`
+const ImageWrapper = styled.img<{ isReversed?: boolean }>`
   width: 100%;
 
   @media (min-width: 1024px) {

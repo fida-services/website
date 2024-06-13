@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
-import { Text } from 'components/_common/Text';
-import { colors } from 'theme';
-import { missionItems } from 'data/missionItems';
-import { maxWidth840 } from '../rwd/detectMobile';
-import { MissionCard } from '../MissionCard';
+import gradientLaptopMobile from 'assets/images/gradient-laptop-mobile.png';
+import gradientPhones from 'assets/images/gradient-mobile-phones.png';
+import gradientLaptop from 'assets/images/gradient-laptop.png';
+import { FidaMarketplaceCard } from 'components/FidaMarketplaceCard';
+import { maxWidth840 } from 'components/rwd/detectMobile';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
 
@@ -19,22 +19,31 @@ export const FidaMarketplace = () => {
     query: maxWidth840,
   });
 
+  const fidaItems = [
+    {
+      description: 'Investors can build diversified investment portfolios to increase capital efficiency and generate leverage as insurance companies do.',
+      imageSrc: isTablet ? gradientLaptopMobile : gradientLaptop,
+      title: 'Increase efficiency',
+    },
+    {
+      description: 'Investors can build diversified investment portfolios to increase capital efficiency and generate leverage as insurance companies do.',
+      imageSrc: gradientPhones,
+      isReversed: true,
+      title: 'Increase efficiency',
+    }
+  ];
+
   return (
     <Container>
       <BaseTextWithDescription description={texts.description} title={texts.title} />
+      <CardsWrapper>
+        {fidaItems?.map(item => (
+          <FidaMarketplaceCard {...item} />
+        ))}
+      </CardsWrapper>
     </Container>
   );
 };
-
-const StyledFidaMarketplace = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 16px 0px;
-
-  @media (min-width: 1024px) {
-    margin: 24px 0px;
-  }
-`;
 
 const CardsWrapper = styled.div`
   display: flex;
@@ -44,28 +53,4 @@ const CardsWrapper = styled.div`
   @media (min-width: 1024px) {
     gap: 0px;
   }
-`;
-
-const BottomSection = styled.div`
-  display: grid;
-  gap: 32px;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 16px;
-  padding: 48px 0px;
-
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  @media (min-width: 1440px) {
-    gap: 64px;
-    padding: 100px 80px;
-  }
-`;
-
-const TextWrapper = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 `;
