@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
+import ourMissionOverlay from 'assets/overlays/mission-overlay.svg';
 import { Text } from 'components/_common/Text';
 import { colors, radius } from 'theme';
 import { maxWidth840 } from './rwd/detectMobile';
@@ -32,46 +33,62 @@ export const MissionCard = (props: MissionCardProps) => {
   });
 
   return (
-    <Card isReversed={isReversed}>
-      <ImageWrapper isReversed={isReversed} src={imageSrc} alt="risk" />
-      <InnerCard>
-        <Text
-          color={colors.text_primary_on_brand}
-          fontFamily="Inter"
-          fontWeight={400}
-          isRoseText={isRoseText}
-          label={title}
-          lineHeight={isTablet ? 38 : 72}
-          size={isTablet ? 1.875 : 3.75}
-        />
-        {subtitle ? (
-          <Text
-            color={colors.rose}
-            fontFamily="Inter"
-            fontWeight={500}
-            label={subtitle}
-            lineHeight={isTablet ? 32 : 44}
-            size={isTablet ? 1.5 : 2.25}
+    <MainContainer>
+      <Card isReversed={isReversed}>
+        {!isTablet ? (
+          <LinesBg
+            alt="mission-overlay"
+            src={ourMissionOverlay}
           />
         ) : (
           null
         )}
-        {description?.length >= MAX_DESCRIPTION_LENGTH && isTablet ? (
-          <ReadMore text={description} limit={MAX_DESCRIPTION_LENGTH} />
-        ) : (
+        <ImageWrapper isReversed={isReversed} src={imageSrc} alt="risk" />
+        <InnerCard>
           <Text
-            color={colors.button_tertiary_color_fg}
+            color={colors.text_primary_on_brand}
             fontFamily="Inter"
-            fontWeight={500}
-            label={description}
-            lineHeight={isTablet ? 20 : 28}
-            size={isTablet ? 0.875 : 1.125}
+            fontWeight={400}
+            isRoseText={isRoseText}
+            label={title}
+            lineHeight={isTablet ? 38 : 72}
+            size={isTablet ? 1.875 : 3.75}
           />
-        )}
-      </InnerCard>
-    </Card>
+          {subtitle ? (
+            <Text
+              color={colors.rose}
+              fontFamily="Inter"
+              fontWeight={500}
+              label={subtitle}
+              lineHeight={isTablet ? 32 : 44}
+              size={isTablet ? 1.5 : 2.25}
+            />
+          ) : (
+            null
+          )}
+          {description?.length >= MAX_DESCRIPTION_LENGTH && isTablet ? (
+            <ReadMore text={description} limit={MAX_DESCRIPTION_LENGTH} />
+          ) : (
+            <Text
+              color={colors.button_tertiary_color_fg}
+              fontFamily="Inter"
+              fontWeight={500}
+              label={description}
+              lineHeight={isTablet ? 20 : 28}
+              size={isTablet ? 0.875 : 1.125}
+            />
+          )}
+        </InnerCard>
+      </Card>
+    </MainContainer>
   );
 };
+
+const MainContainer = styled.div`
+  background-color: ${colors.mainBlack};
+  border-radius: ${radius['4xl']};
+  margin: 80px 0px;
+`;
 
 const Card = styled.div<CardProps>`
   align-items: center;
@@ -79,7 +96,6 @@ const Card = styled.div<CardProps>`
   border-radius: ${radius['4xl']};
   display: flex;
   flex-direction: column;
-  margin: 80px 0px;
   padding: 16px;
 
   @media (min-width: 1024px) {
@@ -91,6 +107,17 @@ const Card = styled.div<CardProps>`
 
   @media (min-width: 1440px) {
     grid-template-columns: ${({ isReversed }) => (isReversed ? '60% 30%;' : '30% 60%')};
+  }
+`;
+
+const LinesBg = styled.img`
+  left: 50%;
+  position: absolute;
+  transform: translate(-30%, -5%);
+  z-index: -1;
+
+  @media (min-width: 1440px) {
+    transform: translate(-30%, 5%);
   }
 `;
 
