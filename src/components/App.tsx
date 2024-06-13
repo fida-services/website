@@ -7,6 +7,7 @@ import { maxWidth640 } from './rwd/detectMobile';
 import { OurMission } from './sections/OurMission';
 import { ConquerRisk } from './sections/ConquerRisk';
 import { FidaMarketplace } from './sections/FidaMarketplace';
+import { SeemlessAI } from './sections/SeemlessAI';
 
 const App = () => {
   const isTablet = useMediaQuery({
@@ -23,6 +24,7 @@ const App = () => {
           <ConquerRisk />
           <FidaMarketplace />
         </Container>
+        <SeemlessAI />
       </MainWrapper>
     </ViewportWrapper>
   );
