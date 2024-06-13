@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
 import { Header } from './Header';
-import { Welcome } from './Welcome';
+import { Welcome } from './sections/Welcome';
 import { maxWidth640 } from './rwd/detectMobile';
-import { OurMission } from './OurMission';
-import { ConquerRisk } from './ConquerRisk';
+import { OurMission } from './sections/OurMission';
+import { ConquerRisk } from './sections/ConquerRisk';
+import { FidaMarketplace } from './sections/FidaMarketplace';
 
 const App = () => {
   const isTablet = useMediaQuery({
@@ -20,6 +21,7 @@ const App = () => {
           <Welcome />
           <OurMission />
           <ConquerRisk />
+          <FidaMarketplace />
         </Container>
       </MainWrapper>
     </ViewportWrapper>

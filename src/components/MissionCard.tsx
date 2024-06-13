@@ -87,7 +87,10 @@ export const MissionCard = (props: MissionCardProps) => {
 const MainContainer = styled.div`
   background-color: ${colors.mainBlack};
   border-radius: ${radius['4xl']};
-  margin: 80px 0px;
+
+  @media (min-width: 1024px) {
+    margin: 80px 0px;
+  }
 `;
 
 const Card = styled.div<CardProps>`
@@ -97,6 +100,7 @@ const Card = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
   padding: 16px;
+  position: relative;
 
   @media (min-width: 1024px) {
     display: grid;

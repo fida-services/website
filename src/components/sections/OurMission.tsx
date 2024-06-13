@@ -4,8 +4,10 @@ import { useMediaQuery } from 'react-responsive';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
 import { missionItems } from 'data/missionItems';
-import { maxWidth840 } from './rwd/detectMobile';
-import { MissionCard } from './MissionCard';
+import { maxWidth840 } from '../rwd/detectMobile';
+import { MissionCard } from '../MissionCard';
+import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
+import { Container } from '../_common/Container';
 
 const texts = {
   title: 'Our Mission',
@@ -24,25 +26,8 @@ export const OurMission = () => {
   });
 
   return (
-    <StyledOurMission>
-      <TopSection>
-        <Text
-          color={colors.text_primary_on_brand}
-          fontWeight={700}
-          label={texts.title}
-          size={isTablet ? 1.25 : 2.25}
-          lineHeight={isTablet ? 30 : 44}
-        />
-        <Text
-          color={colors.text_tertiary_600}
-          fontFamily="Inter"
-          fontWeight={500}
-          label={texts.description}
-          lineHeight={isTablet ? 24 : 30}
-          size={isTablet ? 1 : 1.25}
-          textPlacing="center"
-        />
-      </TopSection>
+    <Container>
+      <BaseTextWithDescription description={texts.description} title={texts.title} />
       <BottomSection>
         {texts?.values?.map(item => (
           <TextWrapper>
@@ -66,19 +51,9 @@ export const OurMission = () => {
           <MissionCard {...item} />
         ))}
       </CardsWrapper>
-    </StyledOurMission>
+    </Container>
   );
 };
-
-const StyledOurMission = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 16px 0px;
-
-  @media (min-width: 1024px) {
-    margin: 24px 0px;
-  }
-`;
 
 const CardsWrapper = styled.div`
   display: flex;
@@ -87,19 +62,6 @@ const CardsWrapper = styled.div`
 
   @media (min-width: 1024px) {
     gap: 0px;
-  }
-`;
-
-const TopSection = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 48px 16px;
-  padding: 48px 16px;
-
-  @media (min-width: 1024px) {
-    padding: 120px 220px;
   }
 `;
 
