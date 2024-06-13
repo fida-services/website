@@ -6,6 +6,7 @@ export const missionItems = [
     description: 'Investors can build diversified investment portfolios to increase capital efficiency and generate leverage as insurance companies do.',
     imageSrc: risk,
     isReversed: true,
+    isRoseText: true,
     title: 'Fida is a <rose>Risk Transfer Protocol</rose> built on top of Cardano.'
   },
   {
