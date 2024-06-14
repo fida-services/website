@@ -17,7 +17,9 @@ export const colors = {
   rose: '#D6357F',
   button_secondary_fg: '#344054',
   button_secondary_border: '#D0D5DD',
-  text_placeholder: '#667085'
+  text_placeholder: '#667085',
+  rose_dot: '#9B3AAC',
+  blue: '#3742F5'
 };
 
 export const radius = {
