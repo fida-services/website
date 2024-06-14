@@ -10,6 +10,7 @@ import { FidaMarketplace } from './sections/FidaMarketplace';
 import { SeemlessAI } from './sections/SeemlessAI';
 import { RoadMap } from './sections/RoadMap';
 import { JoinNetwork } from './sections/JoinNetwork';
+import { Footer } from './sections/Footer';
 
 const App = () => {
   const isTablet = useMediaQuery({
@@ -30,6 +31,7 @@ const App = () => {
         <Container isTablet={isTablet}>
           <RoadMap />
           <JoinNetwork />
+          <Footer />
         </Container>
       </MainWrapper>
     </ViewportWrapper>
