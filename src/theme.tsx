@@ -16,10 +16,12 @@ export const colors = {
   utility_gray: '#333741',
   rose: '#D6357F',
   button_secondary_fg: '#344054',
-  button_secondary_border: '#D0D5DD'
+  button_secondary_border: '#D0D5DD',
+  text_placeholder: '#667085'
 };
 
 export const radius = {
   md: '8px',
   '4xl': '24px',
+  full: '999px'
 };
