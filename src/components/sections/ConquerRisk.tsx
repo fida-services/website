@@ -22,7 +22,7 @@ export const ConquerRisk = () => {
     <StyledConquerRisk>
       <TopSection>
         <Text
-          color={colors.text_primary_on_brand}
+          color={colors.textPrimaryOnBrand}
           fontWeight={400}
           label={texts.title}
           size={isTablet ? 1.875 : 4.5}
@@ -31,7 +31,7 @@ export const ConquerRisk = () => {
           toUpperCase
         />
         <Text
-          color={colors.text_tertiary_600}
+          color={colors.textTertiary600}
           fontFamily="Inter"
           fontWeight={500}
           label={texts.description}
@@ -42,7 +42,7 @@ export const ConquerRisk = () => {
           <PointerWrapper>
             <ArrowPointer src={arrowPointer} alt="arrow-pointer" />
             <Text
-              color={colors.text_tertiary_600}
+              color={colors.textTertiary600}
               fontFamily="Inter"
               fontWeight={500}
               label={item}

@@ -19,14 +19,14 @@ export const BaseTextWithDescription = (props: BaseTextWithDescriptionProps) => 
   return (
     <Container>
       <Text
-        color={colors.text_primary_on_brand}
+        color={colors.textPrimaryOnBrand}
         fontWeight={700}
         label={title}
         size={isTablet ? 1.25 : 2.25}
         lineHeight={isTablet ? 30 : 44}
       />
       <Text
-        color={colors.text_tertiary_600}
+        color={colors.textTertiary600}
         fontFamily="Inter"
         fontWeight={500}
         label={description}

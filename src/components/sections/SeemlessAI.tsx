@@ -24,7 +24,7 @@ export const SeemlessAI = () => {
       <TopSection>
         <Title label={texts.title} />
         <Text
-          color={colors.text_tertiary_600}
+          color={colors.textTertiary600}
           fontFamily="Inter"
           fontWeight={500}
           label={texts.description}

@@ -17,7 +17,7 @@ export const Title = (props: Props) => {
 };
 
 const StyledSpan = styled.span`
-    color: ${colors.text_primary_on_brand};
+    color: ${colors.textPrimaryOnBrand};
     font-size: 2.25rem;
     font-weight: 400;
     line-height: 44px;

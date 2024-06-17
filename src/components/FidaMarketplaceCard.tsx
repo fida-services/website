@@ -41,13 +41,13 @@ export const FidaMarketplaceCard = (props: FidaMarketplaceCardProps) => {
           <Icon src={diagramIcon} alt="diagram" />
         </IconBox>
         <Text
-          color={colors.text_primary_on_brand}
+          color={colors.textPrimaryOnBrand}
           fontWeight={400}
           label={title}
           size={isTablet ? 1.875 : 3}
         />
         <Text
-          color={colors.button_tertiary_color_fg}
+          color={colors.buttonTertiaryColorFg}
           fontWeight={400}
           label={description}
           size={isTablet ? 0.875 : 1.875}
@@ -95,7 +95,7 @@ const Image = styled.img<{ isReversed?: boolean }>`
 `;
 
 const TextContainer = styled.div<{ isReversed?: boolean }>`
-  background-color: ${colors.utility_gray};
+  background-color: ${colors.utilityGray};
   border-radius: ${radius['4xl']};
   display: flex;
   flex-direction: column;

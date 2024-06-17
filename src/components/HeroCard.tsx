@@ -37,14 +37,14 @@ export const HeroCard = () => {
         <TopWrapper>
           <TextWrapper>
             <Text
-              color={colors.text_primary_on_brand}
+              color={colors.textPrimaryOnBrand}
               fontFamily="Inter"
               fontWeight={500}
               label={text.titleOne}
               size={isTablet ? 1.5 : 2.25}
             />
             <Text
-              color={colors.text_secondary_hover}
+              color={colors.textSecondaryHover}
               fontFamily="Inter"
               fontWeight={500}
               label={text.titleTwo}

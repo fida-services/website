@@ -32,13 +32,13 @@ export const OurMission = () => {
         {texts?.values?.map(item => (
           <TextWrapper>
             <Text
-              color={colors.text_primary_on_brand}
+              color={colors.textPrimaryOnBrand}
               fontWeight={isTablet ? 700 : 400}
               label={item?.value}
               size={isTablet ? 1.25 : 3}
             />
             <Text
-              color={colors.text_tertiary_600}
+              color={colors.textTertiary600}
               fontWeight={700}
               label={item?.label}
               size={isTablet ? 0.75 : 1.125}

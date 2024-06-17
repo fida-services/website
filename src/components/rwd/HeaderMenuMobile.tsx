@@ -30,7 +30,7 @@ export const HeaderMenuMobile = (props: Props) => {
               label={label}
               toUpperCase
               textPlacing="center"
-              color={colors.button_tertiary_color_fg}
+              color={colors.buttonTertiaryColorFg}
             />
           </a>
         ))}

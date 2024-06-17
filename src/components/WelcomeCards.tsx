@@ -41,14 +41,14 @@ export const WelcomeCards = () => {
       <Card>
         <InnerCard>
           <Text
-            color={colors.text_primary_on_brand}
+            color={colors.textPrimaryOnBrand}
             fontWeight={400}
             label={texts.card1.title}
             lineHeight={isTablet ? 32 : 44}
             size={isTablet ? 1.5 : 2.25}
           />
           <Text
-            color={colors.text_tertiary_600}
+            color={colors.textTertiary600}
             fontFamily="Inter"
             fontWeight={500}
             label={texts.card1.description}
@@ -56,7 +56,7 @@ export const WelcomeCards = () => {
             size={isTablet ? 1 : 1.25}
           />
           <MenuButton
-            color={colors.button_tertiary_color_fg}
+            color={colors.buttonTertiaryColorFg}
             label={texts.card1.buttonLabel}
             link={texts.card1.buttonLink}
             padding="0px"
@@ -68,7 +68,7 @@ export const WelcomeCards = () => {
         <Card isSmallerCard style={{ position: 'relative' }}>
           <InnerCard isSmallerCard>
             <Text
-              color={colors.text_primary_on_brand}
+              color={colors.textPrimaryOnBrand}
               fontWeight={400}
               label={texts.card2.title}
               lineHeight={isTablet ? 32 : 60}
@@ -76,7 +76,7 @@ export const WelcomeCards = () => {
               textPlacing="center"
             />
             <Text
-              color={colors.text_primary_on_brand}
+              color={colors.textPrimaryOnBrand}
               fontWeight={700}
               label={texts.card2.description}
               size={isTablet ? 0.875 : 1}
@@ -88,7 +88,7 @@ export const WelcomeCards = () => {
         <Card isSmallerCard>
           <InnerCard isSmallerCard>
             <Text
-              color={colors.text_primary_on_brand}
+              color={colors.textPrimaryOnBrand}
               fontWeight={400}
               label={texts.card3.title}
               lineHeight={isTablet ? 32 : 60}
@@ -96,7 +96,7 @@ export const WelcomeCards = () => {
               textPlacing="center"
             />
             <Text
-              color={colors.text_primary_on_brand}
+              color={colors.textPrimaryOnBrand}
               fontWeight={700}
               label={texts.card3.description}
               size={isTablet ? 0.875 : 1}
@@ -122,7 +122,7 @@ const Container = styled.div`
 `;
 
 const Card = styled.div<{ isSmallerCard?: boolean }>`
-  background-color: ${colors.utility_gray};
+  background-color: ${colors.utilityGray};
   border-radius: ${radius['4xl']};
   display: flex;
   flex: 1;
