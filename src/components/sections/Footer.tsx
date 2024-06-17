@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 import fida from 'assets/logos/fidaLogo.svg';
 
-import { menuItems, socials } from 'data/menuItems';
+import { menuItems } from 'data/menuItems';
+import { socials } from 'data/socials';
 import { colors } from 'theme';
 import { Text } from '../_common/Text';
 import { Container } from '../_common/Container';

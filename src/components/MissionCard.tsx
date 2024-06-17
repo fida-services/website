@@ -39,7 +39,7 @@ export const MissionCard = (props: MissionCardProps) => {
         <ImageWrapper isReversed={isReversed} src={imageSrc} alt="risk" />
         <InnerCard>
           <Text
-            color={colors.text_primary_on_brand}
+            color={colors.textPrimaryOnBrand}
             fontFamily="Inter"
             fontWeight={400}
             isRoseText={isRoseText}
@@ -63,7 +63,7 @@ export const MissionCard = (props: MissionCardProps) => {
             <ReadMore text={description} limit={MAX_DESCRIPTION_LENGTH} />
           ) : (
             <Text
-              color={colors.button_tertiary_color_fg}
+              color={colors.buttonTertiaryColorFg}
               fontFamily="Inter"
               fontWeight={500}
               label={description}

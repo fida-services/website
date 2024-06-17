@@ -27,7 +27,7 @@ export const ReadMore = (props: ReadMoreProps) => {
     <div>
       <TextWrapper>
         <Text
-          color={colors.button_tertiary_color_fg}
+          color={colors.buttonTertiaryColorFg}
           fontFamily="Inter"
           fontWeight={500}
           label={isExpanded ? text : `${text?.slice(0, limit)}...`}
@@ -37,7 +37,7 @@ export const ReadMore = (props: ReadMoreProps) => {
       </TextWrapper>
       <StyledButton onClick={toggleText}>
         <Text
-          color={colors.button_tertiary_color_fg}
+          color={colors.buttonTertiaryColorFg}
           fontWeight={700}
           label={isExpanded ? 'Read Less' : 'Read More'}
           lineHeight={isTablet ? 20 : 28}

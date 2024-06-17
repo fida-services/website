@@ -23,7 +23,7 @@ export const JoinNetwork = () => {
       <ContentWrapper>
         <FidaLogo />
         <Text
-          color={colors.text_primary_on_brand}
+          color={colors.textPrimaryOnBrand}
           fontWeight={400}
           label={texts.title}
           lineHeight={isTablet ? 38 : 72}
@@ -31,7 +31,7 @@ export const JoinNetwork = () => {
           textPlacing="center"
         />
         <Text
-          color={colors.button_tertiary_color_fg}
+          color={colors.buttonTertiaryColorFg}
           fontFamily="Inter"
           fontWeight={500}
           label={texts.description}
@@ -44,7 +44,7 @@ export const JoinNetwork = () => {
           <StyledButton>
             <Text
               size={1}
-              color={colors.button_secondary_fg}
+              color={colors.buttonSecondaryFg}
               label={texts.buttonLabel}
               lineHeight={24}
               fontWeight={700}
@@ -101,7 +101,7 @@ const InputWrapper = styled.div`
 const StyledButton = styled.button`
   background: ${colors.white};
   border-radius: 25px;
-  border: 1px solid ${colors.button_secondary_border};
+  border: 1px solid ${colors.buttonSecondaryBorder};
   padding: 10px 15px;
   text-align: center;
   transition: 0.5s;
@@ -114,12 +114,12 @@ const StyledButton = styled.button`
 
 const Input = styled.input`
   background: ${colors.white};
-  border: 1px solid ${colors.button_secondary_border};
+  border: 1px solid ${colors.buttonSecondaryBorder};
   border-radius: ${radius.full};
   padding: 10px 14px;
 
   ::placeholder {
-    color: ${colors.text_placeholder};
+    color: ${colors.textPlaceholder};
     font-family: 'Satoshi-Variable';
     font-weight: 400;
     line-height: 24px;

@@ -46,7 +46,7 @@ export const PhaseItem = (props: PhaseItemProps) => {
       </Line>
       <Container rightPosition={rightPosition}>
         <Text
-          color={colors.text_primary_on_brand}
+          color={colors.textPrimaryOnBrand}
           fontWeight="700"
           label={`Phase ${index}`}
           lineHeight={isMobile ? 32 : 38}
@@ -72,7 +72,7 @@ const MainContainer = styled.div<MainContainerProps>`
 `;
 
 const Container = styled.div<ContainerProps>`
-  background-color: ${colors.utility_gray};
+  background-color: ${colors.utilityGray};
   border-left: solid ${colors.blue} 5px;
   border-radius: ${({ rightPosition }) => (rightPosition ? '64px 0px 64px 0px' : '0px 64px 0px 64px')};
   padding: 24px 32px;
@@ -109,7 +109,7 @@ const ListWrapper = styled.ul`
 `;
 
 const ListItem = styled.li`
-  color: ${colors.button_tertiary_color_fg};
+  color: ${colors.buttonTertiaryColorFg};
   font-family: 'Inter';
   font-size: 1.25rem;
   font-weight: 500;
@@ -117,7 +117,7 @@ const ListItem = styled.li`
   list-style-position: outside;
 
   ::marker {
-    color: ${colors.rose_dot};
+    color: ${colors.roseDot};
   }
 
   @media (min-width: 1024px) {
