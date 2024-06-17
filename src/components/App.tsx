@@ -1,40 +1,42 @@
-import React from 'react';
 import styled from 'styled-components';
-import { ScrollContainer } from 'react-scroll-motion';
+import { useMediaQuery } from 'react-responsive';
 
-import { Welcome } from './Welcome';
-import { Description } from './Description';
-import { StickyOverlappingSections } from './StickyOverlappingSections';
-import { JoinNetwork } from './JoinNetwork';
-import { SignUpBelow } from './SignUpBelow';
-import { Slider } from './slider/Slider';
-import { KeepingSecure } from './KeepingSecure';
-import { SafetyInfo } from './SafetyInfo';
-import { Security } from './Security';
-import { Footer } from './Footer';
-import { Partners } from './Partners';
+import { Header } from './Header';
+import { Welcome } from './sections/Welcome';
+import { maxWidth640 } from './rwd/detectMobile';
+import { OurMission } from './sections/OurMission';
+import { ConquerRisk } from './sections/ConquerRisk';
+import { FidaMarketplace } from './sections/FidaMarketplace';
+import { SeemlessAI } from './sections/SeemlessAI';
+import { RoadMap } from './sections/RoadMap';
+import { JoinNetwork } from './sections/JoinNetwork';
+import { Footer } from './sections/Footer';
 
-const App = () => (
-  <ViewportWrapper>
-    <MainWrapper>
-      <ScrollContainer>
-        <Welcome />
-        <Description />
-        <StickyOverlappingSections isLaptop />
-        <StickyOverlappingSections isPhone />
-        <StickyOverlappingSections isScreen isLast />
-        <JoinNetwork />
-        <SignUpBelow />
-        <Slider />
-        <KeepingSecure />
-        <SafetyInfo />
-        {/* <Security /> */}
-        {/* <Partners /> */}
-        <Footer />
-      </ScrollContainer>
-    </MainWrapper>
-  </ViewportWrapper>
-);
+const App = () => {
+  const isTablet = useMediaQuery({
+    query: maxWidth640,
+  });
+
+  return (
+    <ViewportWrapper>
+      <MainWrapper>
+        <Header />
+        <Container isTablet={isTablet}>
+          <Welcome />
+          <OurMission />
+          <ConquerRisk />
+          <FidaMarketplace />
+        </Container>
+        <SeemlessAI />
+        <Container isTablet={isTablet}>
+          <RoadMap />
+          <JoinNetwork />
+          <Footer />
+        </Container>
+      </MainWrapper>
+    </ViewportWrapper>
+  );
+};
 
 const ViewportWrapper = styled.div`
   width: 100%;
@@ -43,8 +45,13 @@ const ViewportWrapper = styled.div`
 
 const MainWrapper = styled.div`
   color: white;
-  max-width: 1440px;
   margin: 0 auto;
+`;
+
+const Container = styled.div<{ isTablet: boolean }>`
+  color: white;
+  margin: 0 auto;
+  margin: ${({ isTablet }) => (isTablet ? '0 16px' : '0 48px')};
 `;
 
 export default App;
