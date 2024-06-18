@@ -40,6 +40,7 @@ const Container = styled.div`
   align-items: center;
   display: grid;
   margin-bottom: 16px;
+  overflow: hidden;
   position: relative;
   
   @media (min-width: 1024px) {

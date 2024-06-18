@@ -56,6 +56,7 @@ const FooterWrapper = styled.div`
   display: flex;
   padding: 56px 0px;
   flex-direction: column;
+  overflow: hidden;
 
   @media (min-width: 1024px) {
     flex-direction: row;

@@ -19,7 +19,8 @@ export const colors = {
   buttonSecondaryBorder: '#D0D5DD',
   textPlaceholder: '#667085',
   roseDot: '#9B3AAC',
-  blue: '#3742F5'
+  blue: '#3742F5',
+  borderStep: '#676767'
 };
 
 export const radius = {

@@ -49,6 +49,7 @@ const CardsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow: hidden;
 
   @media (min-width: 1024px) {
     gap: 0px;

@@ -18,38 +18,26 @@ const App = () => {
   });
 
   return (
-    <ViewportWrapper>
-      <MainWrapper>
-        <Header />
-        <Container isTablet={isTablet}>
-          <Welcome />
-          <OurMission />
-          <ConquerRisk />
-          <FidaMarketplace />
-        </Container>
-        <SeemlessAI />
-        <Container isTablet={isTablet}>
-          <RoadMap />
-          <JoinNetwork />
-          <Footer />
-        </Container>
-      </MainWrapper>
-    </ViewportWrapper>
+    <div>
+      <Header />
+      <Container isTablet={isTablet}>
+        <Welcome />
+        <OurMission />
+        <ConquerRisk />
+        <FidaMarketplace />
+      </Container>
+      <SeemlessAI />
+      <Container isTablet={isTablet}>
+        <RoadMap />
+        <JoinNetwork />
+        <Footer />
+      </Container>
+    </div>
   );
 };
 
-const ViewportWrapper = styled.div`
-  width: 100%;
-  overflow: hidden;
-`;
-
-const MainWrapper = styled.div`
-  color: white;
-  margin: 0 auto;
-`;
-
 const Container = styled.div<{ isTablet: boolean }>`
-  color: white;
+  // color: white;
   margin: 0 auto;
   margin: ${({ isTablet }) => (isTablet ? '0 16px' : '0 48px')};
 `;
