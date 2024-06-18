@@ -12,7 +12,7 @@ import 'swiper/css/thumbs';
 import './styles.css';
 
 import appPhone from 'assets/images/sliderPic.svg';
-import sliderData from 'components/slider/sliderData.json';
+import sliderData from 'components/slider/sliderData';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
 import { Text } from 'components/_common/Text';
 

@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
 import { missionItems } from 'data/missionItems';
+import { Slider } from 'components/slider/Slider';
 import { maxWidth840 } from '../rwd/detectMobile';
 import { MissionCard } from '../MissionCard';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
@@ -51,6 +52,7 @@ export const OurMission = () => {
           <MissionCard {...item} />
         ))}
       </CardsWrapper>
+      <Slider />
     </Container>
   );
 };

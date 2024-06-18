@@ -50,7 +50,7 @@ export const Welcome = () => {
 
 const StyledWelcome = styled.div`
   display: grid;
-  overflow: visible;
+  overflow: hidden;;
   position: relative;
 
   @media (min-width: 1024px) {
