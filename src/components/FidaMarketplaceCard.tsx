@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 import diagramIcon from 'assets/icons/diagram.svg';
 import fidaOverlay from 'assets/overlays/fida-overlay.svg';
-import { Text } from 'components/_common/Text';
 import { colors, radius } from 'theme';
+import { transition, transformVariant } from 'constants/motionConfig';
 import { maxWidth840 } from './rwd/detectMobile';
+import { AnimatedText } from './_common/AnimatedText';
 
 interface FidaMarketplaceCardProps {
   description: string;
@@ -16,6 +19,7 @@ interface FidaMarketplaceCardProps {
 
 export const FidaMarketplaceCard = (props: FidaMarketplaceCardProps) => {
   const { description, imageSrc, title, isReversed } = props;
+  const ref = useRef(null);
 
   const isTablet = useMediaQuery({
     query: maxWidth840,
@@ -33,20 +37,29 @@ export const FidaMarketplaceCard = (props: FidaMarketplaceCardProps) => {
       )}
       <Image
         alt="device"
+        initial="hidden"
         isReversed={isReversed}
         src={imageSrc}
+        transition={transition}
+        variants={transformVariant}
+        whileInView="visible"
       />
       <TextContainer isReversed={isReversed}>
-        <IconBox>
+        <IconBox
+          initial="hidden"
+          transition={transition}
+          variants={transformVariant}
+          whileInView="visible"
+        >
           <Icon src={diagramIcon} alt="diagram" />
         </IconBox>
-        <Text
+        <AnimatedText
           color={colors.textPrimaryOnBrand}
           fontWeight={400}
           label={title}
           size={isTablet ? 1.875 : 3}
         />
-        <Text
+        <AnimatedText
           color={colors.buttonTertiaryColorFg}
           fontWeight={400}
           label={description}
@@ -62,6 +75,7 @@ const Container = styled.div<{ isReversed?: boolean }>`
   display: grid;
   gap: 16px;
   position: relative;
+  scroll-snap-align: center;
 
   @media (min-width: 1024px) {
     gap: 0px;
@@ -83,7 +97,7 @@ const LinesBg = styled.img`
   }
 `;
 
-const Image = styled.img<{ isReversed?: boolean }>`
+const Image = styled(motion.img)<{ isReversed?: boolean }>`
   border-radius: ${radius['4xl']};
   height: 100%;
   width: 100%;
@@ -116,7 +130,7 @@ const TextContainer = styled.div<{ isReversed?: boolean }>`
   }
 `;
 
-const IconBox = styled.div`
+const IconBox = styled(motion.div)`
   align-items: center;
   background: ${colors.iconGradient};
   border-radius: ${radius.md};

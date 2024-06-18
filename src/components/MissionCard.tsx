@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import { motion } from 'framer-motion';
 
 import ourMissionOverlay from 'assets/overlays/mission-overlay.svg';
-import { Text } from 'components/_common/Text';
 import { colors, radius } from 'theme';
+import { transformVariant, transition } from 'constants/motionConfig';
 import { maxWidth840 } from './rwd/detectMobile';
 import { ReadMore } from './ReadMore';
+import { AnimatedText } from './_common/AnimatedText';
 
 interface MissionCardProps {
   description: string;
@@ -36,9 +38,22 @@ export const MissionCard = (props: MissionCardProps) => {
         ) : (
           null
         )}
-        <ImageWrapper isReversed={isReversed} src={imageSrc} alt="risk" />
-        <InnerCard>
-          <Text
+        <ImageWrapper
+          alt="risk"
+          initial="hidden"
+          isReversed={isReversed}
+          src={imageSrc}
+          variants={transformVariant}
+          whileInView="visible"
+          transition={transition}
+        />
+        <InnerCard
+          initial="hidden"
+          transition={transition}
+          variants={transformVariant}
+          whileInView="visible"
+        >
+          <AnimatedText
             color={colors.textPrimaryOnBrand}
             fontFamily="Inter"
             fontWeight={400}
@@ -48,7 +63,7 @@ export const MissionCard = (props: MissionCardProps) => {
             size={isTablet ? 1.875 : 3.75}
           />
           {subtitle ? (
-            <Text
+            <AnimatedText
               color={colors.rose}
               fontFamily="Inter"
               fontWeight={500}
@@ -62,7 +77,7 @@ export const MissionCard = (props: MissionCardProps) => {
           {description?.length >= MAX_DESCRIPTION_LENGTH && isTablet ? (
             <ReadMore text={description} limit={MAX_DESCRIPTION_LENGTH} />
           ) : (
-            <Text
+            <AnimatedText
               color={colors.buttonTertiaryColorFg}
               fontFamily="Inter"
               fontWeight={500}
@@ -118,7 +133,7 @@ const LinesBg = styled.img`
   }
 `;
 
-const ImageWrapper = styled.img<{ isReversed?: boolean }>`
+const ImageWrapper = styled(motion.img)<{ isReversed?: boolean }>`
   width: 100%;
 
   @media (min-width: 1024px) {
@@ -127,7 +142,7 @@ const ImageWrapper = styled.img<{ isReversed?: boolean }>`
   }
 `;
 
-const InnerCard = styled.div`
+const InnerCard = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 16px;

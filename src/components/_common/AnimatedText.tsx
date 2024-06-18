@@ -1,11 +1,14 @@
 /* eslint-disable no-else-return */
 /* eslint-disable no-nested-ternary */
+import { transformVariant, transition } from 'constants/motionConfig';
+import { motion, MotionStyle } from 'framer-motion';
 import { CSSProperties, useCallback } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { colors } from 'theme';
 
 interface StyledProps {
+  animatedStyle?: MotionStyle
   size?: number
   color?: string
   linearGradient?: boolean;
@@ -25,22 +28,28 @@ interface Props extends StyledProps {
 
 const roseReg = /(<rose>|<\/rose>)/;
 
-export const Text = (props: Props) => {
-  const { label, toUpperCase, color, linearGradient, lineHeight, size, textPlacing, fontWeight, fontFamily, hoverTransition, noTextWrap, isRoseText } = props;
+export const AnimatedText = (props: Props) => {
+  const { animatedStyle, label, toUpperCase, color, linearGradient, lineHeight, size, textPlacing, fontWeight, fontFamily, hoverTransition, noTextWrap, isRoseText } = props;
 
   const renderText = useCallback(
     (text: string, index: number, isRose: boolean) => (
       <StyledSpan
-        color={isRose ? colors.rose : color}
-        fontFamily={fontFamily}
-        fontWeight={fontWeight}
-        hoverTransition={hoverTransition}
+        variants={transformVariant}
+        initial="hidden"
+        whileInView="visible"
+        animate="show"
+        style={animatedStyle}
         key={index}
+        textPlacing={textPlacing}
+        color={isRose ? colors.rose : color}
+        fontWeight={fontWeight}
+        size={size}
         linearGradient={linearGradient}
         lineHeight={lineHeight}
+        hoverTransition={hoverTransition}
         noTextWrap={noTextWrap}
-        size={size}
-        textPlacing={textPlacing}
+        fontFamily={fontFamily}
+        transition={transition}
       >
         {toUpperCase ? text.toUpperCase() : text}
       </StyledSpan>
@@ -65,22 +74,28 @@ export const Text = (props: Props) => {
 
   return (
     <StyledSpan
+      variants={transformVariant}
+      initial="hidden"
+      animate="show"
+      whileInView="visible"
+      style={animatedStyle}
+      textPlacing={textPlacing}
       color={color}
-      fontFamily={fontFamily}
       fontWeight={fontWeight}
-      hoverTransition={hoverTransition}
+      size={size}
       linearGradient={linearGradient}
       lineHeight={lineHeight}
+      hoverTransition={hoverTransition}
       noTextWrap={noTextWrap}
-      size={size}
-      textPlacing={textPlacing}
+      fontFamily={fontFamily}
+      transition={transition}
     >
       {isRoseText ? formattedText : toUpperCase ? label.toUpperCase() : label}
     </StyledSpan>
   );
 };
 
-const StyledSpan = styled.span<StyledProps>`
+const StyledSpan = styled(motion.span)<StyledProps>`
     color: ${({ color, linearGradient }) => ((color && !linearGradient) ? color : colors.white)};
     background: ${({ linearGradient, color }) => (linearGradient && color ? color : 'none')};
     font-size: ${({ size }) => (size ? `${size}rem` : '16px')};
@@ -96,13 +111,4 @@ const StyledSpan = styled.span<StyledProps>`
     white-space: pre-line;
 
     ${({ noTextWrap }) => noTextWrap && 'white-space: nowrap;'}
-    
-    transition: 0.5s;
-
-      &:hover {
-      ${({ hoverTransition }) => hoverTransition
-        && css`
-          opacity: 0.7;
-        `}
-      }
 `;
