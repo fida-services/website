@@ -12,7 +12,7 @@ export const Footer = () => {
   const { iterableItems } = menuItems;
 
   return (
-    <Container>
+    <Container style={{ marginBottom: '0px' }}>
       <FooterWrapper>
         <LogoWrapper>
           <img src={fida} alt="fida logo" />

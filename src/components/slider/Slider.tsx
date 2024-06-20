@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
+import { maxWidth840 } from 'components/rwd/detectMobile';
 import { SliderCard } from './SliderCard';
 import { sliderData } from './sliderData';
 
@@ -10,8 +12,11 @@ export const Slider = () => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
+  const isTablet = useMediaQuery({
+    query: maxWidth840,
+  });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-67%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', isTablet ? '-68%' : '-67%']);
 
   return (
     <MainContainer ref={targetRef}>

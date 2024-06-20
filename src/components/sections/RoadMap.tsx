@@ -1,9 +1,12 @@
 /* eslint-disable react/no-array-index-key */
 import { SyntheticEvent, useState } from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 
 import roadMap from 'assets/images/road-map.svg';
+import { maxWidth840 } from 'components/rwd/detectMobile';
 import { PhaseItem } from 'components/PhaseItem';
+import { PhasesSwiper } from 'components/rwd/PhasesSwiper';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
 
@@ -36,6 +39,10 @@ export const RoadMap = () => {
   const [imageHeight, setImageHeight] = useState(0);
   const [imageWidth, setImageWidth] = useState(0);
 
+  const isTablet = useMediaQuery({
+    query: maxWidth840,
+  });
+
   const onImageLoad = (e: SyntheticEvent<HTMLImageElement, Event>) => {
     const imageElement = e.currentTarget;
     setImageHeight(imageElement.offsetHeight);
@@ -46,28 +53,60 @@ export const RoadMap = () => {
     <Container>
       <ContentWrapper>
         <BaseTextWithDescription description={texts.description} title={texts.title} />
-        <Image onLoad={onImageLoad} src={roadMap} alt="road-map" />
-        <PhasesContainer>
-          <PhaseItem height={imageHeight} width={imageWidth} index={1} isActive dots={texts?.phases[0].dots} />
-          {/* TODO: prepare for animations */}
-          {/* {texts?.phases?.map((phase, index) => (
-            <PhaseItem height={imageHeight} width={imageWidth} key={index} index={index} isActive dots={phase?.dots} />
-          ))} */}
-        </PhasesContainer>
+        <div style={{ position: 'relative' }}>
+          <ImageWrapper>
+            <Image onLoad={onImageLoad} src={roadMap} alt="road-map" />
+          </ImageWrapper>
+          {isTablet ? <PhasesSwiper height={imageHeight} /> : (
+            <PhasesContainer>
+              {texts?.phases?.map((phase, index) => (
+                <PhaseItem
+                  dots={phase?.dots}
+                  height={imageHeight}
+                  index={index + 1}
+                  isActive
+                  key={index}
+                  rightPosition={index % 2 !== 0}
+                  width={imageWidth}
+                />
+              ))}
+            </PhasesContainer>
+          )}
+        </div>
       </ContentWrapper>
     </Container>
   );
 };
 
 const ContentWrapper = styled.div`
+  height: 100vh
   position: relative;
+
+  @media (min-width: 1024px) {
+    height: auto;
+  }
 `;
 
 const PhasesContainer = styled.div`
-  position: relative;
-  height: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
 `;
 
 const Image = styled.img`
   width: 100%;
+
+  @media (min-width: 1024px) {
+    width: auto;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;

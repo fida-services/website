@@ -7,44 +7,43 @@ import { Text } from './_common/Text';
 import { maxWidth640 } from './rwd/detectMobile';
 
 interface ContainerProps {
-  index?: number
   rightPosition?: boolean
+  top?: number
 }
 
 interface MainContainerProps {
-  index?: number
   isActive?: boolean
-  top: number
+  rightPosition?: boolean
 }
 
 interface LineProps {
-  size: number
-  index: number
-  width: number
+  size?: number
+  rightPosition?: boolean
 }
 
-interface PhaseItemProps extends ContainerProps {
+interface PhaseItemProps {
   dots: string[]
   height: number
   index: number
   isActive?: boolean
   width: number
+  rightPosition?: boolean
 }
 
 export const PhaseItem = (props: PhaseItemProps) => {
   const { height, index, isActive, rightPosition, dots, width } = props;
-  const { phaseHeight, phaseWidth, top } = usePhaseSize({ height, width, phaseIndex: index });
+  const { phaseWidth, top } = usePhaseSize({ height, width, phaseIndex: index });
 
   const isMobile = useMediaQuery({
     query: maxWidth640,
   });
 
   return (
-    <MainContainer index={index} isActive={isActive} top={top}>
-      <Line index={index} size={phaseHeight} width={phaseWidth}>
-        <LineDot />
-      </Line>
-      <Container rightPosition={rightPosition}>
+    <MainContainer isActive={isActive} rightPosition={rightPosition}>
+      <Container rightPosition={rightPosition} top={top}>
+        <Line rightPosition={rightPosition} size={phaseWidth}>
+          <LineDot rightPosition={rightPosition} />
+        </Line>
         <Text
           color={colors.textPrimaryOnBrand}
           fontWeight="700"
@@ -65,22 +64,26 @@ export const PhaseItem = (props: PhaseItemProps) => {
 };
 
 const MainContainer = styled.div<MainContainerProps>`
-  // opacity: 0;
-  // opacity: ${({ isActive }) => (isActive ? '1' : '0.2')};
-  margin-top: ${({ top }) => `-${top}px`};
-  position: absolute;
+  display: flex;
+  justify-content: ${({ rightPosition }) => (rightPosition ? 'end' : 'start')};;
+  left: ${({ rightPosition }) => (rightPosition ? 'auto' : '0px')};
+  opacity: ${({ isActive }) => (isActive ? '1' : '0.2')};
+  right: ${({ rightPosition }) => (rightPosition ? '0px' : 'auto')};
 `;
 
 const Container = styled.div<ContainerProps>`
   background-color: ${colors.utilityGray};
-  border-left: solid ${colors.blue} 5px;
+  border-bottom: solid ${colors.blue} 5px;
+  border-left: none;
   border-radius: ${({ rightPosition }) => (rightPosition ? '64px 0px 64px 0px' : '0px 64px 0px 64px')};
-  padding: 24px 32px;
+  height: fit-content;
+  margin-top: ${({ rightPosition, top }) => (rightPosition ? `${top}px` : '0px')};
+  padding: 32px 42px;
+  position: relative;
+  width: 330px;
 
-  @media (min-width: 1024px) {
-    border-bottom: solid ${colors.blue} 5px;
-    border-left: none;
-    padding: 32px 42px;
+  @media (min-width: 1440px) {
+    width: 425px;
   }
 `;
 
@@ -88,17 +91,20 @@ const Line = styled.div<LineProps>`
   border-top-left-radius: 8px;
   border-left: solid ${colors.blue} 5px;
   border-top: solid ${colors.blue} 5px;
-  height: ${({ size }) => `${size}px`};
-  position: relative;
-  width: ${({ width }) => `${width}px`};
+  position: absolute;
+  width: ${({ size }) => `${size}vw`};
+  bottom: -5px;
+  left: ${({ rightPosition }) => (rightPosition ? 'auto' : '60px')};
+  right: ${({ rightPosition }) => (rightPosition ? '60px' : 'auto')};
 `;
 
-const LineDot = styled.div`
+const LineDot = styled.div<{ rightPosition?: boolean }>`
   background-color: ${colors.blue};
   border-radius: ${radius.full};
   height: 15px;
   position: absolute;
-  right: -4px;
+  left: ${({ rightPosition }) => (rightPosition ? '-5px' : 'auto')};
+  right: ${({ rightPosition }) => (rightPosition ? 'auto' : '-4px')};
   top: -9px;
   width: 15px;
 `;
@@ -111,17 +117,11 @@ const ListWrapper = styled.ul`
 const ListItem = styled.li`
   color: ${colors.buttonTertiaryColorFg};
   font-family: 'Inter';
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  line-height: 30px;
-  list-style-position: outside;
+  line-height: 32px;
 
   ::marker {
     color: ${colors.roseDot};
-  }
-
-  @media (min-width: 1024px) {
-    font-size: 1.5rem;
-    line-height: 32px;
   }
 `;

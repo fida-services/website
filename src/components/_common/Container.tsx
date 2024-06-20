@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 interface ContainerProps {
   children: JSX.Element[] | JSX.Element
+  style?: React.CSSProperties
 }
 
-export const Container = ({ children }: ContainerProps) => (
-  <StyledContainer>
+export const Container = ({ children, style }: ContainerProps) => (
+  <StyledContainer style={style}>
     {children}
   </StyledContainer>
 );

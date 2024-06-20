@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import 'swiper/css';
 
 import { Header } from './Header';
 import { Welcome } from './sections/Welcome';
@@ -37,7 +38,6 @@ const App = () => {
 };
 
 const Container = styled.div<{ isTablet: boolean }>`
-  // color: white;
   margin: 0 auto;
   margin: ${({ isTablet }) => (isTablet ? '0 16px' : '0 48px')};
 `;
