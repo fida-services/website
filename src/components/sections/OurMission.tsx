@@ -49,7 +49,7 @@ export const OurMission = () => {
       </BottomSection>
       <CardsWrapper>
         {missionItems?.map(item => (
-          <MissionCard {...item} />
+          <MissionCard key={item?.title} {...item} />
         ))}
       </CardsWrapper>
       <Slider />
