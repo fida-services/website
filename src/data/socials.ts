@@ -9,22 +9,22 @@ export const socials = [
   {
     src: discord,
     name: 'discord',
-    link: 'https://twitter.com/fida_finance'
+    link: 'https://discord.gg/BN4NJebn'
   },
   {
     src: github,
     name: 'github',
-    link: 'https://t.me/+ZQqwyHJDSUJiYTdh'
+    link: 'https://github.com/fida-services'
   },
   {
     src: medium,
     name: 'medium',
-    link: 'https://www.linkedin.com/company/fida-finance/'
+    link: 'https://medium.com/@adelmonte'
   },
   {
     src: youtube,
     name: 'youtube',
-    link: 'https://www.linkedin.com/company/fida-finance/'
+    link: 'https://youtube.com/fida_finance'
   },
   {
     src: linkedin,
@@ -34,6 +34,6 @@ export const socials = [
   {
     src: twitter,
     name: 'twitter',
-    link: 'https://www.linkedin.com/company/fida-finance/'
+    link: 'https://twitter.com/fida_finance'
   },
 ];
