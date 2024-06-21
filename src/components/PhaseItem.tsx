@@ -6,11 +6,6 @@ import { usePhaseSize } from 'hooks/usePhaseSize';
 import { Text } from './_common/Text';
 import { maxWidth640 } from './rwd/detectMobile';
 
-interface ContainerProps {
-  rightPosition?: boolean
-  top?: number
-}
-
 interface MainContainerProps {
   isActive?: boolean
   rightPosition?: boolean
@@ -32,7 +27,7 @@ interface PhaseItemProps {
 
 export const PhaseItem = (props: PhaseItemProps) => {
   const { height, index, isActive, rightPosition, dots, width } = props;
-  const { phaseWidth, top } = usePhaseSize({ height, width, phaseIndex: index });
+  const { phaseWidth } = usePhaseSize({ height, width, phaseIndex: index });
 
   const isMobile = useMediaQuery({
     query: maxWidth640,
@@ -40,7 +35,7 @@ export const PhaseItem = (props: PhaseItemProps) => {
 
   return (
     <MainContainer isActive={isActive} rightPosition={rightPosition}>
-      <Container rightPosition={rightPosition} top={top}>
+      <Container rightPosition={rightPosition} id={`phase-item-${index}`}>
         <Line rightPosition={rightPosition} size={phaseWidth}>
           <LineDot rightPosition={rightPosition} />
         </Line>
@@ -69,20 +64,23 @@ const MainContainer = styled.div<MainContainerProps>`
   left: ${({ rightPosition }) => (rightPosition ? 'auto' : '0px')};
   opacity: ${({ isActive }) => (isActive ? '1' : '0.2')};
   right: ${({ rightPosition }) => (rightPosition ? '0px' : 'auto')};
+  transition: 1s;
+  transition-delay: 0.01s;
 `;
 
-const Container = styled.div<ContainerProps>`
+const Container = styled.div<{ rightPosition?: boolean }>`
   background-color: ${colors.utilityGray};
   border-bottom: solid ${colors.blue} 5px;
   border-left: none;
   border-radius: ${({ rightPosition }) => (rightPosition ? '64px 0px 64px 0px' : '0px 64px 0px 64px')};
   height: fit-content;
-  margin-top: ${({ rightPosition, top }) => (rightPosition ? `${top}px` : '0px')};
+  margin-top: ${({ rightPosition }) => (rightPosition ? '100px' : '0px')};
   padding: 32px 42px;
   position: relative;
   width: 330px;
 
   @media (min-width: 1440px) {
+    margin-top: ${({ rightPosition }) => (rightPosition ? '115px' : '0px')};
     width: 425px;
   }
 `;
