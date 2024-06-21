@@ -14,7 +14,7 @@ export const menuItems = {
     },
     {
       label: 'github',
-      link: 'https://docsend.com/view/vk3buz5675z2siuy',
+      link: 'https://github.com/fida-services',
     },
   ],
   joinNetwork: {
