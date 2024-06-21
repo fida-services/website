@@ -7,7 +7,7 @@ import roadMap from 'assets/images/road-map.svg';
 import { maxWidth840 } from 'components/rwd/detectMobile';
 import { PhaseItem } from 'components/PhaseItem';
 import { PhasesSwiper } from 'components/rwd/PhasesSwiper';
-import { useScrollspy } from 'hooks/useScrollSpy';
+import { useScrollSpy } from 'hooks/useScrollSpy';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
 
@@ -28,7 +28,7 @@ export const RoadMap = () => {
   const [imageHeight, setImageHeight] = useState(0);
   const [imageWidth, setImageWidth] = useState(0);
   const ids = ['phase-item-1', 'phase-item-2', 'phase-item-3', 'phase-item-4', 'phase-item-5', 'phase-item-6'];
-  const activeId = useScrollspy(ids, 500);
+  const activeId = useScrollSpy(ids, 500);
 
   const isTablet = useMediaQuery({
     query: maxWidth840,
@@ -53,7 +53,6 @@ export const RoadMap = () => {
               {texts?.phases?.map((phase, index) => (
                 <PhaseItem
                   dots={phase}
-                  height={imageHeight}
                   index={index + 1}
                   isActive={index + 1 === +activeId[activeId.length - 1]}
                   key={index}

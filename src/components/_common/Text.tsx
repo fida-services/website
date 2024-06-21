@@ -6,15 +6,15 @@ import styled, { css } from 'styled-components';
 import { colors } from 'theme';
 
 interface StyledProps {
-  size?: number
   color?: string
-  linearGradient?: boolean;
-  lineHeight?: number;
-  hoverTransition?: boolean;
-  noTextWrap?: boolean;
-  textPlacing?: CSSProperties['textAlign']
   fontFamily?: CSSProperties['fontFamily']
   fontWeight?: CSSProperties['fontWeight']
+  hoverTransition?: boolean;
+  linearGradient?: boolean;
+  lineHeight?: number;
+  noTextWrap?: boolean;
+  size?: number
+  textPlacing?: CSSProperties['textAlign']
 }
 
 interface Props extends StyledProps {
@@ -26,7 +26,20 @@ interface Props extends StyledProps {
 const roseReg = /(<rose>|<\/rose>)/;
 
 export const Text = (props: Props) => {
-  const { label, toUpperCase, color, linearGradient, lineHeight, size, textPlacing, fontWeight, fontFamily, hoverTransition, noTextWrap, isRoseText } = props;
+  const {
+    color,
+    fontFamily,
+    fontWeight,
+    hoverTransition,
+    isRoseText,
+    label,
+    linearGradient,
+    lineHeight,
+    noTextWrap,
+    size,
+    textPlacing,
+    toUpperCase
+  } = props;
 
   const renderText = useCallback(
     (text: string, index: number, isRose: boolean) => (

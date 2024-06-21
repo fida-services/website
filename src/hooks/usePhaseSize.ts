@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 
 interface UsePhaseSizeInput {
-  height: number
   phaseIndex: number
   width: number
 }
 
 export const usePhaseSize = (props: UsePhaseSizeInput) => {
-  const { height, phaseIndex, width } = props;
+  const { phaseIndex, width } = props;
   const [phaseWidth, setPhaseWidth] = useState(0);
 
   useEffect(() => {
@@ -39,7 +38,7 @@ export const usePhaseSize = (props: UsePhaseSizeInput) => {
     }
 
     setPhaseWidth(newWidth);
-  }, [phaseIndex, height, width]);
+  }, [phaseIndex, width]);
 
   return { phaseWidth };
 };

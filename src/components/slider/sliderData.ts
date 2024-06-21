@@ -13,7 +13,6 @@ export const sliderData = [
     imageSrc: flag,
     isReversed: true,
     isRoseText: true,
-    // subtitleColor: colors.
     title: 'Fida is a <rose>Risk Transfer Protocol</rose> built on top of Cardano.'
   },
   {
