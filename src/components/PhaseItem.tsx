@@ -18,7 +18,6 @@ interface LineProps {
 
 interface PhaseItemProps {
   dots: string[]
-  height: number
   index: number
   isActive?: boolean
   width: number
@@ -26,8 +25,8 @@ interface PhaseItemProps {
 }
 
 export const PhaseItem = (props: PhaseItemProps) => {
-  const { height, index, isActive, rightPosition, dots, width } = props;
-  const { phaseWidth } = usePhaseSize({ height, width, phaseIndex: index });
+  const { index, isActive, rightPosition, dots, width } = props;
+  const { phaseWidth } = usePhaseSize({ width, phaseIndex: index });
 
   const isMobile = useMediaQuery({
     query: maxWidth640,

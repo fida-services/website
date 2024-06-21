@@ -7,7 +7,7 @@ const clamp = (value: number) => Math.max(0, value);
 // Check if number is between two values
 const isBetween = (value: number, floor: number, ceil: number) => value >= floor && value <= ceil;
 
-export const useScrollspy = (ids: any, offset: number = 0) => {
+export const useScrollSpy = (ids: any, offset: number = 0) => {
   const [activeId, setActiveId] = useState('');
 
   useLayoutEffect(() => {
