@@ -14,7 +14,7 @@ export default {
   args: {
     fontFamily: 'Satoshi-Variable',
     fontWeight: 400,
-    label: 'Lorem ipsum dolor sit amet.',
+    label: 'Hello world',
     size: 2,
     hoverTransition: false,
     lineHeight: 1.5,
