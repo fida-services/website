@@ -2,15 +2,15 @@ export const menuItems = {
   iterableItems: [
     {
       label: 'litepaper',
-      link: '#',
+      link: 'https://docs.fida.finance/whitepaper.pdf',
     },
     {
       label: 'documentation',
-      link: 'https://docsend.com/view/vk3buz5675z2siuy',
+      link: 'https://docs.fida.finance',
     },
     {
       label: 'blog',
-      link: 'https://docsend.com/view/vk3buz5675z2siuy',
+      link: 'https://medium.com/@adelmonte',
     },
     {
       label: 'github',
@@ -19,6 +19,6 @@ export const menuItems = {
   ],
   joinNetwork: {
     label: 'LAUNCH MARKETPLACE',
-    link: ' https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w',
+    link: '#marketplace',
   },
 };

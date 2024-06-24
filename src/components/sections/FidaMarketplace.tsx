@@ -34,7 +34,7 @@ export const FidaMarketplace = () => {
   ];
 
   return (
-    <Container>
+    <Container id="marketplace">
       <BaseTextWithDescription description={texts.description} title={texts.title} />
       <CardsWrapper>
         {fidaItems?.map(item => (
