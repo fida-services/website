@@ -7,6 +7,7 @@ import { Text } from './_common/Text';
 interface Props extends StyledProps {
   label: string;
   link: string;
+  onClickLink?: () => void
 }
 
 interface StyledTagA {
@@ -19,10 +20,10 @@ interface StyledProps extends StyledTagA {
 }
 
 export const MenuButton = (props: Props) => {
-  const { label, color, backgroundColor, border, link, padding } = props;
+  const { label, color, backgroundColor, border, link, padding, onClickLink } = props;
   return (
     <StyledMenuButton backgroundColor={backgroundColor} border={border}>
-      <StyledLink href={link} padding={padding}>
+      <StyledLink href={link} padding={padding} onClick={onClickLink}>
         <Text size={1} color={color} label={label} fontWeight={700} toUpperCase />
       </StyledLink>
     </StyledMenuButton>
