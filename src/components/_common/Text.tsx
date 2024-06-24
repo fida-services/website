@@ -10,7 +10,6 @@ interface StyledProps {
   fontFamily?: CSSProperties['fontFamily']
   fontWeight?: CSSProperties['fontWeight']
   hoverTransition?: boolean;
-  linearGradient?: boolean;
   lineHeight?: number;
   noTextWrap?: boolean;
   size?: number
@@ -33,7 +32,6 @@ export const Text = (props: Props) => {
     hoverTransition,
     isRoseText,
     label,
-    linearGradient,
     lineHeight,
     noTextWrap,
     size,
@@ -49,7 +47,6 @@ export const Text = (props: Props) => {
         fontWeight={fontWeight}
         hoverTransition={hoverTransition}
         key={index}
-        linearGradient={linearGradient}
         lineHeight={lineHeight}
         noTextWrap={noTextWrap}
         size={size}
@@ -82,7 +79,6 @@ export const Text = (props: Props) => {
       fontFamily={fontFamily}
       fontWeight={fontWeight}
       hoverTransition={hoverTransition}
-      linearGradient={linearGradient}
       lineHeight={lineHeight}
       noTextWrap={noTextWrap}
       size={size}
@@ -94,17 +90,12 @@ export const Text = (props: Props) => {
 };
 
 const StyledSpan = styled.span<StyledProps>`
-    color: ${({ color, linearGradient }) => ((color && !linearGradient) ? color : colors.white)};
-    background: ${({ linearGradient, color }) => (linearGradient && color ? color : 'none')};
+    color: ${({ color }) => (color || colors.white)};
     font-size: ${({ size }) => (size ? `${size}rem` : '16px')};
     text-align: ${({ textPlacing }) => textPlacing || 'left'};
     font-weight: ${({ fontWeight }) => (fontWeight || '500')};
     font-family: ${({ fontFamily }) => (fontFamily || 'Satoshi-Variable')};
     line-height: ${({ lineHeight }) => (lineHeight ? `${lineHeight}px` : '')};
-
-    background-clip: ${({ linearGradient }) => (linearGradient ? 'text' : 'none')};
-    -webkit-background-clip: ${({ linearGradient }) => (linearGradient ? 'text' : 'none')};
-    -webkit-text-fill-color: ${({ linearGradient }) => (linearGradient ? 'transparent' : 'none')};
 
     white-space: pre-line;
 

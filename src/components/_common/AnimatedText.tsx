@@ -11,7 +11,6 @@ interface StyledProps {
   animatedStyle?: MotionStyle
   size?: number
   color?: string
-  linearGradient?: boolean;
   lineHeight?: number;
   hoverTransition?: boolean;
   noTextWrap?: boolean;
@@ -29,7 +28,20 @@ interface Props extends StyledProps {
 const roseReg = /(<rose>|<\/rose>)/;
 
 export const AnimatedText = (props: Props) => {
-  const { animatedStyle, label, toUpperCase, color, linearGradient, lineHeight, size, textPlacing, fontWeight, fontFamily, hoverTransition, noTextWrap, isRoseText } = props;
+  const {
+    animatedStyle,
+    color,
+    fontFamily,
+    fontWeight,
+    hoverTransition,
+    isRoseText,
+    label,
+    lineHeight,
+    noTextWrap,
+    size,
+    textPlacing,
+    toUpperCase
+  } = props;
 
   const renderText = useCallback(
     (text: string, index: number, isRose: boolean) => (
@@ -44,7 +56,6 @@ export const AnimatedText = (props: Props) => {
         color={isRose ? colors.rose : color}
         fontWeight={fontWeight}
         size={size}
-        linearGradient={linearGradient}
         lineHeight={lineHeight}
         hoverTransition={hoverTransition}
         noTextWrap={noTextWrap}
@@ -83,7 +94,6 @@ export const AnimatedText = (props: Props) => {
       color={color}
       fontWeight={fontWeight}
       size={size}
-      linearGradient={linearGradient}
       lineHeight={lineHeight}
       hoverTransition={hoverTransition}
       noTextWrap={noTextWrap}
@@ -96,17 +106,12 @@ export const AnimatedText = (props: Props) => {
 };
 
 const StyledSpan = styled(motion.span)<StyledProps>`
-    color: ${({ color, linearGradient }) => ((color && !linearGradient) ? color : colors.white)};
-    background: ${({ linearGradient, color }) => (linearGradient && color ? color : 'none')};
+    color: ${({ color }) => (color || colors.white)};
     font-size: ${({ size }) => (size ? `${size}rem` : '16px')};
     text-align: ${({ textPlacing }) => textPlacing || 'left'};
     font-weight: ${({ fontWeight }) => (fontWeight || '500')};
     font-family: ${({ fontFamily }) => (fontFamily || 'Satoshi-Variable')};
     line-height: ${({ lineHeight }) => (lineHeight ? `${lineHeight}px` : '')};
-
-    background-clip: ${({ linearGradient }) => (linearGradient ? 'text' : 'none')};
-    -webkit-background-clip: ${({ linearGradient }) => (linearGradient ? 'text' : 'none')};
-    -webkit-text-fill-color: ${({ linearGradient }) => (linearGradient ? 'transparent' : 'none')};
 
     white-space: pre-line;
 

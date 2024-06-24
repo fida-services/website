@@ -1,0 +1,19 @@
+/* this is solution for working font-family in storybook */
+@import url('./fonts/Fonts/WEB/css/satoshi.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Satoshi-Variable';
+}
+body {
+    background-color: #141414;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
