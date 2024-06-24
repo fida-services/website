@@ -72,6 +72,10 @@ const ContentWrapper = styled.div`
   height: 100vh;
   position: relative;
 
+  @media (min-width: 768px) {
+    height: 100%;
+  }
+
   @media (min-width: 1024px) {
     height: auto;
   }
@@ -88,6 +92,10 @@ const PhasesContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
+
+  @media (min-width: 640px) {
+    width: 60%;
+  }
 
   @media (min-width: 1024px) {
     width: auto;
