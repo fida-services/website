@@ -14,8 +14,8 @@ const text = {
 };
 
 const button = {
-  label: 'Launch',
-  link: 'https://fida.finance/'
+  label: 'Learn',
+  link: '#marketplace'
 };
 
 export const HeroCard = () => {

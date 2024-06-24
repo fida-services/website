@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import menuMobileOpen from 'assets/icons/menuMobileOpen.svg';
@@ -16,7 +16,7 @@ export const MobileHeader = () => {
         onClick={() => setModalToggle((prevState) => !prevState)}
         alt="open menu"
       />
-      <HeaderMenuMobile modalToggle={modalToggle} />
+      <HeaderMenuMobile modalToggle={modalToggle} setModalToggle={setModalToggle} />
     </>
   );
 };
@@ -25,5 +25,4 @@ const MobileMenuButton = styled.img`
   width: 30px;
   height: 30px;
   cursor: pointer;
-  
 `;

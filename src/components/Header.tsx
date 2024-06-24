@@ -25,8 +25,8 @@ export const Header = () => {
             <MenuButton key={label} label={label} link={link} />
           ))}
           <MenuButton
-            label={menuItems.joinNetwork.label}
-            link={menuItems.joinNetwork.link}
+            label={menuItems.learnAbout.label}
+            link={menuItems.learnAbout.link}
             border
           />
         </div>

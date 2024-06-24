@@ -17,8 +17,8 @@ export const menuItems = {
       link: 'https://github.com/fida-services',
     },
   ],
-  joinNetwork: {
-    label: 'LAUNCH MARKETPLACE',
+  learnAbout: {
+    label: 'Learn about marketplace',
     link: '#marketplace',
   },
 };
