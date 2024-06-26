@@ -1,14 +1,13 @@
 /* eslint-disable no-else-return */
 /* eslint-disable no-nested-ternary */
 import { transformVariant, transition } from 'constants/motionConfig';
-import { motion, MotionStyle } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { CSSProperties, useCallback } from 'react';
 import styled from 'styled-components';
 
 import { colors } from 'theme';
 
 interface StyledProps {
-  animatedStyle?: MotionStyle
   size?: number
   color?: string
   lineHeight?: number;
@@ -29,7 +28,6 @@ const roseReg = /(<rose>|<\/rose>)/;
 
 export const AnimatedText = (props: Props) => {
   const {
-    animatedStyle,
     color,
     fontFamily,
     fontWeight,
@@ -49,8 +47,6 @@ export const AnimatedText = (props: Props) => {
         variants={transformVariant}
         initial="hidden"
         whileInView="visible"
-        animate="show"
-        style={animatedStyle}
         key={index}
         textPlacing={textPlacing}
         color={isRose ? colors.rose : color}
@@ -87,9 +83,7 @@ export const AnimatedText = (props: Props) => {
     <StyledSpan
       variants={transformVariant}
       initial="hidden"
-      animate="show"
       whileInView="visible"
-      style={animatedStyle}
       textPlacing={textPlacing}
       color={color}
       fontWeight={fontWeight}
