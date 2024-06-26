@@ -6,13 +6,8 @@ import opportunities from 'assets/images/opportunities.svg';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
 import { BaseTextWithDescription } from 'components/_common/BaseTextWithDescription';
+import { conquerRiskTexts } from 'data/texts';
 import { maxWidth840 } from '../rwd/detectMobile';
-
-const texts = {
-  title: 'Divide and <rose>conquer risk!</rose>',
-  description: 'Our revolutionary protocol offers unique benefits:',
-  points: ['Proof of Reserves', 'Liquid Assets (ILS NFTs)', 'Capital Efficiency']
-};
 
 export const ConquerRisk = () => {
   const isTablet = useMediaQuery({
@@ -21,13 +16,17 @@ export const ConquerRisk = () => {
 
   return (
     <>
-      <BaseTextWithDescription description="Ensuring comprehensive coverage for global emerging risks by redefining how risk is transferred is a financial, social, and moral imperative." title="How it all works" />
-      <StyledConquerRisk id="conquerRisk">
+      <BaseTextWithDescription
+        description="Ensuring comprehensive coverage for global emerging risks by redefining how risk is transferred is a financial, social, and moral imperative."
+        id="howItWorks"
+        title="How it all works"
+      />
+      <StyledConquerRisk id="marketplace">
         <TopSection>
           <Text
             color={colors.textPrimaryOnBrand}
             fontWeight={400}
-            label={texts.title}
+            label={conquerRiskTexts.title}
             size={isTablet ? 1.875 : 4.5}
             isRoseText
             lineHeight={isTablet ? 38 : 90}
@@ -37,11 +36,11 @@ export const ConquerRisk = () => {
             color={colors.textTertiary600}
             fontFamily="Inter"
             fontWeight={500}
-            label={texts.description}
+            label={conquerRiskTexts.description}
             lineHeight={isTablet ? 20 : 32}
             size={isTablet ? 0.875 : 1.5}
           />
-          {texts?.points?.map(item => (
+          {conquerRiskTexts?.points?.map(item => (
             <PointerWrapper key={item}>
               <ArrowPointer src={arrowPointer} alt="arrow-pointer" />
               <Text

@@ -4,14 +4,8 @@ import { useMediaQuery } from 'react-responsive';
 import { ReactComponent as FidaLogo } from 'assets/logos/fida.svg';
 import { colors, radius } from 'theme';
 import { Text } from 'components/_common/Text';
+import { newsletterTexts } from 'data/texts';
 import { maxWidth1140 } from '../rwd/detectMobile';
-
-const texts = {
-  title: 'We look forward to connecting with the community!',
-  description: 'We look forward to connecting with the community!',
-  buttonLabel: 'Sign up',
-  placeholder: 'email@email.com',
-};
 
 export const JoinNetwork = () => {
   const isTablet = useMediaQuery({
@@ -25,7 +19,7 @@ export const JoinNetwork = () => {
         <Text
           color={colors.textPrimaryOnBrand}
           fontWeight={400}
-          label={texts.title}
+          label={newsletterTexts.title}
           lineHeight={isTablet ? 38 : 72}
           size={isTablet ? 1.875 : 3.75}
           textPlacing="center"
@@ -34,13 +28,13 @@ export const JoinNetwork = () => {
           color={colors.buttonTertiaryColorFg}
           fontFamily="Inter"
           fontWeight={500}
-          label={texts.description}
+          label={newsletterTexts.description}
           lineHeight={isTablet ? 20 : 30}
           size={isTablet ? 0.875 : 1.25}
           textPlacing="center"
         />
         <InputWrapper action="https://dev.us17.list-manage.com/subscribe/post?u=6c6ff2be4870ee058f70e6790&amp;id=936d188d9d&amp;f_id=007644e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
-          <Input type="email" name="EMAIL" className="required email" id="mce-EMAIL" required placeholder={texts.placeholder} />
+          <Input type="email" name="EMAIL" className="required email" id="mce-EMAIL" required placeholder={newsletterTexts.placeholder} />
           <div id="mce-responses" className="clear">
             <div className="response" id="mce-error-response" style={{ display: 'none' }} />
             <div className="response" id="mce-success-response" style={{ display: 'none' }} />

@@ -5,14 +5,10 @@ import gradientLaptopMobile from 'assets/images/gradient-laptop-mobile.png';
 import gradientPhones from 'assets/images/gradient-mobile-phones.png';
 import gradientLaptop from 'assets/images/gradient-laptop.png';
 import { FidaMarketplaceCard } from 'components/FidaMarketplaceCard';
+import { fidaMarketplaceTexts } from 'data/texts';
 import { maxWidth840 } from 'components/rwd/detectMobile';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
-
-const texts = {
-  title: 'The Fida Marketplace',
-  description: 'Ensuring comprehensive coverage for global emerging risks by redefining how risk is transferred is a financial, social, and moral imperative.'
-};
 
 export const FidaMarketplace = () => {
   const isTablet = useMediaQuery({
@@ -21,9 +17,9 @@ export const FidaMarketplace = () => {
 
   const fidaItems = [
     {
-      description: 'Investors can build diversified investment portfolios to increase capital efficiency and generate leverage as insurance companies do.',
+      description: "Fida is built from the ground up to be easy to use, understanding where you're coming from and what is available for you to do, eliminating unnecessary guess work.",
       imageSrc: isTablet ? gradientLaptopMobile : gradientLaptop,
-      title: 'Increase efficiency',
+      title: 'Intuitive User Experience',
     },
     {
       description: 'Investors can build diversified investment portfolios to increase capital efficiency and generate leverage as insurance companies do.',
@@ -34,8 +30,8 @@ export const FidaMarketplace = () => {
   ];
 
   return (
-    <Container id="marketplace">
-      <BaseTextWithDescription description={texts.description} title={texts.title} />
+    <Container>
+      <BaseTextWithDescription description={fidaMarketplaceTexts.description} title={fidaMarketplaceTexts.title} />
       <CardsWrapper>
         {fidaItems?.map(item => (
           <FidaMarketplaceCard key={item?.title} {...item} />

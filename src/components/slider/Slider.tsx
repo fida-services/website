@@ -4,8 +4,8 @@ import { useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { maxWidth840 } from 'components/rwd/detectMobile';
+import { sliderData } from 'data/texts';
 import { SliderCard } from './SliderCard';
-import { sliderData } from './sliderData';
 
 export const Slider = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
