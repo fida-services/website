@@ -5,8 +5,8 @@ import { useMediaQuery } from 'react-responsive';
 import ourMissionOverlay from 'assets/overlays/mission-overlay.svg';
 import { Text } from 'components/_common/Text';
 import { colors, radius } from 'theme';
+import { sliderData } from 'data/texts';
 import { maxWidth840 } from '../rwd/detectMobile';
-import { sliderData } from './sliderData';
 
 interface SliderCardProps {
   description: string;
@@ -103,6 +103,7 @@ const Card = styled.div`
   border-radius: ${radius['4xl']};
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 16px;
   position: relative;
   width: calc(100vw - 32px);
@@ -134,7 +135,7 @@ const LinesBg = styled.img`
 `;
 
 const ImageWrapper = styled.img`
-  width: 100%;
+  width: 70%;
   order: 0;
 
   @media (min-width: 768px) {

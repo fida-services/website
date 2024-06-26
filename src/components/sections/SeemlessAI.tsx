@@ -6,12 +6,8 @@ import seemlessAIDesktop from 'assets/images/seemless-AI-desktop.svg';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
 import { Title } from 'components/_common/Title';
+import { seemlessAITexts } from 'data/texts';
 import { maxWidth840 } from '../rwd/detectMobile';
-
-const texts = {
-  title: 'Seemless AI',
-  description: "Behind the scenes we bring immutable verified AI training data on-chain. Transparent confirmation of Risk prediction. risk diversification score that powers protocol stability. AI assistant on Fida Card trades. Fida is built on Ai and blockchain, but you wouldn't notice. It just works."
-};
 
 export const SeemlessAI = () => {
   const isTablet = useMediaQuery({
@@ -22,12 +18,12 @@ export const SeemlessAI = () => {
     <Container>
       {isTablet && <ImageWrapper src={seemlessAIMobile} alt="seemless-AI" />}
       <TopSection>
-        <Title label={texts.title} />
+        <Title label={seemlessAITexts.title} />
         <Text
           color={colors.textTertiary600}
           fontFamily="Inter"
           fontWeight={500}
-          label={texts.description}
+          label={seemlessAITexts.description}
           lineHeight={isTablet ? 20 : 32}
           size={isTablet ? 0.875 : 1.5}
         />

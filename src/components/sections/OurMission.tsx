@@ -4,7 +4,6 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
-import { missionItems } from 'data/missionItems';
 import { missionCards, ourMissionTexts } from 'data/texts';
 import { Slider } from 'components/slider/Slider';
 import { maxWidth1440, maxWidth840 } from '../rwd/detectMobile';

@@ -4,25 +4,13 @@ import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
 import roadMap from 'assets/images/road-map.svg';
+import { roadMapTexts } from 'data/texts';
 import { maxWidth840 } from 'components/rwd/detectMobile';
 import { PhaseItem } from 'components/PhaseItem';
 import { PhasesSwiper } from 'components/rwd/PhasesSwiper';
 import { useScrollSpy } from 'hooks/useScrollSpy';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
-
-const texts = {
-  title: 'The Roadmap',
-  description: 'Ensuring comprehensive coverage for global emerging risks by redefining how risk is transferred is a financial, social, and moral imperative.',
-  phases: [
-    ['CLI', 'Core risk transfer protocol'],
-    ['On-chain contract audits', 'Webapp'],
-    ['Voting', 'Multi coin support', 'Staking'],
-    ['Card transfer', 'Marketplace', 'Oracle integration'],
-    ['Transparent fiat integration', 'Portfolio diversity score', 'Protocol solvency audit'],
-    ['Multi chain support', 'Fund pools', 'Under collateralization support'],
-  ]
-};
 
 export const RoadMap = () => {
   const [imageHeight, setImageHeight] = useState(0);
@@ -43,14 +31,14 @@ export const RoadMap = () => {
   return (
     <Container>
       <ContentWrapper>
-        <BaseTextWithDescription description={texts.description} title={texts.title} />
+        <BaseTextWithDescription description={roadMapTexts.description} title={roadMapTexts.title} />
         <div style={{ position: 'relative' }}>
           <ImageWrapper>
             <Image onLoad={onImageLoad} src={roadMap} alt="road-map" />
           </ImageWrapper>
           {isTablet ? <PhasesSwiper height={imageHeight} /> : (
             <PhasesContainer>
-              {texts?.phases?.map((phase, index) => (
+              {roadMapTexts?.phases?.map((phase, index) => (
                 <PhaseItem
                   dots={phase}
                   index={index + 1}

@@ -8,16 +8,17 @@ import { maxWidth840 } from '../rwd/detectMobile';
 interface BaseTextWithDescriptionProps {
   description: string
   title: string
+  id?: string
 }
 
 export const BaseTextWithDescription = (props: BaseTextWithDescriptionProps) => {
-  const { description, title } = props;
+  const { description, title, id } = props;
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
 
   return (
-    <Container>
+    <Container id={id}>
       <Text
         color={colors.textPrimaryOnBrand}
         fontWeight={700}

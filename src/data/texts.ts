@@ -1,4 +1,5 @@
 import diagram from 'assets/images/diagram.svg';
+import flag from 'assets/images/flag.svg';
 import risk from 'assets/images/risk.svg';
 
 // welcome section
@@ -19,7 +20,7 @@ const welcomeHeroCard = {
 const welcomeCards = {
   card1: {
     buttonLabel: 'Learn more',
-    buttonLink: '#conquerRisk',
+    buttonLink: '#howItWorks',
     description: 'Include Fida Cards into your portfolio to recieve gains from insurance premiums.',
     title: 'Expand your investors portfolio'
   },
@@ -61,10 +62,84 @@ const missionCards = [
   }
 ];
 
+const sliderData = [
+  {
+    description: 'By eliminating trade friction, Fida restores essential liquidity, facilitating real-time optimization of investor portfolios. This strategic advantage empowers risk mitigation on an unprecedented scale.',
+    imageSrc: flag,
+    isReversed: true,
+    isRoseText: true,
+    title: 'Be the herald of the <rose>Insurance Revolution</rose>',
+    subtitle: 'Recovering Liquidity, Optimizing Portfolio Revenue'
+  },
+  {
+    description: 'Smart contracts become the cornerstone of our platform, introducing unparalleled efficiency. The result? Dramatically reduced costs and atomic, predictable claim payouts for policyholders, without sacrificing the essence of insurance that has been trusted since time immemorial.',
+    imageSrc: flag,
+    isReversed: true,
+    isRoseText: true,
+    title: 'Be the herald of the <rose>Insurance Revolution</rose>',
+    subtitle: 'Elevating Efficiency, Ensuring Predictable Outcomes'
+  },
+  {
+    description: 'Fida redefines insurance investment, unlocking the potential of solvency universally. This innovation ushers in higher yields across the board, democratizing profit opportunities for investors.',
+    imageSrc: flag,
+    isReversed: true,
+    isRoseText: true,
+    title: 'Be the herald of the <rose>Insurance Revolution</rose>',
+    subtitle: 'Unleashing Solvency for All'
+  }
+];
+
+// conquer risk section
+const conquerRiskTexts = {
+  title: 'Divide and <rose>conquer risk!</rose>',
+  description: 'Our revolutionary protocol offers unique benefits:',
+  points: ['Proof of Reserves', 'Liquid Assets (ILS NFTs)', 'Capital Efficiency']
+};
+
+// fida marketplace section
+const fidaMarketplaceTexts = {
+  description: 'Rediscover liquidity, even when the collateral is safely maintained. Trade Fida Cards to improve your Risk Diversification.',
+  title: 'The Fida Marketplace'
+};
+
+// seemlessAI section
+const seemlessAITexts = {
+  title: 'Seemless AI',
+  description: "Behind the scenes we bring immutable verified AI training data on-chain. Transparent confirmation of Risk prediction. risk diversification score that powers protocol stability. AI assistant on Fida Card trades. Fida is built on Ai and blockchain, but you wouldn't notice. It just works."
+};
+
+// road map section
+const roadMapTexts = {
+  title: 'The Roadmap',
+  description: 'We are on our way to covering the insurance protection gap with our technology. Our phased roll-out is optimized so the protocol is fully functional from Phase 1. Unlocking additional use cases on each subsequent phase.',
+  phases: [
+    ['CLI', 'Core risk transfer protocol'],
+    ['On-chain contract audits', 'Webapp'],
+    ['Voting', 'Multi coin support', 'Staking'],
+    ['Card transfer', 'Marketplace', 'Oracle integration'],
+    ['Transparent fiat integration', 'Portfolio diversity score', 'Protocol solvency audit'],
+    ['Multi chain support', 'Fund pools', 'Under collateralization support'],
+  ]
+};
+
+// newsletter section
+const newsletterTexts = {
+  title: 'Stay informed!',
+  description: 'We look forward to connecting with the community!',
+  buttonLabel: 'Sign up',
+  placeholder: 'email@email.com',
+};
+
 export {
-  welcomeTexts,
-  welcomeHeroCard,
-  welcomeCards,
+  conquerRiskTexts,
+  fidaMarketplaceTexts,
+  missionCards,
+  newsletterTexts,
   ourMissionTexts,
-  missionCards
+  roadMapTexts,
+  seemlessAITexts,
+  sliderData,
+  welcomeCards,
+  welcomeHeroCard,
+  welcomeTexts
 };
