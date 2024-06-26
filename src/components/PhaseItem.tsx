@@ -47,7 +47,7 @@ export const PhaseItem = (props: PhaseItemProps) => {
         />
         <ListWrapper>
           {dots?.map(dot => (
-            <ListItem>
+            <ListItem key={dot}>
               {dot}
             </ListItem>
           ))}

@@ -1,54 +1,51 @@
+/* eslint-disable no-nested-ternary */
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
 import { missionItems } from 'data/missionItems';
+import { missionCards, ourMissionTexts } from 'data/texts';
 import { Slider } from 'components/slider/Slider';
-import { maxWidth840 } from '../rwd/detectMobile';
+import { maxWidth1440, maxWidth840 } from '../rwd/detectMobile';
 import { MissionCard } from '../MissionCard';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
-
-const texts = {
-  title: 'Our Mission',
-  description: 'Ensuring comprehensive coverage for global emerging risks by redefining how risk is transferred is a financial, social, and moral imperative.',
-  values: [
-    { value: '$ 120 bln', label: 'Market value' },
-    { value: '$ 120 bln', label: 'Market value' },
-    { value: '$ 120 bln', label: 'Market value' },
-    { value: '$ 120 bln', label: 'Market value' }
-  ]
-};
 
 export const OurMission = () => {
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
 
+  const isDesktop = useMediaQuery({
+    query: maxWidth1440,
+  });
+
   return (
     <Container>
-      <BaseTextWithDescription description={texts.description} title={texts.title} />
+      <BaseTextWithDescription description={ourMissionTexts.description} title={ourMissionTexts.title} />
       <BottomSection>
-        {texts?.values?.map(item => (
-          <TextWrapper>
+        {ourMissionTexts?.values?.map(item => (
+          <TextWrapper key={item?.label}>
             <Text
               color={colors.textPrimaryOnBrand}
               fontWeight={isTablet ? 700 : 400}
               label={item?.value}
-              size={isTablet ? 1.25 : 3}
+              size={isTablet ? 1.25 : isDesktop ? 2.2 : 3}
+              textPlacing="center"
             />
             <Text
               color={colors.textTertiary600}
               fontWeight={700}
               label={item?.label}
               size={isTablet ? 0.75 : 1.125}
+              textPlacing="center"
             />
           </TextWrapper>
         ))}
       </BottomSection>
       <CardsWrapper>
-        {missionItems?.map(item => (
+        {missionCards?.map(item => (
           <MissionCard key={item?.title} {...item} />
         ))}
       </CardsWrapper>

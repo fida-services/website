@@ -18,7 +18,7 @@ export const menuItems = {
     },
   ],
   learnAbout: {
-    label: 'Learn about marketplace',
+    label: 'Discover Marketplace',
     link: '#marketplace',
   },
 };

@@ -4,19 +4,10 @@ import { useMediaQuery } from 'react-responsive';
 import fidaMacbook from 'assets/images/macbook.svg';
 import fidaMacbookDesktop from 'assets/images/macbook-desktop.svg';
 import { colors, radius } from 'theme';
+import { welcomeHeroCard } from 'data/texts';
 import { maxWidth840, maxWidth640, minWidth1024 } from './rwd/detectMobile';
 import { Text } from './_common/Text';
 import { MenuButton } from './MenuButton';
-
-const text = {
-  titleOne: 'Fida Marketplace',
-  titleTwo: 'Some text',
-};
-
-const button = {
-  label: 'Learn',
-  link: '#marketplace'
-};
 
 export const HeroCard = () => {
   const isTablet = useMediaQuery({
@@ -40,21 +31,21 @@ export const HeroCard = () => {
               color={colors.textPrimaryOnBrand}
               fontFamily="Inter"
               fontWeight={500}
-              label={text.titleOne}
+              label={welcomeHeroCard.title}
               size={isTablet ? 1.5 : 2.25}
             />
             <Text
               color={colors.textSecondaryHover}
               fontFamily="Inter"
               fontWeight={500}
-              label={text.titleTwo}
+              label={welcomeHeroCard.description}
               size={isTablet ? 1 : 1.25}
             />
           </TextWrapper>
           <MenuButton
             border
-            label={button.label}
-            link={button.link}
+            label={welcomeHeroCard.button.label}
+            link={welcomeHeroCard.button.link}
             padding={isTablet ? '8px 14px' : '16px 22px'}
           />
         </TopWrapper>
@@ -67,7 +58,6 @@ export const HeroCard = () => {
         </ImageWrapper>
       </ContentWrapper>
     </Wrapper>
-
   );
 };
 

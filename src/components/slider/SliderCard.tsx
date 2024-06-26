@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
@@ -78,7 +79,7 @@ export const SliderCard = (props: SliderCardProps) => {
               />
               <StepperWrapper>
                 {sliderData?.map((_, index) => (
-                  <Step isColored={currentIndex - 1 >= index} />
+                  <Step key={index} isColored={currentIndex - 1 >= index} />
                 ))}
               </StepperWrapper>
             </StepperContainer>
