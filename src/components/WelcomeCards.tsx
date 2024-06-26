@@ -11,7 +11,6 @@ import { welcomeCards } from 'data/texts';
 import { maxWidth840 } from './rwd/detectMobile';
 import { MenuButton } from './MenuButton';
 
-
 interface InnerCardProps {
   isSmallerCard?: boolean
 }
