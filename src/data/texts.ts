@@ -25,12 +25,12 @@ const welcomeCards = {
     title: 'Expand your investors portfolio'
   },
   card2: {
-    description: 'Insurance gap',
-    title: '67%'
+    description: 'Launch Policies',
+    title: '3'
   },
   card3: {
-    description: 'Market value',
-    title: '$120 bln'
+    description: 'APY',
+    title: '16-54%'
   }
 };
 
@@ -102,9 +102,9 @@ const fidaMarketplaceTexts = {
   title: 'The Fida Marketplace'
 };
 
-// seemlessAI section
-const seemlessAITexts = {
-  title: 'Seemless AI',
+// seamlessAI section
+const seamlessAITexts = {
+  title: 'Seamless AI',
   description: "Behind the scenes we bring immutable verified AI training data on-chain. Transparent confirmation of Risk prediction. risk diversification score that powers protocol stability. AI assistant on Fida Card trades. Fida is built on Ai and blockchain, but you wouldn't notice. It just works."
 };
 
@@ -137,7 +137,7 @@ export {
   newsletterTexts,
   ourMissionTexts,
   roadMapTexts,
-  seemlessAITexts,
+  seamlessAITexts,
   sliderData,
   welcomeCards,
   welcomeHeroCard,

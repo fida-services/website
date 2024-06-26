@@ -9,7 +9,7 @@ export const socials = [
   {
     src: discord,
     name: 'discord',
-    link: 'https://discord.gg/BN4NJebn'
+    link: 'https://discord.com/invite/kFdXXBqwdu'
   },
   {
     src: github,

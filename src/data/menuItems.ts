@@ -2,7 +2,7 @@ export const menuItems = {
   iterableItems: [
     {
       label: 'litepaper',
-      link: 'https://docs.fida.finance/whitepaper.pdf',
+      link: 'https://docs.fida.finance/introduction/whitepaper',
     },
     {
       label: 'documentation',

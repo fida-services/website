@@ -419,10 +419,10 @@ onImageLoad
 HTMLImageElement
 imageElement
 onLoad
-seemlessAIMobile
-seemlessAIDesktop
-Seemless
-SeemlessAI
+seamlessAIMobile
+seamlessAIDesktop
+Seamless
+SeamlessAI
 Ai
 TopSection
 welcomeOverlay
@@ -508,7 +508,6 @@ greyBackgroundGradient
 iconGradient
 textSecondaryHover
 utilityGray
-rose
 buttonSecondaryFg
 subtitleColor
 isBetween
@@ -528,7 +527,6 @@ justifyContent
 onClickLink
 learnAbout
 WithRoseText
-amet.
 welcomeTexts
 welcomeHeroCard
 WelcomeCards
@@ -537,8 +535,8 @@ ourMissionTexts
 missionCards
 conquerRiskTexts
 fidaMarketplaceTexts
-seemlessAITexts
-seemlessAI
+seamlessAITexts
+seamlessAI
 roadMapTexts
 newsletterTexts
 maxWidth1440
