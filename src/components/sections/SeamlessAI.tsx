@@ -1,29 +1,29 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
-import seemlessAIMobile from 'assets/images/seemless-AI-mobile.svg';
-import seemlessAIDesktop from 'assets/images/seemless-AI-desktop.svg';
+import seamlessAIMobile from 'assets/images/seamless-AI-mobile.svg';
+import seamlessAIDesktop from 'assets/images/seamless-AI-desktop.svg';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
 import { Title } from 'components/_common/Title';
-import { seemlessAITexts } from 'data/texts';
+import { seamlessAITexts } from 'data/texts';
 import { maxWidth840 } from '../rwd/detectMobile';
 
-export const SeemlessAI = () => {
+export const SeamlessAI = () => {
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
 
   return (
     <Container>
-      {isTablet && <ImageWrapper src={seemlessAIMobile} alt="seemless-AI" />}
+      {isTablet && <ImageWrapper src={seamlessAIMobile} alt="seamless-AI" />}
       <TopSection>
-        <Title label={seemlessAITexts.title} />
+        <Title label={seamlessAITexts.title} />
         <Text
           color={colors.textTertiary600}
           fontFamily="Inter"
           fontWeight={500}
-          label={seemlessAITexts.description}
+          label={seamlessAITexts.description}
           lineHeight={isTablet ? 20 : 32}
           size={isTablet ? 0.875 : 1.5}
         />
@@ -40,7 +40,7 @@ const Container = styled.div`
   position: relative;
   
   @media (min-width: 1024px) {
-    background-image: url(${seemlessAIDesktop});
+    background-image: url(${seamlessAIDesktop});
     background-position: center;
     background-repeat: no-repeat;
     grid-template-columns: 50% 50%;

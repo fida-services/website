@@ -8,7 +8,7 @@ import { maxWidth640 } from './rwd/detectMobile';
 import { OurMission } from './sections/OurMission';
 import { ConquerRisk } from './sections/ConquerRisk';
 import { FidaMarketplace } from './sections/FidaMarketplace';
-import { SeemlessAI } from './sections/SeemlessAI';
+import { SeamlessAI } from './sections/SeamlessAI';
 import { RoadMap } from './sections/RoadMap';
 import { JoinNetwork } from './sections/JoinNetwork';
 import { Footer } from './sections/Footer';
@@ -27,7 +27,7 @@ const App = () => {
         <ConquerRisk />
         <FidaMarketplace />
       </Container>
-      <SeemlessAI />
+      <SeamlessAI />
       <Container isTablet={isTablet}>
         <RoadMap />
         <JoinNetwork />
