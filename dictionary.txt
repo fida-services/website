@@ -529,3 +529,17 @@ onClickLink
 learnAbout
 WithRoseText
 amet.
+welcomeTexts
+welcomeHeroCard
+WelcomeCards
+howItWorks
+ourMissionTexts
+missionCards
+conquerRiskTexts
+fidaMarketplaceTexts
+seemlessAITexts
+seemlessAI
+roadMapTexts
+newsletterTexts
+maxWidth1440
+welcomeCards

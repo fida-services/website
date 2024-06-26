@@ -21,7 +21,7 @@ const welcomeCards = {
   card1: {
     buttonLabel: 'Learn more',
     buttonLink: '#howItWorks',
-    description: 'Include Fida Cards into your portfolio to recieve gains from insurance premiums.',
+    description: 'Include Fida Cards into your portfolio to receive gains from insurance premiums.',
     title: 'Expand your investors portfolio'
   },
   card2: {
