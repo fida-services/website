@@ -98,6 +98,7 @@ const StyledButton = styled.input`
   border-radius: 25px;
   border: 1px solid ${colors.buttonSecondaryBorder};
   color: ${colors.buttonSecondaryFg};
+  cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
   line-height: 24px;
