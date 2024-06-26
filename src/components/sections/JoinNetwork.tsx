@@ -10,7 +10,7 @@ const texts = {
   title: 'We look forward to connecting with the community!',
   description: 'We look forward to connecting with the community!',
   buttonLabel: 'Sign up',
-  placeholder: 'email@email.com'
+  placeholder: 'email@email.com',
 };
 
 export const JoinNetwork = () => {
@@ -39,17 +39,18 @@ export const JoinNetwork = () => {
           size={isTablet ? 0.875 : 1.25}
           textPlacing="center"
         />
-        <InputWrapper>
-          <Input placeholder={texts.placeholder} />
-          <StyledButton>
-            <Text
-              size={1}
-              color={colors.buttonSecondaryFg}
-              label={texts.buttonLabel}
-              lineHeight={24}
-              fontWeight={700}
-            />
-          </StyledButton>
+        <InputWrapper action="https://dev.us17.list-manage.com/subscribe/post?u=6c6ff2be4870ee058f70e6790&amp;id=936d188d9d&amp;f_id=007644e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+          <Input type="email" name="EMAIL" className="required email" id="mce-EMAIL" required placeholder={texts.placeholder} />
+          <div id="mce-responses" className="clear">
+            <div className="response" id="mce-error-response" style={{ display: 'none' }} />
+            <div className="response" id="mce-success-response" style={{ display: 'none' }} />
+          </div>
+          <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
+            <input type="text" name="b_6c6ff2be4870ee058f70e6790_936d188d9d" value="" />
+          </div>
+          <div className="clear">
+            <StyledButton type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Sign up" />
+          </div>
         </InputWrapper>
       </ContentWrapper>
     </Wrapper>
@@ -84,7 +85,7 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const InputWrapper = styled.div`
+const InputWrapper = styled.form`
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -98,11 +99,15 @@ const InputWrapper = styled.div`
   }
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.input`
   background: ${colors.white};
   border-radius: 25px;
   border: 1px solid ${colors.buttonSecondaryBorder};
-  padding: 10px 15px;
+  color: ${colors.buttonSecondaryFg};
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 7px 14px;
   text-align: center;
   transition: 0.5s;
   width: fit-content;
@@ -125,7 +130,11 @@ const Input = styled.input`
     line-height: 24px;
   }
 
+  :focus-visible {
+    outline-color: ${colors.blue};
+  }
+
   @media (min-width: 768px) {
-    flex: 1
+    flex: 1;
   }
 `;

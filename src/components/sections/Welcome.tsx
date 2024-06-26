@@ -5,15 +5,11 @@ import welcomeOverlay from 'assets/overlays/welcome-overlay.svg';
 import welcomeOverlayDesktop from 'assets/overlays/welcome-overlay-desktop.svg';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
+import { welcomeTexts } from 'data/texts';
 import { maxWidth640, maxWidth840 } from '../rwd/detectMobile';
 import { HeroCard } from '../HeroCard';
 import { Title } from '../_common/Title';
 import { WelcomeCards } from '../WelcomeCards';
-
-const texts = {
-  description: 'Follow insurence experts.\nMake the same investments they do.',
-  title: 'Invest in insurence Contracts',
-};
 
 export const Welcome = () => {
   const isTablet = useMediaQuery({
@@ -32,12 +28,12 @@ export const Welcome = () => {
           src={isMobile ? welcomeOverlay : welcomeOverlayDesktop}
         />
         <TextWrapper>
-          <Title label={texts.title} />
+          <Title label={welcomeTexts.title} />
           <Text
             color={colors.textTertiary600}
             fontFamily="Inter"
             fontWeight={500}
-            label={texts.description}
+            label={welcomeTexts.description}
             size={isTablet ? 1.5 : 1.875}
           />
         </TextWrapper>

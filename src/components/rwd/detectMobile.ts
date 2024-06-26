@@ -8,6 +8,8 @@ export const maxWidth1024 = '(max-width: 1024px)';
 
 export const minWidth1024 = '(min-width: 1024px)';
 
+export const maxWidth1440 = '(max-width: 1440px)';
+
 export const minWidth640 = '(min-width: 640px)';
 
 export const maxWidth1140 = '(max-width: 1140px)';

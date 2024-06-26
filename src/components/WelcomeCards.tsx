@@ -7,25 +7,10 @@ import lineChart from 'assets/images/line-chart.svg';
 import lineChartDesktop from 'assets/images/line-chart-desktop.svg';
 import { Text } from 'components/_common/Text';
 import { colors, radius } from 'theme';
+import { welcomeCards } from 'data/texts';
 import { maxWidth840 } from './rwd/detectMobile';
 import { MenuButton } from './MenuButton';
 
-const texts = {
-  card1: {
-    buttonLabel: 'Learn more',
-    buttonLink: '',
-    description: 'Follow insurence experts. Make the same investments they do.',
-    title: 'Expand your investors portfolio'
-  },
-  card2: {
-    description: 'Insurance gap',
-    title: '67%'
-  },
-  card3: {
-    description: 'Market value',
-    title: '$120 bln'
-  }
-};
 
 interface InnerCardProps {
   isSmallerCard?: boolean
@@ -43,7 +28,7 @@ export const WelcomeCards = () => {
           <Text
             color={colors.textPrimaryOnBrand}
             fontWeight={400}
-            label={texts.card1.title}
+            label={welcomeCards.card1.title}
             lineHeight={isTablet ? 32 : 44}
             size={isTablet ? 1.5 : 2.25}
           />
@@ -51,14 +36,14 @@ export const WelcomeCards = () => {
             color={colors.textTertiary600}
             fontFamily="Inter"
             fontWeight={500}
-            label={texts.card1.description}
+            label={welcomeCards.card1.description}
             lineHeight={isTablet ? 24 : 30}
             size={isTablet ? 1 : 1.25}
           />
           <MenuButton
             color={colors.buttonTertiaryColorFg}
-            label={texts.card1.buttonLabel}
-            link={texts.card1.buttonLink}
+            label={welcomeCards.card1.buttonLabel}
+            link={welcomeCards.card1.buttonLink}
             padding="0px"
           />
         </InnerCard>
@@ -70,7 +55,7 @@ export const WelcomeCards = () => {
             <Text
               color={colors.textPrimaryOnBrand}
               fontWeight={400}
-              label={texts.card2.title}
+              label={welcomeCards.card2.title}
               lineHeight={isTablet ? 32 : 60}
               size={isTablet ? 1.5 : 3}
               textPlacing="center"
@@ -78,7 +63,7 @@ export const WelcomeCards = () => {
             <Text
               color={colors.textPrimaryOnBrand}
               fontWeight={700}
-              label={texts.card2.description}
+              label={welcomeCards.card2.description}
               size={isTablet ? 0.875 : 1}
               textPlacing="center"
             />
@@ -90,7 +75,7 @@ export const WelcomeCards = () => {
             <Text
               color={colors.textPrimaryOnBrand}
               fontWeight={400}
-              label={texts.card3.title}
+              label={welcomeCards.card3.title}
               lineHeight={isTablet ? 32 : 60}
               size={isTablet ? 1.5 : 3}
               textPlacing="center"
@@ -98,7 +83,7 @@ export const WelcomeCards = () => {
             <Text
               color={colors.textPrimaryOnBrand}
               fontWeight={700}
-              label={texts.card3.description}
+              label={welcomeCards.card3.description}
               size={isTablet ? 0.875 : 1}
               textPlacing="center"
             />
