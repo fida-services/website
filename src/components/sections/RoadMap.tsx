@@ -7,8 +7,8 @@ import roadMap from 'assets/images/road-map.svg';
 import { roadMapTexts } from 'data/texts';
 import { maxWidth840 } from 'components/rwd/detectMobile';
 import { PhaseItem } from 'components/PhaseItem';
-import { PhasesSwiper } from 'components/rwd/PhasesSwiper';
 import { useScrollSpy } from 'hooks/useScrollSpy';
+import { PhasesCarousel } from 'components/rwd/PhasesCarousel';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
 
@@ -36,7 +36,7 @@ export const RoadMap = () => {
           <ImageWrapper>
             <Image onLoad={onImageLoad} src={roadMap} alt="road-map" />
           </ImageWrapper>
-          {isTablet ? <PhasesSwiper height={imageHeight} /> : (
+          {isTablet ? <PhasesCarousel height={imageHeight} width={imageWidth} /> : (
             <PhasesContainer>
               {roadMapTexts?.phases?.map((phase, index) => (
                 <PhaseItem
@@ -57,12 +57,8 @@ export const RoadMap = () => {
 };
 
 const ContentWrapper = styled.div`
-  height: 100vh;
+  height: 105vh;
   position: relative;
-
-  @media (min-width: 768px) {
-    height: 100%;
-  }
 
   @media (min-width: 1024px) {
     height: auto;
@@ -82,7 +78,7 @@ const Image = styled.img`
   width: 100%;
 
   @media (min-width: 640px) {
-    width: 60%;
+    width: 70%;
   }
 
   @media (min-width: 1024px) {
