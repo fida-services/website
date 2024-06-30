@@ -11,8 +11,13 @@ interface StyledProps {
   fontWeight?: CSSProperties['fontWeight']
   hoverTransition?: boolean;
   lineHeight?: number;
+  link?: {
+    label: string
+    href: string
+  }
   noTextWrap?: boolean;
   size?: number
+  style?: React.CSSProperties
   textPlacing?: CSSProperties['textAlign']
 }
 
@@ -33,8 +38,10 @@ export const Text = (props: Props) => {
     isRoseText,
     label,
     lineHeight,
+    link,
     noTextWrap,
     size,
+    style,
     textPlacing,
     toUpperCase
   } = props;
@@ -50,6 +57,7 @@ export const Text = (props: Props) => {
         lineHeight={lineHeight}
         noTextWrap={noTextWrap}
         size={size}
+        style={style}
         textPlacing={textPlacing}
       >
         {toUpperCase ? text.toUpperCase() : text}
@@ -82,9 +90,15 @@ export const Text = (props: Props) => {
       lineHeight={lineHeight}
       noTextWrap={noTextWrap}
       size={size}
+      style={style}
       textPlacing={textPlacing}
     >
       {isRoseText ? formattedText : toUpperCase ? label.toUpperCase() : label}
+      {link ? (
+        <StyledLink href={link?.href}>
+          {link?.label}
+        </StyledLink>
+      ) : null}
     </StyledSpan>
   );
 };
@@ -109,4 +123,8 @@ const StyledSpan = styled.span<StyledProps>`
           opacity: 0.7;
         `}
       }
+`;
+
+const StyledLink = styled.a`
+    color: ${colors.rose};
 `;

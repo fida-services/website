@@ -76,7 +76,7 @@ const sliderData = [
     imageSrc: flag,
     isReversed: true,
     isRoseText: true,
-    title: 'Be the herald of the <rose>Insurance Revolution</rose>',
+    title: 'Setup insurance sidecars and find the liquidity you need to grow your company.',
     subtitle: 'Elevating Efficiency, Ensuring Predictable Outcomes'
   },
   {
@@ -84,10 +84,19 @@ const sliderData = [
     imageSrc: flag,
     isReversed: true,
     isRoseText: true,
-    title: 'Be the herald of the <rose>Insurance Revolution</rose>',
+    title: 'Follow insurance experts and gain an edge by leveraging uncorrelated assets as your investment base.',
     subtitle: 'Unleashing Solvency for All'
   }
 ];
+
+const howItWorks = {
+  description: 'You can think of Fida as a crowd funded reinsurance group. The Fida Risk Transfer Protocol decentralizes risk. In so doing, it makes insurance liquid, safe, and efficient for everyone. Users receive coverage on submitted policies, earn premiums from policy payments and collect fees of protocol usage. In the process of creating a Fida Policy, there are three main actors involved: the policy broker, the policy owner (who have purchased the insurance), and the investors (who provide collateral for the policy). This process proceeds as follows: Clients initially approach the policy broker with the intention of purchasing a policy. Subsequently, they must agree on the cost the client must pay for the policy. Once agreed upon, the policy broker (using the clior web app) creates a policy and provides an address (Fida Policy Contract Address) where the client must send the agreed amount (premium amount). You can continue to read into the process, which is fully documented at ',
+  title: 'How it all works',
+  link: {
+    label: 'docs.fida.finance',
+    href: 'https://docs.fida.finance/'
+  }
+};
 
 // conquer risk section
 const conquerRiskTexts = {
@@ -133,6 +142,7 @@ const newsletterTexts = {
 export {
   conquerRiskTexts,
   fidaMarketplaceTexts,
+  howItWorks,
   missionCards,
   newsletterTexts,
   ourMissionTexts,

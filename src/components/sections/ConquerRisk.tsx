@@ -6,7 +6,7 @@ import opportunities from 'assets/images/opportunities.svg';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
 import { BaseTextWithDescription } from 'components/_common/BaseTextWithDescription';
-import { conquerRiskTexts } from 'data/texts';
+import { conquerRiskTexts, howItWorks } from 'data/texts';
 import { maxWidth840 } from '../rwd/detectMobile';
 
 export const ConquerRisk = () => {
@@ -17,9 +17,10 @@ export const ConquerRisk = () => {
   return (
     <>
       <BaseTextWithDescription
-        description="Ensuring comprehensive coverage for global emerging risks by redefining how risk is transferred is a financial, social, and moral imperative."
+        description={howItWorks.description}
         id="howItWorks"
-        title="How it all works"
+        title={howItWorks.title}
+        link={howItWorks.link}
       />
       <StyledConquerRisk id="marketplace">
         <TopSection>
