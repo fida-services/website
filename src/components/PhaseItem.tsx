@@ -19,13 +19,12 @@ interface LineProps {
 interface PhaseItemProps {
   dots: string[]
   index: number
-  isActive?: boolean
   width: number
   rightPosition?: boolean
 }
 
 export const PhaseItem = (props: PhaseItemProps) => {
-  const { index, isActive, rightPosition, dots, width } = props;
+  const { index, rightPosition, dots, width } = props;
   const { phaseWidth } = usePhaseSize({ width, phaseIndex: index });
 
   const isMobile = useMediaQuery({
@@ -33,7 +32,7 @@ export const PhaseItem = (props: PhaseItemProps) => {
   });
 
   return (
-    <MainContainer isActive={isActive} rightPosition={rightPosition}>
+    <MainContainer rightPosition={rightPosition}>
       <Container rightPosition={rightPosition} id={`phase-item-${index}`}>
         <Line rightPosition={rightPosition} size={phaseWidth}>
           <LineDot rightPosition={rightPosition} />
@@ -61,10 +60,14 @@ const MainContainer = styled.div<MainContainerProps>`
   display: flex;
   justify-content: ${({ rightPosition }) => (rightPosition ? 'end' : 'start')};;
   left: ${({ rightPosition }) => (rightPosition ? 'auto' : '0px')};
-  opacity: ${({ isActive }) => (isActive ? '1' : '0.2')};
+  opacity: 0.2;
   right: ${({ rightPosition }) => (rightPosition ? '0px' : 'auto')};
-  transition: 1s;
-  transition-delay: 0.01s;
+
+  &:hover {
+    opacity: 1;
+    transition: 1s;
+    transition-delay: 0.01s;
+  }
 `;
 
 const Container = styled.div<{ rightPosition?: boolean }>`
