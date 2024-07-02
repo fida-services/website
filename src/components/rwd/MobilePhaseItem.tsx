@@ -8,15 +8,8 @@ import { usePhaseSizeMobile } from 'hooks/usePhaseSizeMobile';
 import { Text } from '../_common/Text';
 import { maxWidth640 } from './detectMobile';
 
-interface MainContainerProps {
-  index?: number
-  isActive?: boolean
-  top: number
-}
-
 interface LineProps {
   size: number
-  index: number
   width: number
 }
 
@@ -24,14 +17,13 @@ interface MobilePhaseItemProps {
   dots: string[]
   height: number
   index: number
-  isActive?: boolean
   onClickLeft: () => void
   onClickRight: () => void
   width: number
 }
 
 export const MobilePhaseItem = (props: MobilePhaseItemProps) => {
-  const { height, index, isActive, dots, width, onClickLeft, onClickRight } = props;
+  const { height, index, dots, width, onClickLeft, onClickRight } = props;
   const { phaseHeight, phaseWidth, top } = usePhaseSizeMobile({ height, width, phaseIndex: index });
 
   const isMobile = useMediaQuery({
@@ -39,8 +31,8 @@ export const MobilePhaseItem = (props: MobilePhaseItemProps) => {
   });
 
   return (
-    <MainContainer index={index} isActive={isActive} top={top}>
-      <Line index={index} size={phaseHeight} width={phaseWidth}>
+    <MainContainer top={top}>
+      <Line size={phaseHeight} width={phaseWidth}>
         <LineDot />
       </Line>
       <Container>
@@ -67,7 +59,7 @@ export const MobilePhaseItem = (props: MobilePhaseItemProps) => {
   );
 };
 
-const MainContainer = styled.div<MainContainerProps>`
+const MainContainer = styled.div<{ top: number }>`
   margin-top: ${({ top }) => `-${top}px`};
 `;
 

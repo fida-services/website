@@ -59,10 +59,7 @@ const missionCards = [
     imageSrc: diagram,
     subtitle: 'The insurance industry is failing to cover customers',
     title: "Fida's mission is clear: to fill the protection gap!"
-  }
-];
-
-const sliderData = [
+  },
   {
     description: 'By eliminating trade friction, Fida restores essential liquidity, facilitating real-time optimization of investor portfolios. This strategic advantage empowers risk mitigation on an unprecedented scale.',
     imageSrc: flag,
@@ -74,8 +71,6 @@ const sliderData = [
   {
     description: 'Smart contracts become the cornerstone of our platform, introducing unparalleled efficiency. The result? Dramatically reduced costs and atomic, predictable claim payouts for policyholders, without sacrificing the essence of insurance that has been trusted since time immemorial.',
     imageSrc: flag,
-    isReversed: true,
-    isRoseText: true,
     title: 'Setup insurance sidecars and find the liquidity you need to grow your company.',
     subtitle: 'Elevating Efficiency, Ensuring Predictable Outcomes'
   },
@@ -148,7 +143,6 @@ export {
   ourMissionTexts,
   roadMapTexts,
   seamlessAITexts,
-  sliderData,
   welcomeCards,
   welcomeHeroCard,
   welcomeTexts
