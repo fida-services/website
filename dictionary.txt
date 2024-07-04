@@ -221,6 +221,7 @@ modalToggle
 motionConfig
 moveInAnimationValue
 mui
+n2022
 newDirection
 newHeight
 newTop
