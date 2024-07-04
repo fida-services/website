@@ -1,4 +1,5 @@
 .github
+.pnp
 Ai
 codebase
 AnimatedText
@@ -16,6 +17,7 @@ ContainerProps
 ContentWrapper
 CustomZoom
 DOCTYPE
+DS_Store
 Fida
 Fida's
 FidaLogo

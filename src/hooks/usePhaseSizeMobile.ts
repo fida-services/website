@@ -20,52 +20,28 @@ export const usePhaseSizeMobile = (props: UsePhaseSizeInput) => {
   });
 
   useEffect(() => {
-    // Calculate new height and position based on phase index
-    let newHeight = height;
-    let newWidth = width;
-    let newTop = 0;
-
-    switch (phaseIndex) {
-      case 1:
-        newHeight = isMobile ? height * 0.9 : height * 0.8;
-        newTop = isMobile ? height * 0.9 : height * 0.8;
-        newWidth = isMobile ? width * 0.5 : width * 0.7;
-        break;
-      case 2:
-        newHeight = isMobile ? height * 0.8 : height * 0.7;
-        newTop = isMobile ? height * 0.8 : height * 0.7;
-        newWidth = isMobile ? width * 0.4 : width * 0.7;
-        break;
-      case 3:
-        newHeight = isMobile ? height * 0.6 : height * 0.6;
-        newTop = isMobile ? height * 0.6 : height * 0.6;
-        newWidth = isMobile ? width * 0.3 : width * 0.6;
-        break;
-      case 4:
-        newHeight = isMobile ? height * 0.5 : height * 0.5;
-        newTop = isMobile ? height * 0.5 : height * 0.5;
-        newWidth = isMobile ? width * 0.3 : width * 0.5;
-        break;
-      case 5:
-        newHeight = isMobile ? height * 0.3 : height * 0.3;
-        newTop = isMobile ? height * 0.3 : height * 0.3;
-        newWidth = isMobile ? width * 0.6 : width * 0.85;
-        break;
-      case 6:
-        newHeight = isMobile ? height * 0.2 : height * 0.15;
-        newTop = isMobile ? height * 0.2 : height * 0.1;
-        newWidth = isMobile ? width * 0.5 : width * 0.85;
-        break;
-      default:
-        newHeight = height * 0.2;
-        newTop = height * 0.2;
-        break;
-    }
-
-    setPhaseHeight(newHeight);
-    setTop(newTop);
-    setPhaseWidth(newWidth);
-  }, [phaseIndex, height, width]);
+    const adj = (() => {
+      switch (phaseIndex) {
+        case 1:
+          return { height: isMobile ? 0.9 : 0.8, top: isMobile ? 0.9 : 0.8, width: isMobile ? 0.5 : 0.7 };
+        case 2:
+          return { height: isMobile ? 0.8 : 0.7, top: isMobile ? 0.8 : 0.7, width: isMobile ? 0.4 : 0.7 };
+        case 3:
+          return { height: 0.6, top: 0.6, width: isMobile ? 0.3 : 0.6 };
+        case 4:
+          return { height: 0.5, top: 0.5, width: isMobile ? 0.3 : 0.5 };
+        case 5:
+          return { height: 0.3, top: 0.3, width: isMobile ? 0.6 : 0.85 };
+        case 6:
+          return { height: isMobile ? 0.2 : 0.15, top: isMobile ? 0.2 : 0.1, width: isMobile ? 0.5 : 0.85 };
+        default:
+          return { height: 0.2, top: 0.2, width: 1 };
+      }
+    })();
+    setPhaseHeight(height * adj.height);
+    setTop(height * adj.top);
+    setPhaseWidth(width * adj.width);
+  }, [phaseIndex, isMobile, height, width]);
 
   return {
     phaseHeight,
