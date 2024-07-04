@@ -36,6 +36,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "spell-check": "spellchecker --config .spellcheckerrc.json",
+    "build-dictionary": "spellchecker --config .spellcheckerrc.json --generate-dictionary dictionary.txt",
     "prepare": "husky install"
   },
   "eslintConfig": {

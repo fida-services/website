@@ -15,6 +15,13 @@
     "[0-9]+.*",
     "[a-fA-F0-9]+"
   ],
+  "plugins": [
+    "spell",
+    "indefinite-article",
+    "repeated-words",
+    "syntax-mentions",
+    "syntax-urls"
+  ],
   "reports": [
     "./reports/spellcheck.json"
   ],
