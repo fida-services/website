@@ -7,12 +7,12 @@ jobs:
   collect_changes:
     name: Collect changed files
     outputs:
-      any_changed: ${{ steps.check_files.outputs.any_changed }}
-      changed_files: ${{ steps.check_files.outputs.changed_files }}
+      any_changed: ${{ steps.files.outputs.any_changed }}
+      changed_files: ${{ steps.files.outputs.all_changed_files }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Get Changed Files
         id: files
         uses: tj-actions/changed-files@v41
@@ -31,4 +31,4 @@ jobs:
     if: needs.collect_changes.outputs.any_changed == 'true'
     uses: ./.github/workflows/spellchecker.yaml
     with:
-      files: ${{ needs.collect_changes.outputs.all_changed_files }}
+      files: ${{ needs.collect_changes.outputs.changed_files }}
