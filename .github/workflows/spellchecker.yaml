@@ -1,6 +1,12 @@
 name: Runs spellcheck.cli
 
-on: [ workflow_call ]
+on:
+  workflow_call:
+    inputs:
+      files:
+        description: "A list of changed files"
+        required: false
+        type: string
 
 jobs:
   spellcheck:
@@ -17,7 +23,7 @@ jobs:
       - name: ensure Reports directory
         run: mkdir -p reports
       - name: Spell Check
-        run: npm run spell-check -- --files ${{ steps.files.outputs.all_changed_files }}
+        run: npm run spell-check -- --files ${{ inputs.files }}
       - name: Upload Result
         uses: actions/upload-artifact@v3
         with:
@@ -26,4 +32,4 @@ jobs:
         uses: austenstone/spellchecker-cli-action-summary@main
         with:
           file-json: ./reports/spellcheck.json
-          files-changed: ${{ steps.files.outputs.all_changed_files }}
+          files-changed: ${{ inputs.files }}
