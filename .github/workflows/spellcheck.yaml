@@ -4,7 +4,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  spellcheck:
+  collect_changes:
+    name: Collect changed files
+    outputs:
+      any_changed: ${{ steps.check_files.outputs.any_changed }}
+      changed_files: ${{ steps.check_files.outputs.changed_files }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
@@ -21,6 +25,10 @@ jobs:
             ./src/**/*.json
             ./src/**/*.ts
             ./src/**/*.tsx
-      - name: Run spellchecker
-        if: steps.files.outputs.any_changed == 'true'
-        uses: ./.github/workflows/spellchecker.yaml
+  spellcheck:
+    name: Run spellchecker
+    needs: collect_changes
+    if: needs.collect_changes.outputs.any_changed == 'true'
+    uses: ./.github/workflows/spellchecker.yaml
+    with:
+      files: ${{ needs.collect_changes.outputs.all_changed_files }}
