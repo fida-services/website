@@ -39,7 +39,7 @@ const ourMissionTexts = {
   title: 'Our Mission',
   description: 'Ensuring comprehensive coverage for global emerging risks by redefining how risk is transferred is a financial, social, and moral imperative.',
   values: [
-    { value: '$ 10 tn/FT', label: 'Estimated gap' },
+    { value: '$10 tn', label: 'Estimated gap (Financial Times)' },
     { value: '66%', label: 'Losses remain uncovered' },
     { value: '40%', label: 'Median operational friction' },
     { value: '$12 - $29 bln', label: 'Parametric insurance 2022 - 2030' }
