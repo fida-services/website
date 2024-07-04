@@ -1,0 +1,29 @@
+name: Runs spellcheck.cli
+
+on: [ workflow_call ]
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Fetch Dependencies
+        run: npm ci
+      - name: ensure Reports directory
+        run: mkdir -p reports
+      - name: Spell Check
+        run: npm run spell-check -- --files ${{ steps.files.outputs.all_changed_files }}
+      - name: Upload Result
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./reports/spellcheck.json
+      - name: Report
+        uses: austenstone/spellchecker-cli-action-summary@main
+        with:
+          file-json: ./reports/spellcheck.json
+          files-changed: ${{ steps.files.outputs.all_changed_files }}
