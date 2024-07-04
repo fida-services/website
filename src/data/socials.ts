@@ -24,7 +24,7 @@ export const socials = [
   {
     src: youtube,
     name: 'youtube',
-    link: 'https://youtube.com/fida_finance'
+    link: 'https://youtube.com/@Fida.Finance'
   },
   {
     src: linkedin,
