@@ -55,24 +55,3 @@ const Container = styled.div`
     padding: 120px 100px;
   }
 `;
-
-// const Description = styled.span`
-//     color: ${({ color }) => (color || colors.white)};
-//     font-size: ${({ size }) => (size ? `${size}rem` : '16px')};
-//     text-align: ${({ textPlacing }) => textPlacing || 'left'};
-//     font-weight: ${({ fontWeight }) => (fontWeight || '500')};
-//     font-family: ${({ fontFamily }) => (fontFamily || 'Satoshi-Variable')};
-//     line-height: ${({ lineHeight }) => (lineHeight ? `${lineHeight}px` : '')};
-
-//     white-space: pre-line;
-
-//     ${({ noTextWrap }) => noTextWrap && 'white-space: nowrap;'}
-//     transition: 0.5s;
-
-//       &:hover {
-//       ${({ hoverTransition }) => hoverTransition
-//         && css`
-//           opacity: 0.7;
-//         `}
-//       }
-// `;
