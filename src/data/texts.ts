@@ -1,5 +1,7 @@
 import diagram from 'assets/images/diagram.svg';
 import flag from 'assets/images/flag.svg';
+import motor from 'assets/images/motor.svg';
+import boat from 'assets/images/boat.svg';
 import risk from 'assets/images/risk.svg';
 
 // welcome section
@@ -70,13 +72,13 @@ const missionCards = [
   },
   {
     description: 'Smart contracts become the cornerstone of our platform, introducing unparalleled efficiency. The result? Dramatically reduced costs and atomic, predictable claim payouts for policyholders, without sacrificing the essence of insurance that has been trusted since time immemorial.',
-    imageSrc: flag,
+    imageSrc: motor,
     title: 'Setup insurance sidecars and find the liquidity you need to grow your company.',
     subtitle: 'Elevating Efficiency, Ensuring Predictable Outcomes'
   },
   {
     description: 'Fida redefines insurance investment, unlocking the potential of solvency universally. This innovation ushers in higher yields across the board, democratizing profit opportunities for investors.',
-    imageSrc: flag,
+    imageSrc: boat,
     isReversed: true,
     isRoseText: true,
     title: 'Follow insurance experts and gain an edge by leveraging uncorrelated assets as your investment base.',

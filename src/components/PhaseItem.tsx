@@ -60,7 +60,7 @@ const MainContainer = styled.div<MainContainerProps>`
   display: flex;
   justify-content: ${({ rightPosition }) => (rightPosition ? 'end' : 'start')};;
   left: ${({ rightPosition }) => (rightPosition ? 'auto' : '0px')};
-  opacity: 0.2;
+  opacity: 0.5;
   right: ${({ rightPosition }) => (rightPosition ? '0px' : 'auto')};
 
   &:hover {
