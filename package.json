@@ -15,6 +15,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/styled-components": "^5.1.26",
+    "framer-motion": "^11.2.10",
     "primeflex": "^3.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,7 +23,7 @@
     "react-scripts": "5.0.1",
     "react-scroll-motion": "^0.3.2",
     "styled-components": "^5.3.6",
-    "swiper": "^9.0.5",
+    "swiper": "^11.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -35,6 +36,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "spell-check": "spellchecker --config .spellcheckerrc.json",
+    "build-dictionary": "spellchecker --config .spellcheckerrc.json --generate-dictionary dictionary.txt",
     "prepare": "husky install"
   },
   "eslintConfig": {
@@ -66,6 +68,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@hookform/devtools": "^4.2.2",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",

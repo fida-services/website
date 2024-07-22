@@ -1,38 +1,62 @@
-import React from 'react';
 import styled from 'styled-components';
 import Modal from '@mui/material/Modal';
 
+import { ReactComponent as FidaLogo } from 'assets/logos/fidaLogo.svg';
+import menuMobileOpen from 'assets/icons/menuMobileOpen.svg';
+import menuMobileClose from 'assets/icons/menuMobileClose.svg';
 import { menuItems } from 'data/menuItems';
 import { colors } from 'theme';
 import { Text } from 'components/_common/Text';
-import filledSquares from 'assets/shapes/squareWithFill.png';
+import { MenuButton } from 'components/MenuButton';
 
 interface Props {
-  modalToggle: boolean
+  modalToggle: boolean;
+  setModalToggle: React.Dispatch<React.SetStateAction<boolean>>
 }
-const modalStyled = {
-  top: '120px',
-  height: 'calc(100% - 120px)'
-};
 
 export const HeaderMenuMobile = (props: Props) => {
-  const { modalToggle } = props;
-  const { joinNetwork: { label, link } } = menuItems;
+  const { modalToggle, setModalToggle } = props;
+  const {
+    learnAbout: { label, link },
+  } = menuItems;
   return (
-    <Modal style={modalStyled} hideBackdrop open={modalToggle}>
-      <MenuWrapper className="gap-4">
-        {menuItems.iterableItems.map(({ label, link }) => (
-          <a key={label} href={link} className="no-underline">
-            <Text key={label} size={2.5} label={label} toUpperCase />
-          </a>
-        ))}
-        <a href={link} className="no-underline">
-          <Text label={label} size={2.5} color={colors.textGradient} linearGradient toUpperCase />
-        </a>
-      </MenuWrapper>
+    <Modal hideBackdrop open={modalToggle}>
+      <>
+        <TopWrapper>
+          <FidaLogo />
+          <MobileMenuButton
+            src={modalToggle ? menuMobileClose : menuMobileOpen}
+            onClick={() => setModalToggle((prevState: boolean) => !prevState)}
+            alt="open menu"
+          />
+        </TopWrapper>
+        <MenuWrapper className="gap-4">
+          {menuItems.iterableItems.map(({ label, link }) => (
+            <a key={label} href={link} className="no-underline">
+              <Text
+                key={label}
+                size={0.875}
+                label={label}
+                toUpperCase
+                textPlacing="center"
+                color={colors.buttonTertiaryColorFg}
+              />
+            </a>
+          ))}
+          <MenuButton label={label} link={link} border onClickLink={() => setModalToggle(false)} />
+        </MenuWrapper>
+      </>
     </Modal>
   );
 };
+
+const TopWrapper = styled.div`
+  align-items: center;
+  background-color: ${colors.mainBlack};
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+`;
 
 const MenuWrapper = styled.div`
   display: flex;
@@ -40,16 +64,17 @@ const MenuWrapper = styled.div`
   background-color: ${colors.mainBlack};
   height: 100%;
   padding: 10px 10px 0;
-  
-  &:before {
-      content: "";
-      position: absolute;
-      overflow: visible;
-      width: 500px;
-      height: 500px;
-      bottom: -350px;
-      left: -50px;
-      background: url(${filledSquares}) 0 0 no-repeat;
-      transform: rotate(60deg) scale(.8);
-    }
+  text-align: center;
+  align-items: center;
+  padding-top: 80px;
+
+  :focus-visible {
+    outline: none;
+  }
+`;
+
+const MobileMenuButton = styled.img`
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 `;

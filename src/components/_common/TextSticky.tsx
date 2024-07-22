@@ -30,7 +30,7 @@ export const TextSticky = ({ textData }: Props) => {
     <StyledTextSticky>
       <div>
         {titleTexts.map((text, index) => (index === highlightIndex
-          ? <Text key={text} size={isMobile ? 1.5 : isTablet ? 1.7 : 2} label={text} color={colors.textGradient} fontWeight={700} linearGradient />
+          ? <Text key={text} size={isMobile ? 1.5 : isTablet ? 1.7 : 2} label={text} color={colors.textGradient} fontWeight={700} />
           : <Text key={text} size={isMobile ? 1.5 : isTablet ? 1.7 : 2} label={text} fontWeight={400} />))}
       </div>
       { descriptionText && (

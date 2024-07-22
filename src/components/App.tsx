@@ -1,50 +1,45 @@
-import React from 'react';
 import styled from 'styled-components';
-import { ScrollContainer } from 'react-scroll-motion';
+import { useMediaQuery } from 'react-responsive';
+import 'swiper/css';
 
-import { Welcome } from './Welcome';
-import { Description } from './Description';
-import { StickyOverlappingSections } from './StickyOverlappingSections';
-import { JoinNetwork } from './JoinNetwork';
-import { SignUpBelow } from './SignUpBelow';
-import { Slider } from './slider/Slider';
-import { KeepingSecure } from './KeepingSecure';
-import { SafetyInfo } from './SafetyInfo';
-import { Security } from './Security';
-import { Footer } from './Footer';
-import { Partners } from './Partners';
+import { Header } from './Header';
+import { Welcome } from './sections/Welcome';
+import { maxWidth640 } from './rwd/detectMobile';
+import { OurMission } from './sections/OurMission';
+import { ConquerRisk } from './sections/ConquerRisk';
+import { FidaMarketplace } from './sections/FidaMarketplace';
+import { SeamlessAI } from './sections/SeamlessAI';
+import { RoadMap } from './sections/RoadMap';
+import { JoinNetwork } from './sections/JoinNetwork';
+import { Footer } from './sections/Footer';
 
-const App = () => (
-  <ViewportWrapper>
-    <MainWrapper>
-      <ScrollContainer>
+const App = () => {
+  const isTablet = useMediaQuery({
+    query: maxWidth640,
+  });
+
+  return (
+    <div>
+      <Header />
+      <Container isTablet={isTablet}>
         <Welcome />
-        <Description />
-        <StickyOverlappingSections isLaptop />
-        <StickyOverlappingSections isPhone />
-        <StickyOverlappingSections isScreen isLast />
+        <OurMission />
+        <ConquerRisk />
+        <FidaMarketplace />
+      </Container>
+      <SeamlessAI />
+      <Container isTablet={isTablet}>
+        <RoadMap />
         <JoinNetwork />
-        <SignUpBelow />
-        <Slider />
-        <KeepingSecure />
-        <SafetyInfo />
-        {/* <Security /> */}
-        {/* <Partners /> */}
         <Footer />
-      </ScrollContainer>
-    </MainWrapper>
-  </ViewportWrapper>
-);
+      </Container>
+    </div>
+  );
+};
 
-const ViewportWrapper = styled.div`
-  width: 100%;
-  overflow: hidden;
-`;
-
-const MainWrapper = styled.div`
-  color: white;
-  max-width: 1440px;
+const Container = styled.div<{ isTablet: boolean }>`
   margin: 0 auto;
+  margin: ${({ isTablet }) => (isTablet ? '0 16px' : '0 48px')};
 `;
 
 export default App;

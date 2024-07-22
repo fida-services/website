@@ -1,16 +1,24 @@
 export const menuItems = {
   iterableItems: [
     {
-      label: 'home',
-      link: '#'
+      label: 'litepaper',
+      link: 'https://docs.fida.finance/introduction/whitepaper',
     },
     {
-      label: 'investor deck',
-      link: 'https://docsend.com/view/vk3buz5675z2siuy'
+      label: 'documentation',
+      link: 'https://docs.fida.finance',
+    },
+    {
+      label: 'blog',
+      link: 'https://medium.com/@adelmonte',
+    },
+    {
+      label: 'github',
+      link: 'https://github.com/fida-services',
     },
   ],
-  joinNetwork: {
-    label: 'join our network',
-    link: ' https://share.hsforms.com/1BenVBo4ESxyMjAsvqk0GRQe8c3w'
-  }
+  learnAbout: {
+    label: 'Discover Marketplace',
+    link: '#marketplace',
+  },
 };

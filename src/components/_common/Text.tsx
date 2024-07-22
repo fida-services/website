@@ -1,43 +1,115 @@
-import React, { CSSProperties } from 'react';
+/* eslint-disable no-else-return */
+/* eslint-disable no-nested-ternary */
+import { CSSProperties, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 
 import { colors } from 'theme';
 
 interface StyledProps {
-  size?: number
   color?: string
-  linearGradient?: boolean;
-  hoverTransition?: boolean;
-  noTextWrap?: boolean;
-  textPlacing?: CSSProperties['textAlign']
+  fontFamily?: CSSProperties['fontFamily']
   fontWeight?: CSSProperties['fontWeight']
+  hoverTransition?: boolean;
+  lineHeight?: number;
+  link?: {
+    label: string
+    href: string
+  }
+  noTextWrap?: boolean;
+  size?: number
+  style?: React.CSSProperties
+  textPlacing?: CSSProperties['textAlign']
 }
 
 interface Props extends StyledProps {
   label: string;
+  isRoseText?: boolean
   toUpperCase?: boolean
 }
 
+const roseReg = /(<rose>|<\/rose>)/;
+
 export const Text = (props: Props) => {
-  const { label, toUpperCase, color, linearGradient, size, textPlacing, fontWeight, hoverTransition, noTextWrap } = props;
+  const {
+    color,
+    fontFamily,
+    fontWeight,
+    hoverTransition,
+    isRoseText,
+    label,
+    lineHeight,
+    link,
+    noTextWrap,
+    size,
+    style,
+    textPlacing,
+    toUpperCase
+  } = props;
+
+  const renderText = useCallback(
+    (text: string, index: number, isRose: boolean) => (
+      <StyledSpan
+        color={isRose ? colors.rose : color}
+        fontFamily={fontFamily}
+        fontWeight={fontWeight}
+        hoverTransition={hoverTransition}
+        key={index}
+        lineHeight={lineHeight}
+        noTextWrap={noTextWrap}
+        size={size}
+        style={style}
+        textPlacing={textPlacing}
+      >
+        {toUpperCase ? text.toUpperCase() : text}
+      </StyledSpan>
+    ),
+    [props]
+  );
+
+  const parts = label?.split(roseReg);
+  let isRose = false;
+
+  const formattedText = parts?.map((part, index) => {
+    if (part === '<rose>') {
+      isRose = true;
+      return '';
+    } else if (part === '</rose>') {
+      isRose = false;
+      return '';
+    } else {
+      return renderText(part, index, isRose);
+    }
+  });
 
   return (
-    <StyledSpan textPlacing={textPlacing} fontWeight={fontWeight} size={size} color={color} linearGradient={linearGradient} hoverTransition={hoverTransition} noTextWrap={noTextWrap}>
-      {toUpperCase ? label.toUpperCase() : label}
+    <StyledSpan
+      color={color}
+      fontFamily={fontFamily}
+      fontWeight={fontWeight}
+      hoverTransition={hoverTransition}
+      lineHeight={lineHeight}
+      noTextWrap={noTextWrap}
+      size={size}
+      style={style}
+      textPlacing={textPlacing}
+    >
+      {isRoseText ? formattedText : toUpperCase ? label.toUpperCase() : label}
+      {link ? (
+        <StyledLink href={link?.href}>
+          {link?.label}
+        </StyledLink>
+      ) : null}
     </StyledSpan>
   );
 };
 
 const StyledSpan = styled.span<StyledProps>`
-    color: ${({ color, linearGradient }) => ((color && !linearGradient) ? color : colors.white)};
-    background: ${({ linearGradient, color }) => (linearGradient && color ? color : 'none')};
+    color: ${({ color }) => (color || colors.white)};
     font-size: ${({ size }) => (size ? `${size}rem` : '16px')};
     text-align: ${({ textPlacing }) => textPlacing || 'left'};
     font-weight: ${({ fontWeight }) => (fontWeight || '500')};
-
-    background-clip: ${({ linearGradient }) => (linearGradient ? 'text' : 'none')};
-    -webkit-background-clip: ${({ linearGradient }) => (linearGradient ? 'text' : 'none')};
-    -webkit-text-fill-color: ${({ linearGradient }) => (linearGradient ? 'transparent' : 'none')};
+    font-family: ${({ fontFamily }) => (fontFamily || 'Satoshi-Variable')};
+    line-height: ${({ lineHeight }) => (lineHeight ? `${lineHeight}px` : '')};
 
     white-space: pre-line;
 
@@ -51,4 +123,8 @@ const StyledSpan = styled.span<StyledProps>`
           opacity: 0.7;
         `}
       }
+`;
+
+const StyledLink = styled.a`
+    color: ${colors.rose};
 `;
