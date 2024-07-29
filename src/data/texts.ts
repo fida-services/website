@@ -7,7 +7,7 @@ import risk from 'assets/images/risk.svg';
 // welcome section
 const welcomeTexts = {
   description: 'Discover a way to invest in assets uncorrelated to the financial markets.',
-  title: 'Opportunity meet Risk.',
+  title: 'Opportunity\nmeet Risk.',
 };
 
 const welcomeHeroCard = {
