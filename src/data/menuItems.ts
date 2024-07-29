@@ -10,7 +10,7 @@ export const menuItems = {
     },
     {
       label: 'blog',
-      link: 'https://medium.com/@adelmonte',
+      link: 'https://medium.com/@fida.finance',
     },
     {
       label: 'github',
