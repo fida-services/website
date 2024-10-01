@@ -24,6 +24,7 @@ FidaMarketplace
 FidaMarketplaceCard
 FidaMarketplaceCardProps
 FooterWrapper
+Founder&apos
 FounderSale
 HTMLDivElement
 HTMLElement
@@ -59,8 +60,10 @@ MobilePhaseItem
 MobilePhaseItemProps
 MoveIn
 MoveOut
+NFT
 NFT-MAKER
 NFTs
+NMKR
 OurMission
 ParamsType
 PhaseItem
@@ -103,6 +106,7 @@ TopWrapper
 UsePhaseSizeInput
 WelcomeCards
 WithRoseText
+adopter&apos
 argTypes
 args
 arrowLeft
@@ -164,6 +168,7 @@ gradientPhones
 grey
 greyBackgroundGradient
 greyWhite
+h1
 hideBackdrop
 highlightIndex
 hoverTransition
@@ -257,6 +262,7 @@ onclick
 openPaymentWindow
 ourMissionOverlay
 ourMissionTexts
+outerHeight
 param
 paramArr
 params
@@ -278,6 +284,8 @@ roadMapTexts
 roseDot
 roseReg
 rwd
+screenX
+screenY
 seamlessAI
 seamlessAIDesktop
 seamlessAIMobile
@@ -332,4 +340,5 @@ welcomeOverlay
 welcomeOverlayDesktop
 welcomeTexts
 whileInView
+wtop
 youtube
