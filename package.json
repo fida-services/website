@@ -33,8 +33,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
     "spell-check": "spellchecker --config .spellcheckerrc.json",
     "build-dictionary": "spellchecker --config .spellcheckerrc.json --generate-dictionary dictionary.txt",
     "prepare": "husky install"
@@ -70,16 +68,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@hookform/devtools": "^4.2.2",
-    "@storybook/addon-actions": "^6.5.15",
-    "@storybook/addon-essentials": "^6.5.15",
-    "@storybook/addon-interactions": "^6.5.15",
-    "@storybook/addon-links": "^6.5.15",
-    "@storybook/builder-webpack5": "^6.5.15",
-    "@storybook/manager-webpack5": "^6.5.15",
-    "@storybook/node-logger": "^6.5.15",
-    "@storybook/preset-create-react-app": "^4.1.2",
-    "@storybook/react": "^6.5.15",
-    "@storybook/testing-library": "^0.0.13",
     "@types/react-helmet": "^6.1.5",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
@@ -98,6 +86,7 @@
     "gh-pages": "^5.0.0",
     "husky": "^8.0.0",
     "prop-types": "^15.8.1",
+    "react-router-dom": "^6.26.2",
     "spellchecker-cli": "^6.1.1",
     "typescript": "^4.9.4",
     "webpack": "^5.94.0"
