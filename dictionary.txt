@@ -1,7 +1,6 @@
 .github
 .pnp
 Ai
-codebase
 AnimatedText
 ArrowPointer
 BaseTextWithDescription
@@ -25,6 +24,8 @@ FidaMarketplace
 FidaMarketplaceCard
 FidaMarketplaceCardProps
 FooterWrapper
+Founder&apos
+FounderSale
 HTMLDivElement
 HTMLElement
 HTMLImageElement
@@ -59,7 +60,10 @@ MobilePhaseItem
 MobilePhaseItemProps
 MoveIn
 MoveOut
+NFT
+NFT-MAKER
 NFTs
+NMKR
 OurMission
 ParamsType
 PhaseItem
@@ -102,12 +106,14 @@ TopWrapper
 UsePhaseSizeInput
 WelcomeCards
 WithRoseText
+adopter&apos
 argTypes
 args
 arrowLeft
 arrowPointer
 arrowRight
 austenstone
+backgroundCheck
 backgroundColor
 backgroundGradient
 backgroundGradientBottom
@@ -125,7 +131,10 @@ card3
 charset
 ci
 className
+clearInterval
 clior
+clior
+codebase
 codebase
 collateralization
 config
@@ -159,6 +168,7 @@ gradientPhones
 grey
 greyBackgroundGradient
 greyWhite
+h1
 hideBackdrop
 highlightIndex
 hoverTransition
@@ -191,6 +201,8 @@ isScreen
 isSmallerCard
 isTablet
 iterableItems
+javascript
+javascript:openPaymentWindow
 lang
 laptopCards
 lateralPadding
@@ -236,6 +248,7 @@ newTop
 newWidth
 newsletterTexts
 ninefold
+nmeet
 noTextWrap
 nowrap
 npm
@@ -245,15 +258,21 @@ onClickLink
 onClickRight
 onImageLoad
 onLoad
+onclick
+openPaymentWindow
 ourMissionOverlay
 ourMissionTexts
+outerHeight
 param
 paramArr
 params
+paymentUrl
 phaseHeight
 phaseIndex
 phaseWidth
 png
+popupHeight
+popupWidth
 prevState
 px
 react-dom
@@ -265,6 +284,8 @@ roadMapTexts
 roseDot
 roseReg
 rwd
+screenX
+screenY
 seamlessAI
 seamlessAIDesktop
 seamlessAIMobile
@@ -272,6 +293,7 @@ seamlessAITexts
 setImageHeight
 setImageWidth
 setIntersecting
+setInterval
 setIsExpanded
 setModalToggle
 setOne
@@ -318,6 +340,5 @@ welcomeOverlay
 welcomeOverlayDesktop
 welcomeTexts
 whileInView
+wtop
 youtube
-clior
-nmeet
