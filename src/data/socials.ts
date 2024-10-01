@@ -19,7 +19,7 @@ export const socials = [
   {
     src: medium,
     name: 'medium',
-    link: 'https://medium.com/@adelmonte'
+    link: 'https://medium.com/@fida.finance'
   },
   {
     src: youtube,
