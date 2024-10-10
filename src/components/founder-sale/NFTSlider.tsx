@@ -16,6 +16,7 @@ import nft3 from 'assets/images/nft-cards/nft-3.svg';
 import nft4 from 'assets/images/nft-cards/nft-4.svg';
 import nft5 from 'assets/images/nft-cards/nft-5.svg';
 import nft6 from 'assets/images/nft-cards/nft-6.svg';
+import nft7 from 'assets/images/nft-cards/nft-7.svg';
 
 import { maxWidth640 } from 'components/rwd/detectMobile';
 
@@ -42,7 +43,7 @@ export const NFTSlider = () => {
         pagination={false}
         navigation
         modules={[Navigation, EffectCoverflow]}
-        className="mySwiper"
+        className="nft-slider"
       >
         {nfts.map((nft, index) => (
         // eslint-disable-next-line react/no-array-index-key
@@ -60,11 +61,11 @@ const NFTSliderContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 40px;
+  padding: 0;
 
     @media (max-width: 840px) {
-    padding: 0 12px;
+    padding: 0;
   }
 `;
 
-const nfts = [nft1, nft2, nft3, nft4, nft5, nft6, nft1, nft2, nft3, nft4, nft5, nft6, nft1, nft2, nft3, nft4, nft5, nft6, nft1, nft2, nft3, nft4, nft5, nft6, nft1, nft2, nft3, nft4, nft5, nft6, nft1, nft2, nft3, nft4, nft5, nft6];
+const nfts = [nft1, nft2, nft3, nft4, nft5, nft6, nft7, nft1, nft2, nft3, nft4, nft5, nft6, nft7, nft1, nft2, nft3, nft4, nft5, nft6, nft7, nft1, nft2, nft3, nft4, nft5, nft6, nft7, nft1, nft2, nft3, nft4, nft5, nft6, nft7, nft1, nft2, nft3, nft4, nft5, nft6, nft7];

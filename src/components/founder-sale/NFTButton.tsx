@@ -40,7 +40,7 @@ const GradientButton = styled.button`
   }
 
    @media (max-width: 840px) {
-    width: 60%;
+    width: 90%;
     font-size: 16px;
   }
 `;
