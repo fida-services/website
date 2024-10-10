@@ -1,20 +1,32 @@
-.swiper {
+.nft-slider.swiper {
     width: 100%;
   }
   
-  .swiper-slide {
+  .nft-slider .swiper-slide {
     background-position: center;
     background-size: cover;
     width: initial;
     height: initial;
+    filter: brightness(20%);
+  }
+
+  .nft-slider .swiper-slide.swiper-slide-visible {
+    filter: brightness(50%)
+  }
+  .nft-slider .swiper-slide.swiper-slide-visible.swiper-slide-prev, .nft-slider .swiper-slide.swiper-slide-visible.swiper-slide-next {
+    filter: brightness(80%)
+  }
+
+  .nft-slider .swiper-slide.swiper-slide-visible.swiper-slide-active {
+    filter: brightness(100%)
   }
   
-  .swiper-slide img {
+  .nft-slider .swiper-slide img {
     display: block;
     width: 100%;
   }
 
-  .swiper-button-next, .swiper-button-prev {
+  .nft-slider .swiper-button-next, .nft-slider .swiper-button-prev {
     border-radius: 100%;
     background-color: white;
     color: #323232;
@@ -22,17 +34,33 @@
     height: 56px;
   }
 
-  .swiper-button-next::after, .swiper-button-prev::after {
+  .nft-slider .swiper-button-next {
+    right: 40px;
+  }
+
+  .nft-slider .swiper-button-prev {
+    left: 40px;
+  }
+
+  .nft-slider .swiper-button-next::after, .nft-slider .swiper-button-prev::after {
     scale: 0.4;
   }
 
   @media (max-width: 840px) {
-    .swiper-button-next, .swiper-button-prev {
+    .nft-slider .swiper-button-next, .nft-slider .swiper-button-prev {
         width: 24px;
         height: 24px;
       }
 
-      .swiper-button-next::after, .swiper-button-prev::after {
+      .nft-slider .swiper-button-next::after, .nft-slider .swiper-button-prev::after {
         scale: 0.2;
+      }
+
+      .nft-slider .swiper-button-next {
+        right: 10px;
+      }
+    
+      .nft-slider .swiper-button-prev {
+        left: 10px;
       }
   }
