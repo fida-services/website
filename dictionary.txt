@@ -125,8 +125,8 @@ img
 InfoProps
 InformationBox
 InformationDescription
-informations
-InformationsContainer
+Details
+DetailsContainer
 InformationTitle
 initialSlide
 InnerCard
@@ -233,7 +233,7 @@ nft5
 nft6
 NFTButton
 nft-cards
-NFTInformations
+NFTDetails
 nft-infos
 NFT-MAKER
 nfts

@@ -11,7 +11,7 @@ interface InfoProps {
   src: string;
 }
 
-const informations: InfoProps[] = [
+const Details: InfoProps[] = [
   {
     title: 'Exclusive Fida Benefits',
     description: 'The Fida Founders NFT Collection is designed to offer a suite of benefits that enhance your experience and potential returns within the Fida ecosystem.',
@@ -29,19 +29,19 @@ const informations: InfoProps[] = [
   },
 ];
 
-export const NFTInformations = () => (
-  <InformationsContainer>
-    {informations.map(info => (
+export const NFTDetails = () => (
+  <DetailsContainer>
+    {Details.map(info => (
       <InformationBox key={info.title}>
         <img width={100} height={100} src={info.src} alt={info.title} />
         <InformationTitle>{info.title}</InformationTitle>
         <InformationDescription>{info.description}</InformationDescription>
       </InformationBox>
     ))}
-  </InformationsContainer>
+  </DetailsContainer>
 );
 
-const InformationsContainer = styled.div`
+const DetailsContainer = styled.div`
   width: 90%;
   display: flex;
   flex-direction: row;
