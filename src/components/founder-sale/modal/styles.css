@@ -1,12 +1,16 @@
 .modal-swiper.swiper {
     width: 100%;
     height: 100%;
+    border: none;
+    outline: none;
   }
   
   .modal-swiper .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
+    border: none;
+    outline: none;
   
     /* Center slide text vertically */
     display: flex;
@@ -17,6 +21,7 @@
   .modal-swiper .swiper-slide img {
     display: block;
     width: 100%;
+    max-width: 829px;
     height: 324px;
     object-fit: cover;
     border-radius: 24px;
@@ -46,17 +51,21 @@
   .modal-swiper .swiper-button-next, .modal-swiper .swiper-button-prev {
     border-radius: 100%;
     background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: #323232;
-    width: 56px;
-    height: 56px;
+    width: 42px;
+    height: 42px;
+    top: auto;
+    bottom: 0;
+    z-index: 30;
   }
 
   .modal-swiper .swiper-button-next {
-    right: -10px;
+    right: 22%;
   }
 
   .modal-swiper .swiper-button-prev {
-    left: -10px;
+    left: 22%;
   }
 
   .modal-swiper .swiper-button-next::after, .modal-swiper .swiper-button-prev::after {
@@ -66,3 +75,58 @@
   .modal-swiper .swiper-button-disabled {
     visibility: hidden;
   }
+
+  @media (max-width: 830px) {
+    .modal-swiper .swiper-button-next {
+      right: 14%;
+    }
+  
+    .modal-swiper .swiper-button-prev {
+      left: 14%;
+    }
+}
+
+  @media (max-width: 640px) {
+    .modal-swiper .swiper-pagination-bullet {
+      width: 16px;
+      height: 16px;
+    }
+
+    .modal-swiper .swiper-button-next, .modal-swiper .swiper-button-prev {
+      width: 26px;
+      height: 26px;
+      bottom: 8px;
+    }
+
+    .modal-swiper .swiper-button-next::after, .modal-swiper .swiper-button-prev::after {
+      scale: 0.2;
+    }
+
+    .modal-swiper .swiper-button-next {
+      right: 32%;
+    }
+  
+    .modal-swiper .swiper-button-prev {
+      left: 32%;
+    }
+}
+
+@media (max-width: 560px) {
+  .modal-swiper .swiper-button-next {
+    right: 28%;
+  }
+
+  .modal-swiper .swiper-button-prev {
+    left: 28%;
+  }
+}
+
+@media (max-width: 450px) {
+  .modal-swiper .swiper-button-next {
+    right: 22%;
+  }
+
+  .modal-swiper .swiper-button-prev {
+    left: 22%;
+  }
+}

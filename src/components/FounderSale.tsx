@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { colors } from 'theme';
 
 import { useMediaQuery } from 'react-responsive';
-import { Header } from './Header';
 import { Footer } from './sections/Footer';
 import { Text } from './_common/Text';
 import { Container } from './_common/Container';
@@ -15,6 +14,7 @@ import { NFTSlider } from './founder-sale/NFTSlider';
 import { NFTDetails } from './founder-sale/NFTDetails';
 import { maxWidth840 } from './rwd/detectMobile';
 import { FounderModal } from './founder-sale/modal/FounderModal';
+import { HeaderFounders } from './HeaderFounders';
 
 export const FounderSale = () => {
   const [isFounderModalOpen, setIsFounderModalOpen] = useState(false);
@@ -49,7 +49,7 @@ export const FounderSale = () => {
   return (
     <>
       <Container>
-        <Header />
+        <HeaderFounders handleOpenModal={() => setIsFounderModalOpen(true)} />
         <FounderContainer>
           <TitleContainer>
             <Title>{'Fida Founder\'s NFT Collection Mint'.toUpperCase()}</Title>
@@ -62,9 +62,6 @@ export const FounderSale = () => {
         </FounderContainer>
         <Footer />
       </Container>
-      {/* <FounderModal isOpen={isFounderModalOpen} handleClose={() => setIsFounderModalOpen(false)}>
-        <div>dupa</div>
-      </FounderModal> */}
       <FounderModal isOpen={isFounderModalOpen} handleClose={() => setIsFounderModalOpen(false)} />
     </>
   );
