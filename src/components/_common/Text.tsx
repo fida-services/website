@@ -25,6 +25,7 @@ interface Props extends StyledProps {
   label: string;
   isRoseText?: boolean
   toUpperCase?: boolean
+  onClick?: () => void
 }
 
 const roseReg = /(<rose>|<\/rose>)/;
@@ -43,7 +44,8 @@ export const Text = (props: Props) => {
     size,
     style,
     textPlacing,
-    toUpperCase
+    toUpperCase,
+    onClick
   } = props;
 
   const renderText = useCallback(
@@ -92,6 +94,7 @@ export const Text = (props: Props) => {
       size={size}
       style={style}
       textPlacing={textPlacing}
+      onClick={onClick}
     >
       {isRoseText ? formattedText : toUpperCase ? label.toUpperCase() : label}
       {link ? (

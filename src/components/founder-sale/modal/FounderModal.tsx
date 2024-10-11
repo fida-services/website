@@ -42,20 +42,30 @@ const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
+  max-width: 861px;
   height: 70%;
+  min-height: 690px;
+  overflow: auto;
   background-color: white;
   border: 1px solid #000;
   box-shadow: 24;
   padding: 16px;
   outline: none;
   border-radius: 24px;
-`;
+
+       @media (max-width: 1900px) {
+        height: 90%;
+    }
+
+       @media (max-width: 860px) {
+        max-width: 100%;
+    }
+    `;
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,10 +74,15 @@ const CloseButton = styled.button`
   border-radius: 100%;
   border: none;
   outline: none;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.2);
   color: white;
-  backdrop-filter: blur(1px);
   font-size: 18px;
   z-index: 10;
   cursor: pointer;
+  backdrop-filter: blur(8px);
+
+       @media (max-width: 860px) {
+        width: 40px;
+        height: 40px;
+    }
 `;
