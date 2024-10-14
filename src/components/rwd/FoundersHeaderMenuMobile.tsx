@@ -7,6 +7,7 @@ import menuMobileClose from 'assets/icons/menuMobileClose.svg';
 import { colors } from 'theme';
 import { Text } from 'components/_common/Text';
 import { StyledMenuMainButton } from 'components/StyledFoundersNavButtons';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   modalToggle: boolean;
@@ -16,6 +17,7 @@ interface Props {
 
 export const FoundersHeaderMenuMobile = (props: Props) => {
   const { modalToggle, setModalToggle, handleOpenLearnMoreModal } = props;
+  const navigate = useNavigate();
 
   return (
     <Modal hideBackdrop open={modalToggle}>
@@ -37,7 +39,7 @@ export const FoundersHeaderMenuMobile = (props: Props) => {
             color={colors.buttonTertiaryColorFg}
             onClick={handleOpenLearnMoreModal}
           />
-          <StyledMenuMainButton>
+          <StyledMenuMainButton onClick={() => navigate('/')}>
             Discover FIDA
           </StyledMenuMainButton>
         </MenuWrapper>

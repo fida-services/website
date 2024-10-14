@@ -6,8 +6,8 @@ import welcomeOverlayDesktop from 'assets/overlays/welcome-overlay-desktop.svg';
 import { Text } from 'components/_common/Text';
 import { colors } from 'theme';
 import { welcomeTexts } from 'data/texts';
+import { FounderHeroCard } from 'components/FounderHeroCard';
 import { maxWidth640, maxWidth840 } from '../rwd/detectMobile';
-import { HeroCard } from '../HeroCard';
 import { Title } from '../_common/Title';
 import { WelcomeCards } from '../WelcomeCards';
 
@@ -37,7 +37,7 @@ export const Welcome = () => {
             size={isTablet ? 1.5 : 1.875}
           />
         </TextWrapper>
-        <HeroCard />
+        <FounderHeroCard />
       </StyledWelcome>
       <WelcomeCards />
     </>
@@ -52,6 +52,10 @@ const StyledWelcome = styled.div`
   @media (min-width: 1024px) {
     align-items: center;
     flex-direction: row;
+    grid-template-columns: 60% 50%;
+  }
+
+   @media (min-width: 1090px) {
     grid-template-columns: 50% 50%;
   }
 `;

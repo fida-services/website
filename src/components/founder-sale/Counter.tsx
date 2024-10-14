@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 import { colors } from 'theme';
 
+import { motion } from 'framer-motion';
+import { transition, transformVariant } from 'constants/motionConfig';
 import PlusIcon from '../../assets/icons/plus.svg';
 import MinusIcon from '../../assets/icons/minus.svg';
 
@@ -19,7 +21,12 @@ export const Counter = ({ value, handleIncrement, handleDecrement, handleChange 
   const isTablet = useMediaQuery(maxWidth840);
 
   return (
-    <CounterContainer>
+    <CounterContainer
+      initial="hidden"
+      transition={transition}
+      variants={transformVariant}
+      whileInView="visible"
+    >
       <StyledLabel>
         Amount:
       </StyledLabel>
@@ -39,7 +46,7 @@ export const Counter = ({ value, handleIncrement, handleDecrement, handleChange 
   );
 };
 
-const CounterContainer = styled.div`
+const CounterContainer = styled(motion.div)`
     display: flex;
     gap: 12px;
     align-items: center;

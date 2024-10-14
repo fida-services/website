@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
-import { useRef } from 'react';
 import { motion } from 'framer-motion';
 
 import diagramIcon from 'assets/icons/diagram.svg';
@@ -19,7 +18,6 @@ interface FidaMarketplaceCardProps {
 
 export const FidaMarketplaceCard = (props: FidaMarketplaceCardProps) => {
   const { description, imageSrc, title, isReversed } = props;
-  const ref = useRef(null);
 
   const isTablet = useMediaQuery({
     query: maxWidth840,

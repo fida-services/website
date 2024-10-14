@@ -1,18 +1,26 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import { colors } from 'theme';
+import { transition, transformVariant } from 'constants/motionConfig';
 
 interface Props {
   value: number;
 }
 
 export const NFTButton = ({ value }: Props) => (
-  <GradientButton onClick={() => openPaymentWindow(value)}>
+  <GradientButton
+    initial="hidden"
+    transition={transition}
+    variants={transformVariant}
+    whileInView="visible"
+    onClick={() => openPaymentWindow(value)}
+  >
     {`Buy ${value} Fida Founder’s NFT (${countAda(value)} ADA)`}
   </GradientButton>
 );
 
-const GradientButton = styled.button`
+const GradientButton = styled(motion.button)`
   margin-bottom: 40px;
   border: 1px solid ${colors.blue};
   background: ${colors.backgroundGradient};
