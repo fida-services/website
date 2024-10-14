@@ -19,6 +19,15 @@ const welcomeHeroCard = {
   }
 };
 
+const founderWelcomeHeroCard = {
+  description: 'Mint a Founder\'s NFT to gain early adopter\'s access to the decentralized insurance marketplace.',
+  title: 'Fida Founder\'s NFT Collection Mint',
+  button: {
+    label: 'Discover',
+    link: 'founder-sale',
+  }
+};
+
 const welcomeCards = {
   card1: {
     buttonLabel: 'Learn more',
@@ -147,5 +156,6 @@ export {
   seamlessAITexts,
   welcomeCards,
   welcomeHeroCard,
-  welcomeTexts
+  welcomeTexts,
+  founderWelcomeHeroCard
 };

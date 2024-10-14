@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
 
 import { ReactComponent as FidaLogo } from 'assets/logos/fidaLogo.svg';
 import { colors } from 'theme';
@@ -12,6 +13,8 @@ interface Props {
 }
 
 export const HeaderFounders = ({ handleOpenModal }: Props) => {
+  const navigate = useNavigate();
+
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
@@ -28,7 +31,7 @@ export const HeaderFounders = ({ handleOpenModal }: Props) => {
       ) : (
         <div className="flex">
           <StyledMenuModalButton onClick={handleOpenModal}>{isSlg ? 'Learn more' : 'Learn more about Fida NFT Collection'}</StyledMenuModalButton>
-          <StyledMenuMainButton>
+          <StyledMenuMainButton onClick={() => navigate('/')}>
             Discover FIDA
           </StyledMenuMainButton>
         </div>

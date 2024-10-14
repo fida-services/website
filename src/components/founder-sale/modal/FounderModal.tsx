@@ -53,8 +53,16 @@ const Container = styled.div`
   outline: none;
   border-radius: 24px;
 
-       @media (max-width: 1900px) {
+       @media (max-width: 1900px) and (max-height: 1037px) {
         height: 90%;
+    }
+
+      @media (min-height: 1037px) {
+        height: 70%;
+    }
+
+      @media (min-height: 1400px) {
+        height: 40%;
     }
 
        @media (max-width: 860px) {
