@@ -20,7 +20,8 @@ export const colors = {
   textPlaceholder: '#667085',
   roseDot: '#9B3AAC',
   blue: '#3742F5',
-  borderStep: '#676767'
+  borderStep: '#676767',
+  alphaBlack: 'rgba(255, 255, 255, 0.7)'
 };
 
 export const radius = {

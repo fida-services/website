@@ -4,6 +4,9 @@ import { colors } from 'theme';
 import star from 'assets/images/nft-infos/star.svg';
 import resources from 'assets/images/nft-infos/resources.svg';
 import light from 'assets/images/nft-infos/light.svg';
+import { motion } from 'framer-motion';
+
+import { transition, transformVariant } from 'constants/motionConfig';
 
 interface InfoProps {
   title: string;
@@ -32,7 +35,13 @@ const Details: InfoProps[] = [
 export const NFTDetails = () => (
   <DetailsContainer>
     {Details.map(info => (
-      <InformationBox key={info.title}>
+      <InformationBox
+        key={info.title}
+        initial="hidden"
+        transition={transition}
+        variants={transformVariant}
+        whileInView="visible"
+      >
         <img width={100} height={100} src={info.src} alt={info.title} />
         <InformationTitle>{info.title}</InformationTitle>
         <InformationDescription>{info.description}</InformationDescription>
@@ -55,7 +64,7 @@ const DetailsContainer = styled.div`
   }
 `;
 
-const InformationBox = styled.div`
+const InformationBox = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 24px;
