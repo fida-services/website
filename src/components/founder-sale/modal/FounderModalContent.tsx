@@ -13,16 +13,16 @@ import { Swiper as SwiperCore } from 'swiper/types';
 import { useMediaQuery } from 'react-responsive';
 import { maxWidth640 } from 'components/rwd/detectMobile';
 
-import cover1 from '../../../assets/images/nft-modal/cover-1.svg';
-import cover1mobile from '../../../assets/images/nft-modal/cover-1-mobile.svg';
-import cover2 from '../../../assets/images/nft-modal/cover-2.svg';
-import cover2mobile from '../../../assets/images/nft-modal/cover-2-mobile.svg';
-import cover3 from '../../../assets/images/nft-modal/cover-3.svg';
-import cover3mobile from '../../../assets/images/nft-modal/cover-3-mobile.svg';
-import cover4 from '../../../assets/images/nft-modal/cover-4.svg';
-import cover4mobile from '../../../assets/images/nft-modal/cover-4-mobile.svg';
-import cover5 from '../../../assets/images/nft-modal/cover-5.svg';
-import cover5mobile from '../../../assets/images/nft-modal/cover-5-mobile.svg';
+import cover1 from '../../../assets/images/nft-modal/cover-1.png';
+import cover1mobile from '../../../assets/images/nft-modal/cover-1-mobile.png';
+import cover2 from '../../../assets/images/nft-modal/cover-2.png';
+import cover2mobile from '../../../assets/images/nft-modal/cover-2-mobile.png';
+import cover3 from '../../../assets/images/nft-modal/cover-3.png';
+import cover3mobile from '../../../assets/images/nft-modal/cover-3-mobile.png';
+import cover4 from '../../../assets/images/nft-modal/cover-4.png';
+import cover4mobile from '../../../assets/images/nft-modal/cover-4-mobile.png';
+import cover5 from '../../../assets/images/nft-modal/cover-5.png';
+import cover5mobile from '../../../assets/images/nft-modal/cover-5-mobile.png';
 
 interface Steps {
   title: string;
