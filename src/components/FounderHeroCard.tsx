@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 
-import founderDesktopCard from 'assets/images/founder-hello-card-desktop.svg';
-import founderMobileCard from 'assets/images/founder-hello-card-mobile.svg';
+import founderDesktopCard from 'assets/images/founder-hello-card-desktop.png';
+import founderMobileCard from 'assets/images/founder-hello-card-mobile.png';
 import { colors, radius } from 'theme';
 import { founderWelcomeHeroCard } from 'data/texts';
 import { maxWidth840 } from './rwd/detectMobile';
