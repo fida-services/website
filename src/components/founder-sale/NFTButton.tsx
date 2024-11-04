@@ -53,7 +53,7 @@ const GradientButton = styled(motion.button)`
   }
 `;
 
-const plural = (count: number) => ((1*count) === 1 ? '' : 's');
+const plural = (count: number) => ((1 * count) === 1 ? '' : 's');
 
 const countAda = (count: number) => (count * 500) - ((count - 1) * 50);
 
