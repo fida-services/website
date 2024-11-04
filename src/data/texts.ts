@@ -23,7 +23,7 @@ const founderWelcomeHeroCard = {
   description: 'Mint a Founder\'s NFT to gain early adopter\'s access to the decentralized insurance marketplace.',
   title: 'Fida Founder\'s NFT Collection Mint',
   button: {
-    label: 'Mint',
+    label: 'Mint Now!',
     link: 'founder-sale',
   }
 };
