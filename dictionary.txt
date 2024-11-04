@@ -84,6 +84,7 @@ formattedText
 Founder&apos
 FounderContainer
 FounderSale
+founderWelcomeHeroCard
 getQueryParams
 gh-pages
 .github
