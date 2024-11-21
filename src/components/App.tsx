@@ -8,7 +8,6 @@ const App = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="/founder-sale" element={<FounderSale />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   </Router>
