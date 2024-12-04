@@ -12,7 +12,6 @@ import { StyledMenuMainButton } from './StyledFoundersNavButtons';
 
 export const FounderHeroCard = () => {
   const navigate = useNavigate();
-
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });

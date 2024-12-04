@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import 'swiper/css';
 
 import { Header } from '../components/Header';
-// import Welcome from '../components/sections/Welcome';
-// import OurMission from '../components/sections/OurMission';
 
 // Lazy-loaded sections
 const Welcome = lazy(() => import('../components/sections/Welcome'));

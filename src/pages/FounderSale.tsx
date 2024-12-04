@@ -11,7 +11,6 @@ import { NFTButton } from '../components/founder-sale/NFTButton';
 
 import backgroundImage from '../assets/images/background-pattern.png';
 import { NFTSlider } from '../components/founder-sale/NFTSlider';
-// import { NFTDetails } from '../components/founder-sale/NFTDetails';
 import { maxWidth840 } from '../components/rwd/detectMobile';
 import { FounderModal } from '../components/founder-sale/modal/FounderModal';
 import { HeaderFounders } from '../components/HeaderFounders';
