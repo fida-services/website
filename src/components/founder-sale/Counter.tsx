@@ -40,7 +40,7 @@ export const Counter = ({ value, handleIncrement, handleDecrement, handleChange 
           max="5"
         />
         {!isTablet && <Button onClick={handleIncrement} disabled={value === 5}><img src={PlusIcon} alt="plus" /></Button>}
-        <Button onClick={handleDecrement} disabled={value === 1}><img src={MinusIcon} alt="minus" /></Button>
+        <Button onClick={handleDecrement} disabled={value === 1}><img src={MinusIcon} alt="minus" loading="lazy" /></Button>
       </InputContainer>
     </CounterContainer>
   );

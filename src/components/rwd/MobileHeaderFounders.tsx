@@ -19,6 +19,7 @@ export const MobileHeaderFounders = ({ handleOpenLearnMoreModal }: Props) => {
         src={modalToggle ? menuMobileClose : menuMobileOpen}
         onClick={() => setModalToggle(prevState => !prevState)}
         alt="open menu"
+        loading="lazy"
       />
       <FoundersHeaderMenuMobile modalToggle={modalToggle} setModalToggle={setModalToggle} handleOpenLearnMoreModal={handleOpenLearnMoreModal} />
     </>

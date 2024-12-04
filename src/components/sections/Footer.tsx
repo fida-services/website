@@ -8,21 +8,21 @@ import { colors } from 'theme';
 import { Text } from '../_common/Text';
 import { Container } from '../_common/Container';
 
-export const Footer = () => {
+const Footer = () => {
   const { iterableItems } = menuItems;
 
   return (
     <Container style={{ marginBottom: '0px' }}>
       <FooterWrapper>
         <LogoWrapper>
-          <img src={fida} alt="fida logo" />
+          <img src={fida} alt="fida logo" loading="lazy" />
         </LogoWrapper>
         <ContentWrapper>
           <SocialsWrapper>
             {socials.map(({ name, link, src }) => (
               <IconWrapper key={name}>
                 <a href={link}>
-                  <img src={src} alt={name} />
+                  <img src={src} alt={name} loading="lazy" />
                 </a>
               </IconWrapper>
             ))}
@@ -50,6 +50,8 @@ export const Footer = () => {
     </Container>
   );
 };
+
+export default Footer;
 
 const FooterWrapper = styled.div`
   align-items: center;

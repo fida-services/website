@@ -42,13 +42,15 @@ export const NFTDetails = () => (
         variants={transformVariant}
         whileInView="visible"
       >
-        <img width={100} height={100} src={info.src} alt={info.title} />
+        <img width={100} height={100} src={info.src} alt={info.title} loading="lazy" />
         <InformationTitle>{info.title}</InformationTitle>
         <InformationDescription>{info.description}</InformationDescription>
       </InformationBox>
     ))}
   </DetailsContainer>
 );
+
+export default NFTDetails;
 
 const DetailsContainer = styled.div`
   width: 90%;

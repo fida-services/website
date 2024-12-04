@@ -30,14 +30,11 @@ export const MissionCard = (props: MissionCardProps) => {
   return (
     <MainContainer>
       <Card isReversed={isReversed}>
-        {!isTablet ? (
-          <LinesBg
-            alt="mission-overlay"
-            src={ourMissionOverlay}
-          />
-        ) : (
-          null
-        )}
+        <LinesBg
+          alt="mission-overlay"
+          src={ourMissionOverlay}
+          loading="lazy"
+        />
         <ImageWrapper
           alt="risk"
           initial="hidden"
@@ -127,6 +124,10 @@ const LinesBg = styled.img`
   position: absolute;
   transform: translate(-30%, -5%);
   z-index: -1;
+
+  @media (max-width: 840px) {
+    display: none;
+  }
 
   @media (min-width: 1440px) {
     transform: translate(-30%, 5%);

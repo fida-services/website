@@ -11,7 +11,7 @@ import { PhasesCarousel } from 'components/rwd/PhasesCarousel';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
 
-export const RoadMap = () => {
+const RoadMap = () => {
   const [imageHeight, setImageHeight] = useState(0);
   const [imageWidth, setImageWidth] = useState(0);
 
@@ -31,7 +31,7 @@ export const RoadMap = () => {
         <BaseTextWithDescription description={roadMapTexts.description} title={roadMapTexts.title} />
         <div style={{ position: 'relative' }}>
           <ImageWrapper>
-            <Image onLoad={onImageLoad} src={roadMap} alt="road-map" />
+            <Image onLoad={onImageLoad} src={roadMap} alt="road-map" loading="lazy" />
           </ImageWrapper>
           {isTablet ? <PhasesCarousel height={imageHeight} width={imageWidth} /> : (
             <PhasesContainer>
@@ -51,6 +51,8 @@ export const RoadMap = () => {
     </Container>
   );
 };
+
+export default RoadMap;
 
 const ContentWrapper = styled.div`
   height: 105vh;

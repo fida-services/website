@@ -48,7 +48,7 @@ export const NFTSlider = () => {
         {nfts.map((nft, index) => (
         // eslint-disable-next-line react/no-array-index-key
           <SwiperSlide key={`nft-${index}`}>
-            <img src={nft} alt="nft" />
+            <img src={nft} alt="nft" loading="lazy" />
           </SwiperSlide>
         ))}
       </Swiper>

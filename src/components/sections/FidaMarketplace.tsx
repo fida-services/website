@@ -10,7 +10,7 @@ import { maxWidth840 } from 'components/rwd/detectMobile';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
 
-export const FidaMarketplace = () => {
+const FidaMarketplace = () => {
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
@@ -40,6 +40,8 @@ export const FidaMarketplace = () => {
     </Container>
   );
 };
+
+export default FidaMarketplace;
 
 const CardsWrapper = styled.div`
   display: flex;

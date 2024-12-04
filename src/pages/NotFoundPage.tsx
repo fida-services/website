@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-export const NotFoundPage = () => (
+const NotFoundPage = () => (
   <StyledContainer>
     <h1>404 - Page Not Found</h1>
     <p>The page you are looking for does not exist.</p>
   </StyledContainer>
 );
+
+export default NotFoundPage;
 
 const StyledContainer = styled.div`
     width: 100%;

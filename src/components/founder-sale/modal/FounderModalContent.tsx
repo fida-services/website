@@ -106,7 +106,7 @@ export const FounderModalContent = () => {
       {steps(isMobile).map(step => (
         <SwiperSlide key={step.title}>
           <SliderContainer>
-            <img src={step.src} alt={step.title} />
+            <img src={step.src} alt={step.title} loading="lazy" />
             <TextContainer>
               <SliderTitle>{step.title}</SliderTitle>
               <SliderDescription>{step.description}</SliderDescription>
