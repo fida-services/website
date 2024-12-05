@@ -10,7 +10,7 @@ import { MissionCard } from '../MissionCard';
 import { BaseTextWithDescription } from '../_common/BaseTextWithDescription';
 import { Container } from '../_common/Container';
 
-export const OurMission = () => {
+const OurMission = () => {
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
@@ -50,6 +50,8 @@ export const OurMission = () => {
     </Container>
   );
 };
+
+export default OurMission;
 
 const CardsWrapper = styled.div`
   display: flex;

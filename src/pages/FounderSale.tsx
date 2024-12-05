@@ -1,9 +1,10 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, lazy, Suspense, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { colors } from 'theme';
 
 import { useMediaQuery } from 'react-responsive';
-import { Footer } from '../components/sections/Footer';
+import { Skeleton } from '@mui/material';
+import Footer from '../components/sections/Footer';
 import { Text } from '../components/_common/Text';
 import { Container } from '../components/_common/Container';
 import { Counter } from '../components/founder-sale/Counter';
@@ -11,12 +12,14 @@ import { NFTButton } from '../components/founder-sale/NFTButton';
 
 import backgroundImage from '../assets/images/background-pattern.png';
 import { NFTSlider } from '../components/founder-sale/NFTSlider';
-import { NFTDetails } from '../components/founder-sale/NFTDetails';
+// import { NFTDetails } from '../components/founder-sale/NFTDetails';
 import { maxWidth840 } from '../components/rwd/detectMobile';
 import { FounderModal } from '../components/founder-sale/modal/FounderModal';
 import { HeaderFounders } from '../components/HeaderFounders';
 
-export const FounderSale = () => {
+const NFTDetails = lazy(() => import('../components/founder-sale/NFTDetails'));
+
+const FounderSale = () => {
   const [isFounderModalOpen, setIsFounderModalOpen] = useState(false);
 
   useEffect(() => { setTimeout(() => setIsFounderModalOpen(true), 5000); }, []);
@@ -58,7 +61,9 @@ export const FounderSale = () => {
           <Counter value={value} handleIncrement={handleIncrement} handleDecrement={handleDecrement} handleChange={handleChange} />
           <NFTButton value={value} />
           <NFTSlider />
-          <NFTDetails />
+          <Suspense fallback={<Skeleton height={200} width="100%" />}>
+            <NFTDetails />
+          </Suspense>
         </FounderContainer>
         <Footer />
       </Container>

@@ -9,14 +9,14 @@ import { Title } from 'components/_common/Title';
 import { seamlessAITexts } from 'data/texts';
 import { maxWidth840 } from '../rwd/detectMobile';
 
-export const SeamlessAI = () => {
+const SeamlessAI = () => {
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
 
   return (
     <Container>
-      {isTablet && <ImageWrapper src={seamlessAIMobile} alt="seamless-AI" />}
+      <ImageWrapper src={seamlessAIMobile} alt="seamless-AI" loading="lazy" />
       <TopSection>
         <Title label={seamlessAITexts.title} />
         <Text
@@ -31,6 +31,8 @@ export const SeamlessAI = () => {
     </Container>
   );
 };
+
+export default SeamlessAI;
 
 const Container = styled.div`
   align-items: center;
@@ -57,6 +59,10 @@ const ImageWrapper = styled.img`
   transform: translate(2%, 25%);
   width: 100%;
   z-index: -1;
+
+  @media (min-width: 840px) {
+    display: none;
+  }
 
   @media (min-width: 425px) {
     scale: 1.5;

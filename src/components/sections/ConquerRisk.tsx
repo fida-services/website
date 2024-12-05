@@ -9,7 +9,7 @@ import { BaseTextWithDescription } from 'components/_common/BaseTextWithDescript
 import { conquerRiskTexts, howItWorks } from 'data/texts';
 import { maxWidth840 } from '../rwd/detectMobile';
 
-export const ConquerRisk = () => {
+const ConquerRisk = () => {
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
@@ -43,7 +43,7 @@ export const ConquerRisk = () => {
           />
           {conquerRiskTexts?.points?.map(item => (
             <PointerWrapper key={item}>
-              <ArrowPointer src={arrowPointer} alt="arrow-pointer" />
+              <ArrowPointer src={arrowPointer} alt="arrow-pointer" loading="lazy" />
               <Text
                 color={colors.textTertiary600}
                 fontFamily="Inter"
@@ -55,11 +55,13 @@ export const ConquerRisk = () => {
             </PointerWrapper>
           ))}
         </TopSection>
-        <ImageWrapper src={opportunities} alt="opportunities" />
+        <ImageWrapper src={opportunities} alt="opportunities" loading="lazy" />
       </StyledConquerRisk>
     </>
   );
 };
+
+export default ConquerRisk;
 
 const StyledConquerRisk = styled.div`
   display: grid;

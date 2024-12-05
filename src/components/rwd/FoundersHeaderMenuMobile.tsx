@@ -28,6 +28,7 @@ export const FoundersHeaderMenuMobile = (props: Props) => {
             src={modalToggle ? menuMobileClose : menuMobileOpen}
             onClick={() => setModalToggle((prevState: boolean) => !prevState)}
             alt="open menu"
+            loading="lazy"
           />
         </TopWrapper>
         <MenuWrapper className="gap-4">

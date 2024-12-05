@@ -1,13 +1,14 @@
 .nft-slider.swiper {
     width: 100%;
   }
-  
+
   .nft-slider .swiper-slide {
     background-position: center;
     background-size: cover;
     width: initial;
     height: initial;
     filter: brightness(20%);
+    will-change: transform, opacity;
   }
 
   .nft-slider .swiper-slide.swiper-slide-visible {
@@ -20,7 +21,7 @@
   .nft-slider .swiper-slide.swiper-slide-visible.swiper-slide-active {
     filter: brightness(100%)
   }
-  
+
   .nft-slider .swiper-slide img {
     display: block;
     width: 100%;
@@ -59,7 +60,7 @@
       .nft-slider .swiper-button-next {
         right: 10px;
       }
-    
+
       .nft-slider .swiper-button-prev {
         left: 10px;
       }

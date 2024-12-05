@@ -1,14 +1,12 @@
 import { useMediaQuery } from '@mui/material';
 import { maxWidth840 } from 'components/rwd/detectMobile';
-import { ChangeEvent } from 'react';
+import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 import { colors } from 'theme';
 
-import { motion } from 'framer-motion';
-import { transition, transformVariant } from 'constants/motionConfig';
-import PlusIcon from '../../assets/icons/plus.svg';
-import MinusIcon from '../../assets/icons/minus.svg';
+import { ReactComponent as PlusIcon } from '../../assets/icons/plus.svg';
+import { ReactComponent as MinusIcon } from '../../assets/icons/minus.svg';
 
 interface Props {
   value: number;
@@ -17,21 +15,20 @@ interface Props {
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Counter = ({ value, handleIncrement, handleDecrement, handleChange }: Props) => {
+export const Counter = React.memo(({ value, handleIncrement, handleDecrement, handleChange }: Props) => {
   const isTablet = useMediaQuery(maxWidth840);
 
   return (
-    <CounterContainer
-      initial="hidden"
-      transition={transition}
-      variants={transformVariant}
-      whileInView="visible"
-    >
+    <CounterContainer>
       <StyledLabel>
         Amount:
       </StyledLabel>
       <InputContainer>
-        {isTablet && <Button onClick={handleIncrement} disabled={value === 5}>+</Button>}
+        {isTablet && (
+        <Button onClick={handleIncrement} disabled={value === 5}>
+          <PlusIcon />
+        </Button>
+        )}
         <NumberInput
           type="number"
           value={value}
@@ -39,14 +36,20 @@ export const Counter = ({ value, handleIncrement, handleDecrement, handleChange 
           min="1"
           max="5"
         />
-        {!isTablet && <Button onClick={handleIncrement} disabled={value === 5}><img src={PlusIcon} alt="plus" /></Button>}
-        <Button onClick={handleDecrement} disabled={value === 1}><img src={MinusIcon} alt="minus" /></Button>
+        {!isTablet && (
+        <Button onClick={handleIncrement} disabled={value === 5}>
+          <PlusIcon />
+        </Button>
+        )}
+        <Button onClick={handleDecrement} disabled={value === 1}>
+          <MinusIcon />
+        </Button>
       </InputContainer>
     </CounterContainer>
   );
-};
+});
 
-const CounterContainer = styled(motion.div)`
+const CounterContainer = styled.div`
     display: flex;
     gap: 12px;
     align-items: center;

@@ -12,12 +12,13 @@ import { StyledMenuMainButton } from './StyledFoundersNavButtons';
 
 export const FounderHeroCard = () => {
   const navigate = useNavigate();
+
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
 
   return (
-    <Wrapper isTablet={isTablet}>
+    <Wrapper>
       <ContentWrapper isTablet={isTablet}>
         <TopWrapper>
           <TextWrapper>
@@ -43,8 +44,7 @@ export const FounderHeroCard = () => {
   );
 };
 
-const Wrapper = styled.div<{ isTablet: boolean }>`
-  background-image: url("${({ isTablet }) => (isTablet ? founderMobileCard : founderDesktopCard)}");
+const Wrapper = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -52,6 +52,14 @@ const Wrapper = styled.div<{ isTablet: boolean }>`
   display: flex;
   flex-direction: column;
   margin-top: 56px;
+
+  @media (min-width: 841px) {
+    background-image: url("${founderDesktopCard}");
+  }
+
+  @media (max-width: 840px) {
+    background-image: url("${founderMobileCard}");
+  }
 
   @media (min-width: 1024px) {
     align-items: center;
