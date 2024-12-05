@@ -7,7 +7,7 @@ import { Text } from 'components/_common/Text';
 import { newsletterTexts } from 'data/texts';
 import { maxWidth1140 } from '../rwd/detectMobile';
 
-export const JoinNetwork = () => {
+const JoinNetwork = () => {
   const isTablet = useMediaQuery({
     query: maxWidth1140,
   });
@@ -50,6 +50,8 @@ export const JoinNetwork = () => {
     </Wrapper>
   );
 };
+
+export default JoinNetwork;
 
 const Wrapper = styled.div`
   align-items: center;

@@ -51,8 +51,8 @@ export const MobilePhaseItem = (props: MobilePhaseItemProps) => {
           ))}
         </ListWrapper>
         <Row>
-          {index > 1 ? <Image src={arrowLeft} alt="arrow-left" onClick={onClickLeft} /> : <div />}
-          {index < 6 ? <Image src={arrowRight} alt="arrow-right" onClick={onClickRight} /> : <div />}
+          {index > 1 ? <Image src={arrowLeft} alt="arrow-left" onClick={onClickLeft} loading="lazy" /> : <div />}
+          {index < 6 ? <Image src={arrowRight} alt="arrow-right" onClick={onClickRight} loading="lazy" /> : <div />}
         </Row>
       </Container>
     </MainContainer>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -20,7 +21,7 @@ import nft7 from 'assets/images/nft-cards/nft-7.svg';
 
 import { maxWidth640 } from 'components/rwd/detectMobile';
 
-export const NFTSlider = () => {
+export const NFTSlider = React.memo(() => {
   const isMobile = useMediaQuery({
     query: maxWidth640,
   });
@@ -37,7 +38,7 @@ export const NFTSlider = () => {
           rotate: 20,
           stretch: 20,
           modifier: 1,
-          slideShadows: true,
+          slideShadows: false,
         }}
         loop
         pagination={false}
@@ -54,7 +55,7 @@ export const NFTSlider = () => {
       </Swiper>
     </NFTSliderContainer>
   );
-};
+});
 
 const NFTSliderContainer = styled.div`
   display: flex;
