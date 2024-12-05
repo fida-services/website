@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors } from 'theme';
 
 import { useMediaQuery } from 'react-responsive';
+import { Skeleton } from '@mui/material';
 import Footer from '../components/sections/Footer';
 import { Text } from '../components/_common/Text';
 import { Container } from '../components/_common/Container';
@@ -59,7 +60,7 @@ const FounderSale = () => {
           <Counter value={value} handleIncrement={handleIncrement} handleDecrement={handleDecrement} handleChange={handleChange} />
           <NFTButton value={value} />
           <NFTSlider />
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Skeleton height={200} width="100%" />}>
             <NFTDetails />
           </Suspense>
         </FounderContainer>
