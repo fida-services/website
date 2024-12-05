@@ -16,7 +16,7 @@ export const NFTButton = ({ value }: Props) => (
     whileInView="visible"
     onClick={() => openPaymentWindow(value)}
   >
-    {`Buy ${value} Fida Founder’s NFT (${countAda(value)} ADA)`}
+    {`Mint ${value} Fida Founder’s NFT${plural(value)} (${countAda(value)} ADA)`}
   </GradientButton>
 );
 
@@ -52,6 +52,8 @@ const GradientButton = styled(motion.button)`
     font-size: 16px;
   }
 `;
+
+const plural = (count: number) => ((1 * count) === 1 ? '' : 's');
 
 const countAda = (count: number) => (count * 500) - ((count - 1) * 50);
 
