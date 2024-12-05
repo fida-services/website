@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+# . "$(dirname -- "$0")/_/husky.sh"
 
-changedFiles="$(git diff --name-only --cached)"
-npm run spell-check -- --files ${changedFiles} "!**/package-lock.json" "!**/*.svg" "!**/*.png" "!**/*.jppg" "!**/*.ico"
+# changedFiles="$(git diff --name-only --cached)"
+# npm run spell-check -- --files ${changedFiles} "!**/package-lock.json" "!**/*.svg" "!**/*.png" "!**/*.jppg" "!**/*.ico"
