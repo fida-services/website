@@ -55,7 +55,7 @@ const GradientButton = styled(motion.button)`
 
 const plural = (count: number) => ((1 * count) === 1 ? '' : 's');
 
-const countAda = (count: number) => (count * 500) - ((count - 1) * 50);
+const countAda = (count: number) => (count * 300) - ((count - 1) * 30);
 
 const openPaymentWindow = (value: number) => {
   const paymentUrl = `https://pay.nmkr.io/?p=1fe458e78a46451fb812b36ab3fa6f82&c=${value}`;
