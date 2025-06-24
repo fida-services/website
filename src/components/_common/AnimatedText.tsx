@@ -61,6 +61,8 @@ export const AnimatedText = (props: Props) => {
         {toUpperCase ? text.toUpperCase() : text}
       </StyledSpan>
     ),
+    // props already has these dependencies
+    // eslint-disable-next-line
     [props]
   );
 
