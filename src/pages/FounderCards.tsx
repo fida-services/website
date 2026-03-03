@@ -56,10 +56,10 @@ const FounderContainer = styled.div`
   background-size: 100%;
   background-position: right 0 bottom 50%;
   background-repeat: no-repeat;
-  padding: 24px 0;
+  padding: 24px 48px;
 
-  @media (max-width: 840px) {
-        padding: 0;
+  @media (max-width: 640px) {
+        padding: 0 16px;
         gap: 24px;
     }
 `;
