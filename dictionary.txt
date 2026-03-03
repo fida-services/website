@@ -336,9 +336,7 @@ FounderCards
 FounderBenefits
 BenefitCard
 BenefitContent
-BenefitDescription
 BenefitImage
-BenefitTitle
 BenefitsSection
 handleLearnMore
 BenefitStep

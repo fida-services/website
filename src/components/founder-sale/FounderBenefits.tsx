@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 import { motion } from 'framer-motion';
 
-import { colors } from 'theme';
+import { colors, radius } from 'theme';
 import { transition, transformVariant } from 'constants/motionConfig';
-import { maxWidth640 } from 'components/rwd/detectMobile';
+import { maxWidth640, maxWidth840 } from 'components/rwd/detectMobile';
+import { AnimatedText } from 'components/_common/AnimatedText';
+import { ReadMore } from 'components/ReadMore';
 
 import cover1 from '../../assets/images/nft-modal/cover-1.png';
 import cover1mobile from '../../assets/images/nft-modal/cover-1-mobile.png';
@@ -22,6 +24,8 @@ interface BenefitStep {
   description: string;
   src: string;
 }
+
+const MAX_DESCRIPTION_LENGTH = 150;
 
 const steps = (isMobile: boolean): BenefitStep[] => ([
   {
@@ -53,25 +57,55 @@ const steps = (isMobile: boolean): BenefitStep[] => ([
 
 export const FounderBenefits = () => {
   const isMobile = useMediaQuery({ query: maxWidth640 });
+  const isTablet = useMediaQuery({ query: maxWidth840 });
 
   return (
     <BenefitsSection id="benefits">
-      {steps(isMobile).map((step, index) => (
-        <BenefitCard
-          key={step.title}
-          initial="hidden"
-          transition={transition}
-          variants={transformVariant}
-          whileInView="visible"
-          $reversed={index % 2 !== 0}
-        >
-          <BenefitImage src={step.src} alt={step.title} loading="lazy" />
-          <BenefitContent>
-            <BenefitTitle>{step.title}</BenefitTitle>
-            <BenefitDescription>{step.description}</BenefitDescription>
-          </BenefitContent>
-        </BenefitCard>
-      ))}
+      {steps(isMobile).map((step, index) => {
+        const isReversed = index % 2 !== 0;
+        return (
+          <BenefitCard key={step.title}>
+            <Card isReversed={isReversed}>
+              <BenefitImage
+                alt={step.title}
+                initial="hidden"
+                isReversed={isReversed}
+                src={step.src}
+                variants={transformVariant}
+                whileInView="visible"
+                transition={transition}
+              />
+              <BenefitContent
+                initial="hidden"
+                transition={transition}
+                variants={transformVariant}
+                whileInView="visible"
+              >
+                <AnimatedText
+                  color={colors.textPrimaryOnBrand}
+                  fontFamily="Inter"
+                  fontWeight={400}
+                  label={step.title}
+                  lineHeight={isTablet ? 38 : 72}
+                  size={isTablet ? 1.875 : 3.75}
+                />
+                {step.description.length >= MAX_DESCRIPTION_LENGTH && isTablet ? (
+                  <ReadMore text={step.description} limit={MAX_DESCRIPTION_LENGTH} />
+                ) : (
+                  <AnimatedText
+                    color={colors.buttonTertiaryColorFg}
+                    fontFamily="Inter"
+                    fontWeight={500}
+                    label={step.description}
+                    lineHeight={isTablet ? 20 : 28}
+                    size={isTablet ? 0.875 : 1.125}
+                  />
+                )}
+              </BenefitContent>
+            </Card>
+          </BenefitCard>
+        );
+      })}
     </BenefitsSection>
   );
 };
@@ -79,67 +113,65 @@ export const FounderBenefits = () => {
 const BenefitsSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 16px;
   width: 100%;
-  padding: 48px 0;
 
-  @media (max-width: 840px) {
-    gap: 40px;
-    padding: 24px 16px;
+  @media (min-width: 1024px) {
+    gap: 0px;
   }
 `;
 
-const BenefitCard = styled(motion.div)<{ $reversed: boolean }>`
-  display: flex;
-  flex-direction: ${({ $reversed }) => ($reversed ? 'row-reverse' : 'row')};
+const BenefitCard = styled.div`
+  background-color: ${colors.mainBlack};
+  border-radius: ${radius['4xl']};
+
+  @media (min-width: 1024px) {
+    margin: 80px 0px;
+  }
+`;
+
+const Card = styled.div<{ isReversed: boolean }>`
   align-items: center;
-  gap: 48px;
+  background: ${colors.greyBackgroundGradient};
+  border-radius: ${radius['4xl']};
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: relative;
 
-  @media (max-width: 840px) {
-    flex-direction: column;
-    gap: 24px;
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: ${({ isReversed }) => (isReversed ? '60% 40%' : '40% 60%')};
+    justify-content: space-between;
+    padding: 0px 32px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: ${({ isReversed }) => (isReversed ? '60% 30%' : '30% 60%')};
   }
 `;
 
-const BenefitImage = styled.img`
-  width: 50%;
-  max-width: 400px;
-  border-radius: 24px;
-  object-fit: cover;
+const BenefitImage = styled(motion.img)<{ isReversed: boolean }>`
+  width: 100%;
+  border-radius: ${radius['4xl']};
 
-  @media (max-width: 840px) {
-    width: 100%;
-    max-width: 100%;
+  @media (min-width: 1024px) {
+    margin: ${({ isReversed }) => (isReversed ? '0px' : '24px 0px')};
+    order: ${({ isReversed }) => (isReversed ? 1 : 0)};
   }
 `;
 
-const BenefitContent = styled.div`
+const BenefitContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  flex: 1;
-`;
+  justify-content: center;
+  margin-bottom: 32px;
+  margin-top: 14px;
 
-const BenefitTitle = styled.h3`
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 36px;
-  color: ${colors.textPrimaryOnBrand};
-
-  @media (max-width: 640px) {
-    font-size: 22px;
-    line-height: 28px;
-  }
-`;
-
-const BenefitDescription = styled.p`
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
-  color: ${colors.textTertiary600};
-
-  @media (max-width: 640px) {
-    font-size: 15px;
-    line-height: 24px;
+  @media (min-width: 1024px) {
+    margin-left: 24px;
+    gap: 40px;
+    padding: 100px 0px;
   }
 `;
