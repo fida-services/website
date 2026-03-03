@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense } from 'react';
 import styled from 'styled-components';
 import { colors } from 'theme';
 
@@ -11,38 +11,36 @@ import { Container } from '../components/_common/Container';
 import backgroundImage from '../assets/images/background-pattern.png';
 import { NFTSlider } from '../components/founder-sale/NFTSlider';
 import { maxWidth840 } from '../components/rwd/detectMobile';
-import { FounderModal } from '../components/founder-sale/modal/FounderModal';
 import { HeaderFounders } from '../components/HeaderFounders';
+import { FounderBenefits } from '../components/founder-sale/FounderBenefits';
 
 const NFTDetails = lazy(() => import('../components/founder-sale/NFTDetails'));
 
 const FounderCards = () => {
-  const [isFounderModalOpen, setIsFounderModalOpen] = useState(false);
-
-  useEffect(() => { setTimeout(() => setIsFounderModalOpen(true), 5000); }, []);
-
   const isTablet = useMediaQuery({
     query: maxWidth840,
   });
 
+  const handleScrollToBenefits = () => {
+    document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <>
-      <Container>
-        <HeaderFounders handleOpenModal={() => setIsFounderModalOpen(true)} />
-        <FounderContainer>
-          <TitleContainer>
-            <Title>{'Fida Founder\'s NFT Collection'.toUpperCase()}</Title>
-            <Text style={{ width: isTablet ? '100%' : '60%', textAlign: 'center' }} size={isTablet ? 1.15 : 1.5} color={colors.textTertiary600} label="Explore the Founder&apos;s NFT collection for early adopter&apos;s access to the decentralized insurance marketplace." />
-          </TitleContainer>
-          <NFTSlider />
-          <Suspense fallback={<Skeleton height={200} width="100%" />}>
-            <NFTDetails />
-          </Suspense>
-        </FounderContainer>
-        <Footer />
-      </Container>
-      <FounderModal isOpen={isFounderModalOpen} handleClose={() => setIsFounderModalOpen(false)} />
-    </>
+    <Container>
+      <HeaderFounders handleLearnMore={handleScrollToBenefits} />
+      <FounderContainer>
+        <TitleContainer>
+          <Title>{'Fida Founder\'s NFT Collection'.toUpperCase()}</Title>
+          <Text style={{ width: isTablet ? '100%' : '60%', textAlign: 'center' }} size={isTablet ? 1.15 : 1.5} color={colors.textTertiary600} label="Explore the Founder&apos;s NFT collection for early adopter&apos;s access to the decentralized insurance marketplace." />
+        </TitleContainer>
+        <NFTSlider />
+        <FounderBenefits />
+        <Suspense fallback={<Skeleton height={200} width="100%" />}>
+          <NFTDetails />
+        </Suspense>
+      </FounderContainer>
+      <Footer />
+    </Container>
   );
 };
 
