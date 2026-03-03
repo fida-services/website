@@ -20,10 +20,10 @@ const welcomeHeroCard = {
 };
 
 const founderWelcomeHeroCard = {
-  description: 'Mint a Founder\'s NFT to gain early adopter\'s access to the decentralized insurance marketplace.',
-  title: 'Fida Founder\'s NFT Collection Mint',
+  description: 'Explore the Founder\'s NFT collection for early adopter\'s access to the decentralized insurance marketplace.',
+  title: 'Fida Founder\'s NFT Collection',
   button: {
-    label: 'Mint Now!',
+    label: 'Learn More',
     link: 'founder-sale',
   }
 };

@@ -401,6 +401,7 @@ FounderModalContent
 isFounderModalOpen
 setIsFounderModalOpen
 FounderSale
+FounderCards
 founderWelcomeHeroCard
 MobileHeaderFounders
 HeaderFounders
