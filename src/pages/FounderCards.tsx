@@ -1,4 +1,4 @@
-import { ChangeEvent, lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { colors } from 'theme';
 
@@ -7,19 +7,16 @@ import { Skeleton } from '@mui/material';
 import Footer from '../components/sections/Footer';
 import { Text } from '../components/_common/Text';
 import { Container } from '../components/_common/Container';
-import { Counter } from '../components/founder-sale/Counter';
-import { NFTButton } from '../components/founder-sale/NFTButton';
 
 import backgroundImage from '../assets/images/background-pattern.png';
 import { NFTSlider } from '../components/founder-sale/NFTSlider';
-// import { NFTDetails } from '../components/founder-sale/NFTDetails';
 import { maxWidth840 } from '../components/rwd/detectMobile';
 import { FounderModal } from '../components/founder-sale/modal/FounderModal';
 import { HeaderFounders } from '../components/HeaderFounders';
 
 const NFTDetails = lazy(() => import('../components/founder-sale/NFTDetails'));
 
-const FounderSale = () => {
+const FounderCards = () => {
   const [isFounderModalOpen, setIsFounderModalOpen] = useState(false);
 
   useEffect(() => { setTimeout(() => setIsFounderModalOpen(true), 5000); }, []);
@@ -28,38 +25,15 @@ const FounderSale = () => {
     query: maxWidth840,
   });
 
-  const [value, setValue] = useState<number>(1);
-
-  const handleIncrement = () => {
-    if (value < 5) {
-      setValue(value + 1);
-    }
-  };
-
-  const handleDecrement = () => {
-    if (value > 1) {
-      setValue(value - 1);
-    }
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = parseInt(e.target.value, 10);
-    if (newValue >= 1 && newValue <= 5) {
-      setValue(newValue);
-    }
-  };
-
   return (
     <>
       <Container>
         <HeaderFounders handleOpenModal={() => setIsFounderModalOpen(true)} />
         <FounderContainer>
           <TitleContainer>
-            <Title>{'Fida Founder\'s NFT Collection Mint'.toUpperCase()}</Title>
-            <Text style={{ width: isTablet ? '100%' : '60%', textAlign: 'center' }} size={isTablet ? 1.15 : 1.5} color={colors.textTertiary600} label="Mint a Founder&apos;s NFT to gain early adopter&apos;s access to the decentralized insurance marketplace." />
+            <Title>{'Fida Founder\'s NFT Collection'.toUpperCase()}</Title>
+            <Text style={{ width: isTablet ? '100%' : '60%', textAlign: 'center' }} size={isTablet ? 1.15 : 1.5} color={colors.textTertiary600} label="Explore the Founder&apos;s NFT collection for early adopter&apos;s access to the decentralized insurance marketplace." />
           </TitleContainer>
-          <Counter value={value} handleIncrement={handleIncrement} handleDecrement={handleDecrement} handleChange={handleChange} />
-          <NFTButton value={value} />
           <NFTSlider />
           <Suspense fallback={<Skeleton height={200} width="100%" />}>
             <NFTDetails />
@@ -72,7 +46,7 @@ const FounderSale = () => {
   );
 };
 
-export default FounderSale;
+export default FounderCards;
 
 const FounderContainer = styled.div`
   align-items: center;
