@@ -9,10 +9,10 @@ import { MobileHeaderFounders } from './rwd/MobileHeaderFounders';
 import { StyledMenuMainButton, StyledMenuModalButton } from './StyledFoundersNavButtons';
 
 interface Props {
-  handleOpenModal: () => void;
+  handleLearnMore: () => void;
 }
 
-export const HeaderFounders = ({ handleOpenModal }: Props) => {
+export const HeaderFounders = ({ handleLearnMore }: Props) => {
   const navigate = useNavigate();
 
   const isTablet = useMediaQuery({
@@ -27,10 +27,10 @@ export const HeaderFounders = ({ handleOpenModal }: Props) => {
     <StyledHeader>
       <FidaLogo />
       {isTablet ? (
-        <MobileHeaderFounders handleOpenLearnMoreModal={handleOpenModal} />
+        <MobileHeaderFounders handleLearnMore={handleLearnMore} />
       ) : (
         <div className="flex">
-          <StyledMenuModalButton onClick={handleOpenModal}>{isSlg ? 'Learn more' : 'Learn more about Fida NFT Collection'}</StyledMenuModalButton>
+          <StyledMenuModalButton onClick={handleLearnMore}>{isSlg ? 'Learn more' : 'Learn more about Fida NFT Collection'}</StyledMenuModalButton>
           <StyledMenuMainButton onClick={() => navigate('/')}>
             Discover FIDA
           </StyledMenuMainButton>
