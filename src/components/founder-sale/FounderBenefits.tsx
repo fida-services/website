@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { colors } from 'theme';
 import { transition, transformVariant } from 'constants/motionConfig';
-import { maxWidth640, maxWidth840 } from 'components/rwd/detectMobile';
+import { maxWidth640 } from 'components/rwd/detectMobile';
 
 import cover1 from '../../assets/images/nft-modal/cover-1.png';
 import cover1mobile from '../../assets/images/nft-modal/cover-1-mobile.png';
@@ -53,7 +53,6 @@ const steps = (isMobile: boolean): BenefitStep[] => ([
 
 export const FounderBenefits = () => {
   const isMobile = useMediaQuery({ query: maxWidth640 });
-  const isTablet = useMediaQuery({ query: maxWidth840 });
 
   return (
     <BenefitsSection id="benefits">
@@ -65,7 +64,6 @@ export const FounderBenefits = () => {
           variants={transformVariant}
           whileInView="visible"
           $reversed={index % 2 !== 0}
-          $isTablet={isTablet}
         >
           <BenefitImage src={step.src} alt={step.title} loading="lazy" />
           <BenefitContent>
@@ -91,13 +89,14 @@ const BenefitsSection = styled.div`
   }
 `;
 
-const BenefitCard = styled(motion.div)<{ $reversed: boolean; $isTablet: boolean }>`
+const BenefitCard = styled(motion.div)<{ $reversed: boolean }>`
   display: flex;
-  flex-direction: ${({ $reversed, $isTablet }) => ($isTablet ? 'column' : ($reversed ? 'row-reverse' : 'row'))};
+  flex-direction: ${({ $reversed }) => ($reversed ? 'row-reverse' : 'row')};
   align-items: center;
   gap: 48px;
 
   @media (max-width: 840px) {
+    flex-direction: column;
     gap: 24px;
   }
 `;
