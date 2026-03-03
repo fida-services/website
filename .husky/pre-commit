@@ -7,3 +7,8 @@ changedFiles="$(git diff --name-only --cached | grep -E '\.(html|txt|json|ts|tsx
 if [ -n "$changedFiles" ]; then
   npm run spell-check -- --files ${changedFiles} "!**/package-lock.json" "!**/*.svg" "!**/*.png" "!**/*.jppg" "!**/*.ico"
 fi
+
+lintFiles="$(git diff --name-only --cached | grep -E '\.(ts|tsx)$' | grep -E '^src/' || true)"
+if [ -n "$lintFiles" ]; then
+  npx eslint ${lintFiles}
+fi
