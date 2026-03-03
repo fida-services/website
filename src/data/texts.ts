@@ -24,7 +24,7 @@ const founderWelcomeHeroCard = {
   title: 'Fida Founder\'s NFT Collection',
   button: {
     label: 'Learn More',
-    link: 'founder-sale',
+    link: 'founders-card',
   }
 };
 
