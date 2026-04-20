@@ -7,10 +7,10 @@ import menuMobileClose from 'assets/icons/menuMobileClose.svg';
 import { FoundersHeaderMenuMobile } from './FoundersHeaderMenuMobile';
 
 interface Props {
-  handleOpenLearnMoreModal: () => void;
+  handleLearnMore: () => void;
 }
 
-export const MobileHeaderFounders = ({ handleOpenLearnMoreModal }: Props) => {
+export const MobileHeaderFounders = ({ handleLearnMore }: Props) => {
   const [modalToggle, setModalToggle] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ export const MobileHeaderFounders = ({ handleOpenLearnMoreModal }: Props) => {
         alt="open menu"
         loading="lazy"
       />
-      <FoundersHeaderMenuMobile modalToggle={modalToggle} setModalToggle={setModalToggle} handleOpenLearnMoreModal={handleOpenLearnMoreModal} />
+      <FoundersHeaderMenuMobile modalToggle={modalToggle} setModalToggle={setModalToggle} handleLearnMore={handleLearnMore} />
     </>
   );
 };

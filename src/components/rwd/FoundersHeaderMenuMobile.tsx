@@ -12,11 +12,11 @@ import { useNavigate } from 'react-router-dom';
 interface Props {
   modalToggle: boolean;
   setModalToggle: React.Dispatch<React.SetStateAction<boolean>>;
-  handleOpenLearnMoreModal: () => void
+  handleLearnMore: () => void;
 }
 
 export const FoundersHeaderMenuMobile = (props: Props) => {
-  const { modalToggle, setModalToggle, handleOpenLearnMoreModal } = props;
+  const { modalToggle, setModalToggle, handleLearnMore } = props;
   const navigate = useNavigate();
 
   return (
@@ -38,7 +38,7 @@ export const FoundersHeaderMenuMobile = (props: Props) => {
             toUpperCase
             textPlacing="center"
             color={colors.buttonTertiaryColorFg}
-            onClick={handleOpenLearnMoreModal}
+            onClick={handleLearnMore}
           />
           <StyledMenuMainButton onClick={() => navigate('/')}>
             Discover FIDA
