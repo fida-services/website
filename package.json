@@ -79,7 +79,7 @@
     "gh-pages": "^5.0.0",
     "husky": "^8.0.0",
     "prop-types": "^15.8.1",
-    "spellchecker-cli": "^6.1.1",
+    "spellchecker-cli": "^7.0.4",
     "typescript": "^4.9.4",
     "webpack": "^5.105.0"
   }
